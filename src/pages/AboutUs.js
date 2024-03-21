@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import {
   Box,
   Text,
@@ -17,11 +18,13 @@ const AboutUs = () => {
     <>
       <Header />
       <>
-        <VStack paddingTop="140px" color='#87A922'>
+        <VStack py="140px" color="#87A922">
           <Box display="block" align="center">
             <HStack w="80%">
               <Box w="50%" align="left">
-                <Heading align="center"  color='green'>Our Story</Heading>
+                <Heading align="center" color="green">
+                  Our Story
+                </Heading>
                 <Text fontSize="2xl" py={5}>
                   Our story began in 1989 when Mr. Tepi Emmanuel, our founder,
                   returned from the USA armed with a Master's degree in
@@ -92,7 +95,9 @@ const AboutUs = () => {
                 />
               </Box>
               <Box w="50%" align="center">
-                <Heading align="center"  color='green'>Our Mission</Heading>
+                <Heading align="center" color="green">
+                  Our Mission
+                </Heading>
                 <Text fontSize="2xl" p={5}>
                   Our mission at Sawyer Camp is to empower local farmers with
                   sustainable agricultural practices, fostering economic growth,
@@ -105,6 +110,7 @@ const AboutUs = () => {
             </HStack>
           </Box>
         </VStack>
+        <Footer />
       </>
     </>
   );

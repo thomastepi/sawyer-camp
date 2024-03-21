@@ -8,16 +8,16 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <>
-      <Box bg="#4F6F52" color="white" align="center" height="3rem">
+      <Box bg="#EEEEEE" color="green" align="center" height="3rem">
         <Box width="90%" align="center" paddingTop="6px">
           <HStack display="flex" justifyContent="space-between">
             <nav>
               <HStack spacing={6}>
                 <a>
-                  <FontAwesomeIcon icon={faLinkedin} size="2x" />
+                  <FontAwesomeIcon color='green' icon={faLinkedin} size="2x" />
                 </a>
                 <a>
-                  <FontAwesomeIcon icon={faTwitter} size="2x" />
+                  <FontAwesomeIcon color='green' icon={faTwitter} size="2x" />
                 </a>
               </HStack>
             </nav>

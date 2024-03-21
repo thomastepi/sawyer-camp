@@ -7,7 +7,7 @@ import {
   Text,
   Card,
   CardBody,
-  Avatar
+  Avatar,
 } from "@chakra-ui/react";
 import team from "../utils/team";
 
@@ -18,9 +18,9 @@ const Team = () => {
       alignItems="center"
       minHeight="100vh"
       bg="#EEF0E5"
-      color='#87A922'
+      color="#87A922"
     >
-      <Box align="center" w="100%" height="30vh" color='green'>
+      <Box align="center" w="100%" height="30vh" color="green">
         <Box w="70%" align="center">
           <Heading py={10}>Our Team</Heading>
         </Box>
@@ -33,30 +33,25 @@ const Team = () => {
           gridGap={30}
         >
           <>
-            {team.map((member) => {
+            {team.map((member, index) => {
               return (
-                <>
-                  <Card
-                    direction={{ base: "column", sm: "row" }}
-                    overflow="hidden"
-                    variant="outline"
-                    color='#87A922'
-                  >
-                    <Avatar
-                      size="2xl"
-                      name={member.name}
-                      src={member.image}
-                    />
+                <Card
+                  direction={{ base: "column", sm: "row" }}
+                  overflow="hidden"
+                  variant="outline"
+                  color="#87A922"
+                  key={index}
+                >
+                  <Avatar size="2xl" name={member.name} src={member.image} />
 
-                    <Stack>
-                      <CardBody>
-                        <Heading size="md">{member.name}</Heading>
+                  <Stack>
+                    <CardBody>
+                      <Heading size="md">{member.name}</Heading>
 
-                        <Text py="2">{member.title}</Text>
-                      </CardBody>
-                    </Stack>
-                  </Card>
-                </>
+                      <Text py="2">{member.title}</Text>
+                    </CardBody>
+                  </Stack>
+                </Card>
               );
             })}
           </>
