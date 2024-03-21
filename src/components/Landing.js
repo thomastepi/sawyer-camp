@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import SharedLayout from "../pages/SharedLayout";
 import { Heading, Box, Text, Button, HStack } from "@chakra-ui/react";
 import Header from "./Header";
+import { Link } from "react-router-dom";
 import img from "../assets/images/img_8.jpg";
 import img2 from "../assets/images/rubber_trees.jpg";
 import img3 from "../assets/images/plantain_bunch.jpg";
@@ -37,26 +38,28 @@ export const Landing = () => {
         backgroundColor="#2A4365"
         color="white"
         {...backgroundImageStyle}
+        position="relative"
       >
-        <Box w="70%">
-          <Box py={10}>
-            <Heading as="h1">Sawyer Camp Farmers</Heading>
-            <Heading as="h4">Common Initiative Group</Heading>
+        <Box
+          align="center"
+          justifyContent="center"
+          w="70%"
+          position="absolute"
+          bottom="9"
+        >
+          <Box fontSize="3xl" py={10}>
+            <Heading fontSize="6xl">Sawyer Camp Farmers</Heading>
+            <Heading>Common Initiative Group</Heading>
           </Box>
-          <Box w="50%">
-            <Text fontSize={20} as="p">
-              We are a group of farmers in the Sawyer Camp area of Cameroon. We
-              are dedicated to sustainable farming practices and the promotion
-              of environmental conservation.
-            </Text>
-          </Box>
-          <Box py={10}>
+          <Box display="flex" justifyContent="center" py={6}>
             <HStack spacing={6} color="white">
-              <Button p={7} colorScheme="green" variant="solid">
-                Learn More
-              </Button>
+              <Link to="/about-us">
+                <Button p={7} colorScheme="green" variant="solid">
+                  Learn More
+                </Button>
+              </Link>
               <Button p={7} colorScheme="whiteAlpha">
-                Become a Member
+                <Link to="/become-member">Become a Member</Link>
               </Button>
             </HStack>
           </Box>

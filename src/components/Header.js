@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { Box, HStack, Text } from "@chakra-ui/react";
 import logo from "../assets/images/logo.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -22,15 +23,15 @@ const Header = () => {
             </nav>
             <nav>
               <HStack spacing={6}>
-                <a>
-                  <Text>Become a Member</Text>
-                </a>
-                <a>
-                  <Text>Subscribe</Text>
-                </a>
-                <a>
-                  <Text>Donate</Text>
-                </a>
+                <>
+                  <Link to='/become-member'>Become a Member</Link>
+                </>
+                <>
+                  <Link>Subscribe</Link>
+                </>
+                <>
+                  <Link>Donate</Link>
+                </>
               </HStack>
             </nav>
           </HStack>
@@ -44,25 +45,25 @@ const Header = () => {
             alignItems="center"
           >
             <Box width="5%" paddingTop="6px">
-              <img src={logo} alt="logo" />
+              <Link to='/'><img src={logo} alt="logo" /></Link>
             </Box>
-            <Box>
+            <Box color='green'>
               <HStack spacing={24}>
-                <a>
+                <Link to='/about-us'>
                   <Text>About Us</Text>
-                </a>
-                <a>
+                </Link>
+                <Link to='/our-work'>
                   <Text>Our Work</Text>
-                </a>
-                <a>
-                  <Text>Get Involved</Text>
-                </a>
-                <a>
-                  <Text>Events</Text>
-                </a>
-                <a>
+                </Link>
+                <Link to='/our-services'>
+                  <Text>Our Services</Text>
+                </Link>
+                <Link to='/tools'>
+                  <Text>Tools</Text>
+                </Link>
+                <Link to='/blog'>
                   <Text>Blog</Text>
-                </a>
+                </Link>
               </HStack>
             </Box>
           </Box>

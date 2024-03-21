@@ -7,7 +7,7 @@ import {
   Text,
   Card,
   CardBody,
-  Image,
+  Avatar
 } from "@chakra-ui/react";
 import team from "../utils/team";
 
@@ -18,8 +18,9 @@ const Team = () => {
       alignItems="center"
       minHeight="100vh"
       bg="#EEF0E5"
+      color='#87A922'
     >
-      <Box align="center" w="100%" height="30vh">
+      <Box align="center" w="100%" height="30vh" color='green'>
         <Box w="70%" align="center">
           <Heading py={10}>Our Team</Heading>
         </Box>
@@ -39,12 +40,12 @@ const Team = () => {
                     direction={{ base: "column", sm: "row" }}
                     overflow="hidden"
                     variant="outline"
+                    color='#87A922'
                   >
-                    <Image
-                      objectFit="cover"
-                      maxW={{ base: "100%", sm: "150px" }}
+                    <Avatar
+                      size="2xl"
+                      name={member.name}
                       src={member.image}
-                      alt="member-image"
                     />
 
                     <Stack>
