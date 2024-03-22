@@ -10,8 +10,9 @@ import {
   HStack,
   VStack,
 } from "@chakra-ui/react";
-import img from "../assets/images/plantain_bunch.jpg";
+import img from "../assets/images/img_9.jpg";
 import img2 from "../assets/images/palm_plantation.jpg";
+import { createPath } from "react-router-dom";
 
 const AboutUs = () => {
   return (
@@ -69,11 +70,13 @@ const AboutUs = () => {
                   three major gaps that emerge from the knowledge and
                   experiences of sustainable and rural farming processes. These
                   are:
-                  <ul>
-                    <li>Low productivity and poor quality of farm produce</li>
-                    <li>Low income from farm produce</li>
-                    <li>High cost of farm inputs</li>
-                  </ul>
+                  <Box paddingLeft="25px">
+                    <ul>
+                      <li>Climate</li>
+                      <li>Biodiversity Loss</li>
+                      <li>Rural Poverty</li>
+                    </ul>
+                  </Box>
                   The organization has since evolved into a union of farmers
                   working together to address these gaps through education and
                   access to resources. We cultivate sustainable practices and
@@ -84,16 +87,26 @@ const AboutUs = () => {
             </Box>
 
             <HStack w="80%">
-              <Box w="50%" h="1rem" display="flex" alignItems="center">
-                <Image
-                  boxSize="400px"
-                  borderRadius="10px"
-                  objectFit="cover"
-                  src={img2}
-                  w="100%"
-                  alt="photo of a palm plantation"
-                />
-              </Box>
+              <>
+                <Box
+                  height="fit-content"
+                  style={{ clipPath: "path(var(--badge))", width: "80%" }}
+                  position="relative"
+                  w="50%"
+                  display="flex"
+                  alignItems="center"
+                >
+                  <Image
+                    boxSize="400px"
+                    borderRadius="10px"
+                    objectFit="cover"
+                    src={img2}
+                    w="100%"
+                    alt="photo of a palm plantation"
+                  />
+                </Box>
+              </>
+
               <Box w="50%" align="center">
                 <Heading align="center" color="green">
                   Our Mission

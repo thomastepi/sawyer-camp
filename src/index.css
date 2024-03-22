@@ -1,8 +1,13 @@
+:root {
+  --badge: "M297.043 0L352.998 43.8167L433.256 19.8L453.818 74.75L542.473 75.3L523.586 130.5L603.085 155.5L548.464 200L603.085 244.5L523.586 269.5L542.473 324.7L453.818 325.25L433.256 380.2L352.998 356.183L297.043 400L241.087 356.183L160.829 380.2L140.267 325.25L51.6121 324.7L70.4994 269.5L-9 244.5L45.6215 200L-9 155.5L70.4994 130.5L51.6121 75.3L140.267 74.75L160.829 19.8L241.087 43.8167L297.043 0Z";
+  --heart: "M460.5 0L307 91.6364L153.5 0L0 114.545V274.909L307 504L614 274.909V114.545L460.5 0Z";
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Merriweather", "Roboto Serif", 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Merriweather", "Roboto Serif",
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
@@ -13,7 +18,7 @@ html {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 

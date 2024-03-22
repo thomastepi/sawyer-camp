@@ -43,11 +43,9 @@ const Team = () => {
                   key={index}
                 >
                   <Avatar size="2xl" name={member.name} src={member.image} />
-
                   <Stack>
                     <CardBody>
                       <Heading size="md">{member.name}</Heading>
-
                       <Text py="2">{member.title}</Text>
                     </CardBody>
                   </Stack>

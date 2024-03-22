@@ -14,20 +14,17 @@ const Header = () => {
             <nav>
               <HStack spacing={6}>
                 <a>
-                  <FontAwesomeIcon color='green' icon={faLinkedin} size="2x" />
+                  <FontAwesomeIcon color="green" icon={faLinkedin} size="2x" />
                 </a>
                 <a>
-                  <FontAwesomeIcon color='green' icon={faTwitter} size="2x" />
+                  <FontAwesomeIcon color="green" icon={faTwitter} size="2x" />
                 </a>
               </HStack>
             </nav>
             <nav>
               <HStack spacing={6}>
                 <>
-                  <Link to='/become-member'>Become a Member</Link>
-                </>
-                <>
-                  <Link>Subscribe</Link>
+                  <Link>Contact Us</Link>
                 </>
                 <>
                   <Link>Donate</Link>
@@ -45,23 +42,22 @@ const Header = () => {
             alignItems="center"
           >
             <Box width="5%" paddingTop="6px">
-              <Link to='/'><img src={logo} alt="logo" /></Link>
+              <Link to="/">
+                <img src={logo} alt="logo" />
+              </Link>
             </Box>
-            <Box color='green'>
+            <Box color="green">
               <HStack spacing={24}>
-                <Link to='/about-us'>
+                <Link to="/about-us">
                   <Text>About Us</Text>
                 </Link>
-                <Link to='/our-work'>
+                <Link to="/our-work">
                   <Text>Our Work</Text>
                 </Link>
-                <Link to='/our-services'>
-                  <Text>Our Services</Text>
+                <Link to="/projects">
+                  <Text>Projects</Text>
                 </Link>
-                <Link to='/tools'>
-                  <Text>Tools</Text>
-                </Link>
-                <Link to='/blog'>
+                <Link to="/blog">
                   <Text>Blog</Text>
                 </Link>
               </HStack>

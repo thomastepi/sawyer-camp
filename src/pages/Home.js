@@ -1,4 +1,5 @@
 import React from "react";
+import img from "../assets/images/green-leaf.jpg";
 import { Landing, Team, Projects, Subscribe, Footer } from "../components";
 
 const Home = () => {
@@ -7,7 +8,7 @@ const Home = () => {
       <Landing />
       <Projects />
       <Team />
-      <Subscribe />
+      <Subscribe image={img} heading='News' headingText='Subscribe to our Newsletter' />
       <Footer />
     </>
   );

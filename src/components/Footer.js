@@ -1,9 +1,10 @@
 import React from "react";
+import { Link as ReactRouterLink } from "react-router-dom";
 import {
   HStack,
   VStack,
   Text,
-  Link,
+  Link as ChakraLink,
   Box,
   Flex,
   Center,
@@ -15,17 +16,27 @@ const Footer = () => {
       <Flex w="60%" h="100%" justify="space-between">
         <Center>
           <VStack align="left">
-            <Link>info@sawyercamp.com</Link>
+            <ChakraLink>info@sawyercamp.com</ChakraLink>
             <Text>2024 Sawyer-Camp Farmers CIG</Text>
           </VStack>
         </Center>
         <Center>
           <VStack align="left">
-            <Link as="b">Home</Link>
-            <Link as="b">About Us</Link>
-            <Link as="b">Our Team</Link>
-            <Link as="b">Blog</Link>
-            <Link as="b">Get in Touch</Link>
+            <ChakraLink as={ReactRouterLink} to="/">
+              <Text as="b">Home</Text>
+            </ChakraLink>
+            <ChakraLink as={ReactRouterLink} to="/about-us">
+              <Text as="b">About Us</Text>
+            </ChakraLink>
+            <ChakraLink as={ReactRouterLink} to="/projects">
+              <Text as="b">Projects</Text>
+            </ChakraLink>
+            <ChakraLink as={ReactRouterLink} to="/blog">
+              <Text as="b">Blog</Text>
+            </ChakraLink>
+            <ChakraLink as={ReactRouterLink} to="/get-in-touch">
+              <Text as="b">Get in Touch</Text>
+            </ChakraLink>
           </VStack>
         </Center>
       </Flex>

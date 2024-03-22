@@ -12,14 +12,14 @@ import {
   FormLabel,
 } from "@chakra-ui/react";
 
-const Subscribe = () => {
+const Subscribe = ({ image, heading, headingText }) => {
   const boxStyle = {
     position: "fixed",
     top: "0",
     left: "0",
     width: "100%",
     height: "100%",
-    backgroundImage: img,
+    backgroundImage: image,
     backgroundSize: "cover",
     backgroundPosition: "center",
     opacity: "0.8",
@@ -40,8 +40,8 @@ const Subscribe = () => {
             borderRadius="10px"
           >
             <VStack spacing={10}>
-              <Heading>News</Heading>
-              <Text fontSize="2xl">Subscribe to our newsletter</Text>
+              <Heading>{heading}</Heading>
+              <Text fontSize="2xl">{headingText}</Text>
               <FormControl id="subscribe" isRequired>
                 <FormLabel>Email address</FormLabel>
                 <Input
