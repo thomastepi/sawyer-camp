@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../assets/images/green-leaf.jpg";
+import { FixedBg } from "../components";
 import {
   Box,
   Text,
@@ -8,74 +8,85 @@ import {
   Button,
   Input,
   VStack,
+  HStack,
   FormControl,
   FormLabel,
+  Textarea,
 } from "@chakra-ui/react";
 
 const Subscribe = ({ image, heading, headingText }) => {
-  const boxStyle = {
-    position: "fixed",
-    top: "0",
-    left: "0",
-    width: "100%",
-    height: "100%",
-    backgroundImage: image,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    opacity: "0.8",
-    zIndex: "-1",
-  };
   return (
-    <Center h="100vh" position="relative" overflow="hidden">
-      <Box {...boxStyle} />
+    <Center h="100vh">
+      <FixedBg image={image} />
+      <Box />
       <Center zIndex="1">
         <Box spacing={9}>
           <Box
             align="center"
-            px="150px"
+            px="100px"
             py="40px"
             color="green"
             w="100%"
             bg="#D2E3C8"
-            borderRadius="10px"
           >
             <VStack spacing={10}>
               <Heading>{heading}</Heading>
               <Text fontSize="2xl">{headingText}</Text>
-              <FormControl id="subscribe" isRequired>
-                <FormLabel>Email address</FormLabel>
-                <Input
-                  _focus={{ border: "solid 2px green" }}
-                  variant="filled"
-                  type="email"
-                />
-                <FormLabel>First Name</FormLabel>
-                <Input
-                  _focus={{ border: "solid 2px green" }}
-                  variant="filled"
-                  type="text"
-                />
-                <FormLabel>Last Name</FormLabel>
-                <Input
-                  _focus={{ border: "solid 2px green" }}
-                  variant="filled"
-                  type="text"
-                />
-                <FormLabel>Company</FormLabel>
-                <Input
-                  _focus={{ border: "solid 2px green" }}
-                  variant="filled"
-                  type="text"
-                />
-                <Button
-                  colorScheme="green"
-                  variant="solid"
-                  w="full"
-                  marginTop="30px"
-                >
-                  Subscribe
-                </Button>
-              </FormControl>
+              <Box w="100%">
+                <VStack spacing={4}>
+                  <FormControl id="email">
+                    <FormLabel>Email</FormLabel>
+                    <Input
+                      borderRadius="0"
+                      border="none"
+                      borderBottom="solid green 2px"
+                      type="email"
+                      _hover={{ border: "solid green 2px" }}
+                      _focus={{ border: "solid green 1px" }}
+                      focusBorderColor="green"
+                    />
+                  </FormControl>
+                  <FormControl id="first-name">
+                    <FormLabel>First Name</FormLabel>
+                    <Input
+                      borderRadius="0"
+                      border="none"
+                      borderBottom="solid green 2px"
+                      type="text"
+                      _hover={{ border: "solid green 2px" }}
+                      _focus={{ border: "solid green 1px" }}
+                      focusBorderColor="green"
+                    />
+                  </FormControl>
+                  <FormControl id="last-name">
+                    <FormLabel>Last Name</FormLabel>
+                    <Input
+                      borderRadius="0"
+                      border="none"
+                      borderBottom="solid green 2px"
+                      type="text"
+                      _hover={{ border: "solid green 2px" }}
+                      _focus={{ border: "solid green 1px" }}
+                      focusBorderColor="green"
+                    />
+                  </FormControl>
+                  <FormControl id="company">
+                    <FormLabel>Company</FormLabel>
+                    <Input
+                      borderRadius="0"
+                      border="none"
+                      borderBottom="solid green 2px"
+                      type="text"
+                      _hover={{ border: "solid green 2px" }}
+                      _focus={{ border: "solid green 1px" }}
+                      focusBorderColor="green"
+                    />
+                  </FormControl>
+                  <Button size="lg" px="50px" colorScheme="green">
+                    Send
+                  </Button>
+                </VStack>
+              </Box>
             </VStack>
           </Box>
         </Box>

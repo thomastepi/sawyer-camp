@@ -1,5 +1,7 @@
 import React from "react";
 import { Link as ReactRouterLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import {
   HStack,
   VStack,
@@ -16,6 +18,14 @@ const Footer = () => {
       <Flex w="60%" h="100%" justify="space-between">
         <Center>
           <VStack align="left">
+          <HStack spacing={4}>
+            <ChakraLink>
+              <FontAwesomeIcon icon={faLinkedin} />
+            </ChakraLink>
+            <ChakraLink>
+              <FontAwesomeIcon icon={faTwitter} />
+            </ChakraLink>
+          </HStack>
             <ChakraLink>info@sawyercamp.com</ChakraLink>
             <Text>2024 Sawyer-Camp Farmers CIG</Text>
           </VStack>
@@ -34,7 +44,7 @@ const Footer = () => {
             <ChakraLink as={ReactRouterLink} to="/blog">
               <Text as="b">Blog</Text>
             </ChakraLink>
-            <ChakraLink as={ReactRouterLink} to="/get-in-touch">
+            <ChakraLink as={ReactRouterLink} to="/contact-us">
               <Text as="b">Get in Touch</Text>
             </ChakraLink>
           </VStack>

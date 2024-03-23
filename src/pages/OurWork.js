@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
-import pic1 from "../assets/images/img_5.jpg";
-import pic2 from "../assets/images/img_6.jpg";
-import pic3 from "../assets/images/img_7.jpg";
+import pic1 from "../assets/images/farm-women.jpg";
+import pic2 from "../assets/images/palmnuts.jpg";
+import pic3 from "../assets/images/assorted-fruits.jpg";
 import { Footer } from "../components";
 import {
   Button,
@@ -37,14 +37,15 @@ const OurWork = () => {
     setShowCard2(false);
     setShowCard3(true);
   };
+
   return (
     <>
       <Header />
       <>
-        <Flex color="#87A922" justify="center" h="80vh" bg="#FFF" w="100%">
-          <Box w="90%">
+        <Flex color="#87A922" justify="center" h="80vh" bg="#436850" w="100%">
+          <Box w="90%" bg="white">
             <Flex justify="space-between" w="100%">
-              <Center borderRight="solid 2px green" w="45%">
+              <Center w="45%">
                 <Heading color="green" fontSize="3xl" align="center">
                   We focus our efforts in achieving three strategic goals
                 </Heading>
@@ -59,8 +60,9 @@ const OurWork = () => {
                       transition: "0.5s",
                     }}
                     px="50px"
-                    bg={showCard1 ? "green" : "white"}
+                    bg={showCard1 ? "#9BCF53" : "white"}
                     color={showCard1 ? "white" : "#87A922"}
+                    borderRadius="0"
                   >
                     Goal 1
                   </Button>
@@ -72,8 +74,9 @@ const OurWork = () => {
                       transition: "0.5s",
                     }}
                     px="50px"
-                    bg={showCard2 ? "green" : "white"}
+                    bg={showCard2 ? "#9BCF53" : "white"}
                     color={showCard2 ? "white" : "#87A922"}
+                    borderRadius="0"
                   >
                     Goal 2
                   </Button>
@@ -85,8 +88,9 @@ const OurWork = () => {
                       transition: "0.5s",
                     }}
                     px="50px"
-                    bg={showCard3 ? "green" : "white"}
+                    bg={showCard3 ? "#9BCF53" : "white"}
                     color={showCard3 ? "white" : "#87A922"}
+                    borderRadius="0"
                   >
                     Goal 3
                   </Button>
@@ -101,7 +105,6 @@ const OurWork = () => {
                   {showCard1 && (
                     <Grid templateRows="repeat(2, 1fr)" gap={6} align="center">
                       <GridItem
-                        borderRadius="10px"
                         w="100%"
                         h="22rem"
                         bg="blue.500"
@@ -110,10 +113,10 @@ const OurWork = () => {
                         backgroundRepeat="no-repeat"
                         backgroundPosition="center"
                       ></GridItem>
-                      <GridItem w="100%" h="20" bg="#EEE" borderRadius="10px">
+                      <GridItem w="100%" h="20" bg="#EEE">
                         <Text as="b">
                           Expand and strengthen Sawyer Camp Farmers CIG as a
-                          global collaborative network of organizations that
+                          national collaborative network of organizations that
                           secures a sustainable future for people, food, and
                           nature.
                         </Text>
@@ -123,7 +126,6 @@ const OurWork = () => {
                   {showCard2 && (
                     <Grid templateRows="repeat(2, 1fr)" gap={6} align="center">
                       <GridItem
-                        borderRadius="10px"
                         w="100%"
                         h="22rem"
                         bg="blue.500"
@@ -132,7 +134,7 @@ const OurWork = () => {
                         backgroundRepeat="no-repeat"
                         backgroundPosition="center"
                       ></GridItem>
-                      <GridItem w="100%" h="20" bg="#EEE" borderRadius="10px">
+                      <GridItem w="100%" h="20" bg="#EEE">
                         <Text as="b">
                           Catalyze credible sustainability and climate
                           commitments through an expanded set of nature-based
@@ -144,7 +146,6 @@ const OurWork = () => {
                   {showCard3 && (
                     <Grid templateRows="repeat(2, 1fr)" gap={6} align="center">
                       <GridItem
-                        borderRadius="10px"
                         w="100%"
                         h="22rem"
                         bg="blue.500"
@@ -153,7 +154,7 @@ const OurWork = () => {
                         backgroundRepeat="no-repeat"
                         backgroundPosition="center"
                       ></GridItem>
-                      <GridItem w="100%" h="20" bg="#EEE" borderRadius="10px">
+                      <GridItem w="100%" h="20" bg="#EEE">
                         <Text as="b">
                           Improve rural livelihoods through innovative,
                           scalable, and locally adapted technological solutions

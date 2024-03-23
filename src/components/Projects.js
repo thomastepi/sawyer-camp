@@ -21,7 +21,7 @@ const Projects = () => {
       bg="white"
     >
       <Box align="center">
-        <VStack w="70%" color="#87A922">
+        <VStack w="80%" color="#87A922">
           <Box h="50vh" padding={8}>
             <Text fontSize="4xl">
               We are a community-driven union empowering local farmers in the
@@ -30,10 +30,9 @@ const Projects = () => {
               of high-quality cash crops to the regional market.
             </Text>
           </Box>
-          <Box h="50vh" py="55px">
+          <Box h="50vh" py="55px" bg='#436850' px='30px' color='white'>
             <HStack spacing={5}>
-              <Box align="left" w="70%">
-                {/* <Heading>The Cocoa Coffee Seedling Project (CCSP)</Heading> */}
+              <Box align="left" w="60%">
                 <Text fontSize="2xl">
                   We employ modern techniques to process ripe palm fruits,
                   yielding top-quality palm oil supplied to both local and
@@ -43,14 +42,13 @@ const Projects = () => {
                   <Link to="/about-us">Learn More</Link>
                 </Button>
               </Box>
-              <Box w="30%" h="1rem" display="flex" alignItems="center">
+              <Box w="40%"  display="flex" alignItems="center">
                 <Image
-                  boxSize="300px"
-                  borderRadius="full"
+                  boxSize="250px"
                   objectFit="cover"
                   src={img}
                   w="100%"
-                  alt="Dan Abramov"
+                  alt="photo of a group of people working in a field"
                 />
               </Box>
             </HStack>

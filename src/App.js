@@ -8,6 +8,7 @@ import {
   Blog,
   Projects,
   OurWork,
+  ContactUs
 } from "./pages";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/our-work" element={<OurWork />} />
+          <Route path="/contact-us" element={<ContactUs />} />
         </Routes>
       </Router>
     </ChakraProvider>

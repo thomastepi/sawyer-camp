@@ -55,12 +55,9 @@ export const Landing = () => {
             <HStack spacing={6} color="white">
               <Link to="/about-us">
                 <Button p={7} colorScheme="green" variant="solid">
-                  Learn More
+                  <Link to='/blog'>Subscribe</Link>
                 </Button>
               </Link>
-              <Button p={7} colorScheme="whiteAlpha">
-                <Link to="/become-member">Become a Member</Link>
-              </Button>
             </HStack>
           </Box>
         </Box>
