@@ -7,5 +7,25 @@ import Subscribe from "./Subscribe";
 import Footer from "./Footer";
 import FixedBg from "./FixedBg";
 import GoogleMaps from "./GoogleMaps";
+import DonateLanding from "./DonateLanding";
+import DonateLayer from "./DonateLayer";
+import DonateMiddle from "./DonateMiddle";
+import Paypal from "../pages/Paypal";
+import ScrollToTop from "./ScrollToTop";
 
-export { Header, Landing, Team, Projects, Stats, Footer, Subscribe, FixedBg, GoogleMaps };
+export {
+  Header,
+  Landing,
+  Team,
+  Projects,
+  Stats,
+  Footer,
+  Subscribe,
+  FixedBg,
+  GoogleMaps,
+  DonateLanding,
+  DonateLayer,
+  DonateMiddle,
+  Paypal,
+  ScrollToTop,
+};

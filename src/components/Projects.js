@@ -1,16 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  Box,
-  HStack,
-  VStack,
-  Text,
-  Heading,
-  Image,
-  Button,
-} from "@chakra-ui/react";
+import { Box, HStack, VStack, Text, Image, Button } from "@chakra-ui/react";
 import img from "../assets/images/group.jpg";
-import SharedLayout from "../pages/SharedLayout";
+import SharedLayout from "./SharedLayout";
 
 const Projects = () => {
   return (
@@ -30,7 +22,7 @@ const Projects = () => {
               of high-quality cash crops to the regional market.
             </Text>
           </Box>
-          <Box h="50vh" py="55px" bg='#436850' px='30px' color='white'>
+          <Box h="50vh" py="55px" bg="#436850" px="30px" color="white">
             <HStack spacing={5}>
               <Box align="left" w="60%">
                 <Text fontSize="2xl">
@@ -42,7 +34,7 @@ const Projects = () => {
                   <Link to="/about-us">Learn More</Link>
                 </Button>
               </Box>
-              <Box w="40%"  display="flex" alignItems="center">
+              <Box w="40%" display="flex" alignItems="center">
                 <Image
                   boxSize="250px"
                   objectFit="cover"

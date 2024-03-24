@@ -27,3 +27,7 @@ code {
 ::before {
   box-sizing: border-box;
 }
+
+button {
+  border-radius: 'none' !important;
+}

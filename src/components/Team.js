@@ -1,5 +1,5 @@
 import React from "react";
-import SharedLayout from "../pages/SharedLayout";
+import SharedLayout from "./SharedLayout";
 import {
   Heading,
   Box,
@@ -36,13 +36,19 @@ const Team = () => {
             {team.map((member, index) => {
               return (
                 <Card
+                  borderRadius="none"
                   direction={{ base: "column", sm: "row" }}
                   overflow="hidden"
                   variant="outline"
                   color="#87A922"
                   key={index}
                 >
-                  <Avatar size="2xl" name={member.name} src={member.image} />
+                  <Avatar
+                    size="2xl"
+                    name={member.name}
+                    src={member.image}
+                    borderRadius="none"
+                  />
                   <Stack>
                     <CardBody>
                       <Heading size="md">{member.name}</Heading>

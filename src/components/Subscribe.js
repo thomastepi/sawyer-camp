@@ -8,10 +8,8 @@ import {
   Button,
   Input,
   VStack,
-  HStack,
   FormControl,
   FormLabel,
-  Textarea,
 } from "@chakra-ui/react";
 
 const Subscribe = ({ image, heading, headingText }) => {

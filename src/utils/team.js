@@ -7,7 +7,7 @@ import pic6 from "../assets/images/schnei.jpg";
 
 const team = [
   {
-    name: "Tepi Emmanuel",
+    name: "Emmanuel Tepi",
     title: "Founder/CEO",
     image: pic3,
   },
@@ -22,7 +22,7 @@ const team = [
     image: pic,
   },
   {
-    name: "Mbah Ayisatu",
+    name: "Ayisatu Mbah",
     title: "Senior Manager, Strategic Programs",
     image: pic4,
   },

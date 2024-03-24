@@ -43,14 +43,14 @@ const OurWork = () => {
       <Header />
       <>
         <Flex color="#87A922" justify="center" h="80vh" bg="#436850" w="100%">
-          <Box w="90%" bg="white">
-            <Flex justify="space-between" w="100%">
-              <Center w="45%">
+          <Box w="90%" bg="white" h="50rem">
+            <Center justify="space-between" w="100%">
+              <Center w="40%">
                 <Heading color="green" fontSize="3xl" align="center">
                   We focus our efforts in achieving three strategic goals
                 </Heading>
               </Center>
-              <VStack h="fit-content" w="45%" pt="10px">
+              <VStack h="fit-content" w="60%" pt="10px">
                 <ButtonGroup variant="flush" px="90px">
                   <Button
                     onClick={handleCard1}
@@ -113,8 +113,8 @@ const OurWork = () => {
                         backgroundRepeat="no-repeat"
                         backgroundPosition="center"
                       ></GridItem>
-                      <GridItem w="100%" h="20" bg="#EEE">
-                        <Text as="b">
+                      <GridItem w="100%" h="20" bg="#436850" color="white">
+                        <Text fontSize="lg">
                           Expand and strengthen Sawyer Camp Farmers CIG as a
                           national collaborative network of organizations that
                           secures a sustainable future for people, food, and
@@ -134,8 +134,8 @@ const OurWork = () => {
                         backgroundRepeat="no-repeat"
                         backgroundPosition="center"
                       ></GridItem>
-                      <GridItem w="100%" h="20" bg="#EEE">
-                        <Text as="b">
+                      <GridItem w="100%" h="20" bg="#436850" color="white">
+                        <Text fontSize="lg">
                           Catalyze credible sustainability and climate
                           commitments through an expanded set of nature-based
                           tools, partners, and delivery channels.
@@ -154,8 +154,8 @@ const OurWork = () => {
                         backgroundRepeat="no-repeat"
                         backgroundPosition="center"
                       ></GridItem>
-                      <GridItem w="100%" h="20" bg="#EEE">
-                        <Text as="b">
+                      <GridItem w="100%" h="20" bg="#436850" color="white">
+                        <Text fontSize="lg">
                           Improve rural livelihoods through innovative,
                           scalable, and locally adapted technological solutions
                           in agriculture.
@@ -165,7 +165,7 @@ const OurWork = () => {
                   )}
                 </Box>
               </VStack>
-            </Flex>
+            </Center>
           </Box>
         </Flex>
       </>

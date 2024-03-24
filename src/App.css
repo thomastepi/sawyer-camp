@@ -7,3 +7,8 @@ a p:hover {
     cursor: pointer;
     text-decoration: underline;
 }
+
+button {
+    border-radius: 'none' !important;
+}
+  

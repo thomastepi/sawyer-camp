@@ -2,12 +2,12 @@ import React from "react";
 import Header from "../components/Header";
 import projects from "../utils/projects";
 import { Footer } from "../components";
+import { Link } from "react-router-dom";
 import {
   Box,
   Text,
   Center,
   VStack,
-  HStack,
   Grid,
   Flex,
   Heading,
@@ -59,9 +59,9 @@ const Projects = () => {
                           <Heading fontSize="2xl" as="b">
                             {project.name}
                           </Heading>
-                          <Text>{project.description}</Text>
+                          <Text>{project.location}</Text>
                           <Button colorScheme="green" variant="outline">
-                            Read More
+                            <Link to={`/project/${project.id}`}>Read More</Link>
                           </Button>
                         </VStack>
                       </Center>

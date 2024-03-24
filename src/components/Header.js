@@ -45,6 +45,7 @@ const Header = () => {
               color="white"
               border="solid 2px green"
               _hover={{ bg: "white", color: "green", transition: "0.5s" }}
+              to="/donate"
             >
               Donate
             </ChakraLink>

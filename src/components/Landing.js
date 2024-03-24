@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import SharedLayout from "../pages/SharedLayout";
-import { Heading, Box, Text, Button, HStack } from "@chakra-ui/react";
+import SharedLayout from "./SharedLayout";
+import { Heading, Box, Button, HStack } from "@chakra-ui/react";
 import Header from "./Header";
 import { Link } from "react-router-dom";
 import img from "../assets/images/img_8.jpg";
@@ -55,7 +55,7 @@ export const Landing = () => {
             <HStack spacing={6} color="white">
               <Link to="/about-us">
                 <Button p={7} colorScheme="green" variant="solid">
-                  <Link to='/blog'>Subscribe</Link>
+                  <Link to="/blog">Subscribe</Link>
                 </Button>
               </Link>
             </HStack>

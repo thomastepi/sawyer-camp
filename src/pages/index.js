@@ -4,5 +4,18 @@ import Blog from "./Blog";
 import Projects from "./Projects";
 import OurWork from "./OurWork";
 import ContactUs from "./ContactUs";
+import ProjectDescription from "./ProjectDescription";
+import Donate from "./Donate";
+import Paypal from "./Paypal";
 
-export { Home, AboutUs, Blog, Projects, OurWork, ContactUs};
+export {
+  Home,
+  AboutUs,
+  Blog,
+  Projects,
+  OurWork,
+  ContactUs,
+  ProjectDescription,
+  Donate,
+  Paypal,
+};

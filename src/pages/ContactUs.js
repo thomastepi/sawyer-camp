@@ -14,7 +14,6 @@ import {
   Divider,
   Grid,
   Center,
-  GridItem,
   FormControl,
   FormLabel,
   Input,
@@ -22,7 +21,6 @@ import {
   Button,
   Link as ChakraLink,
 } from "@chakra-ui/react";
-import { GoogleMap } from "@react-google-maps/api";
 
 const ContactUs = () => {
   return (

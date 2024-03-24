@@ -1,9 +1,7 @@
 import React from "react";
-import SharedLayout from "../pages/SharedLayout";
+import SharedLayout from "./SharedLayout";
 import img from "../assets/images/palm_plantation.jpg";
-import { Image, Heading, Box } from "@chakra-ui/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { Heading, Box } from "@chakra-ui/react";
 
 const Stats = () => {
   const backgroundImageStyle = {
@@ -36,9 +34,7 @@ const Stats = () => {
     >
       <Box {...backgroundImageStyle} w="100%">
         <Box>
-          <Heading {...headingStyle}>
-            Stats
-          </Heading>
+          <Heading {...headingStyle}>Stats</Heading>
         </Box>
       </Box>
     </SharedLayout>
