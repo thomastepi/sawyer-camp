@@ -53,11 +53,11 @@ export const Landing = () => {
           </Box>
           <Box display="flex" justifyContent="center" py={6}>
             <HStack spacing={6} color="white">
-              <Link to="/about-us">
+              <>
                 <Button p={7} colorScheme="green" variant="solid">
                   <Link to="/blog">Subscribe</Link>
                 </Button>
-              </Link>
+              </>
             </HStack>
           </Box>
         </Box>

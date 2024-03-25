@@ -12,6 +12,7 @@ import DonateLayer from "./DonateLayer";
 import DonateMiddle from "./DonateMiddle";
 import Paypal from "../pages/Paypal";
 import ScrollToTop from "./ScrollToTop";
+import DisplayAlert from "./DisplayAlert";
 
 export {
   Header,
@@ -28,4 +29,5 @@ export {
   DonateMiddle,
   Paypal,
   ScrollToTop,
+  DisplayAlert,
 };

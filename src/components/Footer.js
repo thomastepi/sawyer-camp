@@ -10,6 +10,7 @@ import {
   Box,
   Flex,
   Center,
+  Link,
 } from "@chakra-ui/react";
 
 const Footer = () => {
@@ -58,10 +59,17 @@ const Footer = () => {
         </Flex>
       </Center>
       <Box bg="white">
-        <Center m="0 auto" borderTop="green solid 2px" w='80%'>
-          <Text py="20px" color="#87A922">
-            Website created by Thomas Tepi - 2023
-          </Text>
+        <Center m="0 auto" borderTop="green solid 2px" w="80%" py={5}>
+          <VStack spacing={2} color="#87A922">
+            <Text>Website created by Thomas Tepi - 2023</Text>
+            <Link
+              target="_blank"
+              rel="noopener noreferre"
+              href="https://www.thomastepi.com"
+            >
+              www.thomastepi.com
+            </Link>
+          </VStack>
         </Center>
       </Box>
     </>
