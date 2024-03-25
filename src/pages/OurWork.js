@@ -15,12 +15,14 @@ import {
   Text,
   Grid,
   GridItem,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 
 const OurWork = () => {
   const [showCard1, setShowCard1] = useState(true);
   const [showCard2, setShowCard2] = useState(false);
   const [showCard3, setShowCard3] = useState(false);
+  const isMobile = useBreakpointValue({ base: true, md: false });
 
   const handleCard1 = () => {
     setShowCard1(true);
@@ -42,16 +44,25 @@ const OurWork = () => {
     <>
       <Header />
       <>
-        <Flex color="#87A922" justify="center" h="80vh" bg="#436850" w="100%">
-          <Box w="90%" bg="white" h="50rem">
-            <Center justify="space-between" w="100%">
-              <Center w="40%">
-                <Heading color="green" fontSize="3xl" align="center">
-                  We focus our efforts in achieving three strategic goals
-                </Heading>
-              </Center>
-              <VStack h="fit-content" w="60%" pt="10px">
-                <ButtonGroup variant="flush" px="90px">
+        <Flex color="#87A922" justify="center" bg="#436850" w="100%">
+          <Box w="90%" bg="white">
+            <Center w="100%" pos="relative">
+              {!isMobile && (
+                <Box w="40%" color="blue" pos="relative">
+                  <Heading
+                    pb="100px"
+                    color="green"
+                    fontSize="3xl"
+                    align="center"
+                    //pos='absolute'
+                    //top='0'
+                  >
+                    We focus our efforts in achieving three strategic goals
+                  </Heading>
+                </Box>
+              )}
+              <VStack h="fit-content" w={isMobile ? "80%" : "60%"} pt="10px">
+                <ButtonGroup variant="flush" px="50px">
                   <Button
                     onClick={handleCard1}
                     _hover={{
@@ -96,7 +107,7 @@ const OurWork = () => {
                   </Button>
                 </ButtonGroup>
                 <Box
-                  h="30rem"
+                  //h="30rem"
                   w="90%"
                   justifyContent="center"
                   alignItems="center"
@@ -106,7 +117,8 @@ const OurWork = () => {
                     <Grid templateRows="repeat(2, 1fr)" gap={6} align="center">
                       <GridItem
                         w="100%"
-                        h="22rem"
+                        h="100%"
+                        py="9rem"
                         bg="blue.500"
                         backgroundImage={pic1}
                         backgroundSize="cover"
@@ -127,7 +139,7 @@ const OurWork = () => {
                     <Grid templateRows="repeat(2, 1fr)" gap={6} align="center">
                       <GridItem
                         w="100%"
-                        h="22rem"
+                        py="9rem"
                         bg="blue.500"
                         backgroundImage={pic2}
                         backgroundSize="cover"
@@ -147,7 +159,7 @@ const OurWork = () => {
                     <Grid templateRows="repeat(2, 1fr)" gap={6} align="center">
                       <GridItem
                         w="100%"
-                        h="22rem"
+                        py="9rem"
                         bg="blue.500"
                         backgroundImage={pic3}
                         backgroundSize="cover"

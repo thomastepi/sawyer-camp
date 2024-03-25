@@ -12,6 +12,7 @@ import {
   RadioGroup,
   Button,
   HStack,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { Header, Footer } from "../components/index";
 
@@ -19,6 +20,7 @@ const Paypal = () => {
   const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
   const [currency, setCurrency] = useState(options.currency);
   const [amount, setAmount] = useState(10);
+  const isMobile = useBreakpointValue({ base: true, md: false });
 
   const onCurrencyChange = ({ target: { value } }) => {
     setCurrency(value);
@@ -56,14 +58,14 @@ const Paypal = () => {
       <Box>
         <Box bg="teal" color="white">
           <Center py="50px" h="20rem">
-            <VStack w="50%" spacing={9}>
+            <VStack w={isMobile ? "90%" : "50%"} spacing={9}>
               <Heading align="center" size="2xl">
                 Your Support Makes a Difference
               </Heading>
             </VStack>
           </Center>
         </Box>
-        <Center p="50px" bg="white" w="50%" m="0 auto">
+        <Center p="50px" bg="white" w="90%" m="0 auto">
           <>
             <Box>
               {isPending ? (
@@ -107,7 +109,7 @@ const Paypal = () => {
                     <option value="CAD">💵 CAD</option>
                   </Select>
 
-                  <Box w="500px">
+                  <Box w="350px">
                     <PayPalButtons
                       style={{ layout: "vertical" }}
                       createOrder={(data, actions) =>
@@ -124,8 +126,10 @@ const Paypal = () => {
           </>
         </Center>
         <Center spacing={8} h="30rem" bg="#BBE2EC">
-          <VStack spacing="60px" w="50%">
-            <Heading>Wanting to make a larger contribution?</Heading>
+          <VStack spacing="60px" w={isMobile ? "90%" : "50%"}>
+            <Heading align="center">
+              Wanting to make a larger contribution?
+            </Heading>
             <Text align="center">
               We would love to reach out to you. Please contact us if you or
               your organization have an interest in making a transformational

@@ -10,10 +10,12 @@ import {
   HStack,
   VStack,
   Center,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import img3 from "../assets/images/sky.jpg";
 
 const AboutUs = () => {
+  const isMobile = useBreakpointValue({ base: true, md: false });
   return (
     <>
       <Header />
@@ -21,7 +23,12 @@ const AboutUs = () => {
         <FixedBg image={img3} />
         <VStack py="100px" color="#87A922">
           <Box display="block" align="center">
-            <Center w="50%" color="green" bg="white" p="10px">
+            <Center
+              w={isMobile ? "90%" : "50%"}
+              color="green"
+              bg="white"
+              p="10px"
+            >
               <VStack>
                 <Heading align="center">Our Story</Heading>
                 <Text color="#87A922" fontSize="2xl" py={5}>
@@ -80,9 +87,12 @@ const AboutUs = () => {
               </Box>
             </Box>
 
-            <HStack w="50%" color="#87A922" bg="white" p="10px">
-              <></>
-
+            <HStack
+              w={isMobile ? "90%" : "50%"}
+              color="#87A922"
+              bg="white"
+              p="10px"
+            >
               <Box align="center">
                 <Heading color="green" align="center">
                   Our Mission

@@ -28,9 +28,11 @@ import {
   Textarea,
   Button,
   Link as ChakraLink,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 
 const ContactUs = () => {
+  const isMobile = useBreakpointValue({ base: true, md: false });
   const dispatch = useDispatch();
   const { isLoading } = useSelector((state) => state.contactUs);
   const alert = useSelector((state) => state.alert);
@@ -74,7 +76,7 @@ const ContactUs = () => {
     <Box w="100%" color="#87A922">
       <Header />
       <Center h="20rem">
-        <VStack spacing={4}>
+        <VStack spacing={4} pl={isMobile && "20px"}>
           <Heading>Get in Touch</Heading>
           <Text fontSize="2xl">
             We want to hear your questions, comments, suggestions and feedback.
@@ -87,9 +89,15 @@ const ContactUs = () => {
         </VStack>
       </Center>
       <Box w="100%">
-        <Grid h="30rem" w="100%" templateColumns="repeat(1, 1fr 2fr 1fr)">
+        <Grid
+          h="30rem"
+          w="100%"
+          templateColumns={
+            isMobile ? "repeat(1, 1fr 2fr)" : "repeat(1, 1fr 2fr 1fr)"
+          }
+        >
           <Center bg="#E1F0DA">
-            <VStack align="left" spacing={7}>
+            <VStack align="left" spacing={7} pl={isMobile && "10px"}>
               <Box>
                 <Text as="b" fontSize="2xl">
                   Address
@@ -124,7 +132,7 @@ const ContactUs = () => {
             </VStack>
           </Center>
           <Center bg="#FFF">
-            <Box w="50%">
+            <Box w={isMobile ? "80%" : "50%"}>
               <form onSubmit={formik.handleSubmit}>
                 <VStack spacing={4}>
                   <FormControl
@@ -202,9 +210,11 @@ const ContactUs = () => {
               </form>
             </Box>
           </Center>
-          <Center bg="grey" bgImg={img}>
-            <Box></Box>
-          </Center>
+          {isMobile ? null : (
+            <Center bg="grey" bgImg={img}>
+              <Box></Box>
+            </Center>
+          )}
         </Grid>
       </Box>
 

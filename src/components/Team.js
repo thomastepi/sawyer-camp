@@ -25,12 +25,18 @@ const Team = () => {
           <Heading py={10}>Our Team</Heading>
         </Box>
       </Box>
-      <Box w="100%" height="70vh" align="center">
+      <Box w="100%" align="center">
         <Box
           w="80%"
           display="grid"
-          gridTemplateColumns="repeat(3, minmax(0, 1fr))"
-          gridGap={30}
+          css={{
+            "@media (max-width: 768px)": {
+              gridTemplateColumns: "1fr",
+              gridGap: 20,
+            },
+            gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+            gridGap: 30,
+          }}
         >
           <>
             {team.map((member, index) => {

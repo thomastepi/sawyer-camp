@@ -25,7 +25,7 @@ const Projects = () => {
               <Heading fontSize="3xl" color="green">
                 Our Projects
               </Heading>
-              <Text fontSize="xl" color="green">
+              <Text align='center' fontSize="xl" color="green">
                 Explore how we are moving sustainability forward through our
                 global expertise and local implementation
               </Text>
@@ -34,7 +34,16 @@ const Projects = () => {
         </Center>
         <Flex justify="center" py="90px">
           <Box w="90%" bg="white">
-            <Grid templateColumns="repeat(2, 1fr)" gap={7}>
+            <Grid
+              css={{
+                "@media (max-width: 768px)": {
+                  gridTemplateColumns: "1fr",
+                  gridGap: 20,
+                },
+                gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+                gridGap: 30,
+              }}
+            >
               {projects.map((project) => {
                 return (
                   <>

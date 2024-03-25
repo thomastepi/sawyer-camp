@@ -15,7 +15,7 @@ export const submitNewsletter = createAsyncThunk(
   async (data, thunkAPI) => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/newsletter/send-email",
+        `${process.env.REACT_APP_BASE_URL}/contact-us/send-email`,
         data
       );
       thunkAPI.dispatch(

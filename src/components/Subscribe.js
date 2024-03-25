@@ -20,14 +20,15 @@ import {
   Button,
   Input,
   VStack,
-  Grid,
   FormControl,
   FormLabel,
   FormErrorMessage,
   FormHelperText,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 
 const Subscribe = ({ image, heading, headingText }) => {
+  const isMobile = useBreakpointValue({ base: true, md: false });
   const dispatch = useDispatch();
   const { isLoading } = useSelector((state) => state.newsletter);
   const alert = useSelector((state) => state.alert);
@@ -52,9 +53,6 @@ const Subscribe = ({ image, heading, headingText }) => {
       dispatch(setFirstName(values.firstName));
       dispatch(setLastName(values.lastName));
       dispatch(setCompany(values.company));
-
-      console.log(values);
-
       try {
         dispatch(submitNewsletter(values));
       } catch (error) {
@@ -78,7 +76,7 @@ const Subscribe = ({ image, heading, headingText }) => {
   return (
     <Center w="100%">
       <FixedBg image={image} />
-      <Center py="50px" w="40%">
+      <Center py="50px" w={isMobile ? "80%" : "30%"}>
         <Box
           align="center"
           px="10px"
@@ -178,14 +176,6 @@ const Subscribe = ({ image, heading, headingText }) => {
             </Box>
           </VStack>
         </Box>
-
-        {/* {alert.show && (
-                      <DisplayAlert
-                        message={alert.message}
-                        alertStatus={alert.status}
-                        title={alert.title}
-                      />
-                    )} */}
       </Center>
     </Center>
   );

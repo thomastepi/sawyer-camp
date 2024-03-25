@@ -3,11 +3,12 @@ import SharedLayout from "./SharedLayout";
 import { Heading, Box, Button, HStack } from "@chakra-ui/react";
 import Header from "./Header";
 import { Link } from "react-router-dom";
-import img from "../assets/images/img_8.jpg";
+import img from "../assets/images/coffee-seed.jpg";
 import img2 from "../assets/images/rubber_trees.jpg";
 import img3 from "../assets/images/plantain_bunch.jpg";
+import img4 from "../assets/images/seedling.jpg";
 
-const imgURLs = [img, img2, img3];
+const imgURLs = [img, img2, img3, img4];
 
 export const Landing = () => {
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
