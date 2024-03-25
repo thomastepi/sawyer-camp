@@ -20,10 +20,12 @@ export const submitContactUs = createAsyncThunk(
       thunkAPI.dispatch(
         setAlert({
           message:
-            "Thank you for contacting us, we will get back to you shortly",
+            response.data.message ||
+            "Thank you for contacting us, we will get back to you soon",
           status: "success",
           title: "Success!",
           show: true,
+          isSuccessful: true,
         })
       );
       return response.data;
@@ -34,6 +36,7 @@ export const submitContactUs = createAsyncThunk(
           status: "error",
           title: "Error!",
           show: true,
+          isSuccessful: false,
         })
       );
       return error.message;

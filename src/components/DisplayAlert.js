@@ -31,6 +31,7 @@ const DisplayAlert = ({ message, alertStatus, title }) => {
                 message: "",
                 status: "success",
                 title: "",
+                isSuccessful: false,
                 show: false,
               })
             );

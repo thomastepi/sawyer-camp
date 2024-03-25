@@ -5,6 +5,7 @@ const initialState = {
   status: "success",
   title: "",
   show: false,
+  isSuccessful: false,
 };
 
 const alertSlice = createSlice({
@@ -16,6 +17,7 @@ const alertSlice = createSlice({
       state.status = action.payload.status;
       state.title = action.payload.title;
       state.show = action.payload.show;
+      state.isSuccessful = action.payload.isSuccessful;
     },
   },
 });

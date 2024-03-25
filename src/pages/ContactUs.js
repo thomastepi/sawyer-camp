@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { GoogleMaps, DisplayAlert } from "../components";
@@ -8,6 +8,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 import { setName, setEmail, setMessage } from "../features/contactUsSlice";
+import { setAlert } from "../features/alertSlice";
 import { submitContactUs } from "../features/contactUsSlice";
 import img from "../assets/images/rubber_tree.jpg";
 
@@ -56,6 +57,18 @@ const ContactUs = () => {
       }
     },
   });
+
+  useEffect(() => {
+    if (alert.isSuccessful) {
+      formik.resetForm();
+      dispatch(
+        setAlert({
+          ...alert,
+          isSuccessful: false,
+        })
+      );
+    }
+  }, [alert.isSuccessful, dispatch, formik, alert]);
 
   return (
     <Box w="100%" color="#87A922">

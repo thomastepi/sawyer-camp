@@ -54,6 +54,7 @@ const Projects = () => {
                         w="70%"
                         h="20rem"
                         bg="white"
+                        px="30px"
                       >
                         <VStack spacing="50px">
                           <Heading fontSize="2xl" as="b">

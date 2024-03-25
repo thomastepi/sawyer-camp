@@ -20,10 +20,13 @@ export const submitNewsletter = createAsyncThunk(
       );
       thunkAPI.dispatch(
         setAlert({
-          message: "Thank you for subscribing to our newsletter",
+          message:
+            response.data.message ||
+            "Thank you for subscribing! We will send you updates soon.",
           status: "success",
           title: "Success!",
           show: true,
+          isSuccessful: true,
         })
       );
       return response.data;
@@ -34,6 +37,7 @@ export const submitNewsletter = createAsyncThunk(
           status: "error",
           title: "Error!",
           show: true,
+          isSuccessful: false,
         })
       );
       return error.message;
