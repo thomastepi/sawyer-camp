@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import pic1 from "../assets/images/farm-women.jpg";
 import pic2 from "../assets/images/palmnuts.jpg";
 import pic3 from "../assets/images/assorted-fruits.jpg";
+import pic4 from "../assets/images/ayisatu.jpg";
 import { Footer } from "../components";
 import {
   Button,
@@ -15,6 +16,8 @@ import {
   Text,
   Grid,
   GridItem,
+  HStack,
+  Image,
   useBreakpointValue,
 } from "@chakra-ui/react";
 
@@ -43,71 +46,91 @@ const OurWork = () => {
   return (
     <>
       <Header />
+      <Box bg="" color="#87A922">
+        <Box m="0 auto" w="70%" py="65px">
+          <Center>
+            <Box>
+              <VStack spacing={8} px="30px">
+                <Heading size="2xl">Our Strategy</Heading>
+                <Text fontSize="lg" align="center">
+                  We have extensive experience with various approaches to
+                  sustainability in agriculture, from certification to the
+                  design and implementation of customized tools for companies
+                  and agencies.
+                </Text>
+              </VStack>
+            </Box>
+            {!isMobile && (
+              <Box w="60%">
+                <Image src={pic4} alt="assorted fruits" />
+              </Box>
+            )}
+          </Center>
+        </Box>
+      </Box>
       <>
+        <Box
+          color="blue"
+          m="0 auto"
+          bg="#436850"
+          py="100px"
+          px={isMobile && "15px"}
+        >
+          <Heading color="white" fontSize="3xl" align="center">
+            We focus our efforts in achieving three strategic goals
+          </Heading>
+        </Box>
         <Flex color="#87A922" justify="center" bg="#436850" w="100%">
           <Box w="90%" bg="white">
-            <Center w="100%" pos="relative">
-              {!isMobile && (
-                <Box w="40%" color="blue" pos="relative">
-                  <Heading
-                    pb="100px"
-                    color="green"
-                    fontSize="3xl"
-                    align="center"
-                    //pos='absolute'
-                    //top='0'
-                  >
-                    We focus our efforts in achieving three strategic goals
-                  </Heading>
-                </Box>
-              )}
-              <VStack h="fit-content" w={isMobile ? "80%" : "60%"} pt="10px">
-                <ButtonGroup variant="flush" px="50px">
-                  <Button
-                    onClick={handleCard1}
-                    _hover={{
-                      backgroundColor: "#74E291",
-                      color: "white",
-                      transition: "0.5s",
-                    }}
-                    px="50px"
-                    bg={showCard1 ? "#9BCF53" : "white"}
-                    color={showCard1 ? "white" : "#87A922"}
-                    borderRadius="0"
-                  >
-                    Goal 1
-                  </Button>
-                  <Button
-                    onClick={handleCard2}
-                    _hover={{
-                      backgroundColor: "#74E291",
-                      color: "white",
-                      transition: "0.5s",
-                    }}
-                    px="50px"
-                    bg={showCard2 ? "#9BCF53" : "white"}
-                    color={showCard2 ? "white" : "#87A922"}
-                    borderRadius="0"
-                  >
-                    Goal 2
-                  </Button>
-                  <Button
-                    onClick={handleCard3}
-                    _hover={{
-                      backgroundColor: "#74E291",
-                      color: "white",
-                      transition: "0.5s",
-                    }}
-                    px="50px"
-                    bg={showCard3 ? "#9BCF53" : "white"}
-                    color={showCard3 ? "white" : "#87A922"}
-                    borderRadius="0"
-                  >
-                    Goal 3
-                  </Button>
+            <Center w="100%">
+              <VStack h="fit-content" w={isMobile ? "80%" : "60%"} pt="40px">
+                <ButtonGroup variant="flush">
+                  <HStack spacing={10} w="100%">
+                    <Button
+                      onClick={handleCard1}
+                      _hover={{
+                        backgroundColor: "#74E291",
+                        color: "white",
+                        transition: "0.5s",
+                      }}
+                      px="30px"
+                      bg={showCard1 ? "#9BCF53" : "white"}
+                      color={showCard1 ? "white" : "#87A922"}
+                      borderRadius="0"
+                    >
+                      Goal 1
+                    </Button>
+                    <Button
+                      onClick={handleCard2}
+                      _hover={{
+                        backgroundColor: "#74E291",
+                        color: "white",
+                        transition: "0.5s",
+                      }}
+                      px="30px"
+                      bg={showCard2 ? "#9BCF53" : "white"}
+                      color={showCard2 ? "white" : "#87A922"}
+                      borderRadius="0"
+                    >
+                      Goal 2
+                    </Button>
+                    <Button
+                      onClick={handleCard3}
+                      _hover={{
+                        backgroundColor: "#74E291",
+                        color: "white",
+                        transition: "0.5s",
+                      }}
+                      px="30px"
+                      bg={showCard3 ? "#9BCF53" : "white"}
+                      color={showCard3 ? "white" : "#87A922"}
+                      borderRadius="0"
+                    >
+                      Goal 3
+                    </Button>
+                  </HStack>
                 </ButtonGroup>
                 <Box
-                  //h="30rem"
                   w="90%"
                   justifyContent="center"
                   alignItems="center"

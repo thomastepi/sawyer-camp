@@ -62,7 +62,7 @@ const AboutUs = () => {
                       w="70%"
                       boxShadow="3px 3px 3px white"
                     >
-                      <Text fontSize="2xl">
+                      <Text fontSize={isMobile ? "sm" : "2xl"}>
                         Sawyer Camp Farmers CIG was established in 1992 as a
                         community-based organization with the objective to
                         address three major gaps that emerge from the knowledge
