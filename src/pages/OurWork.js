@@ -72,7 +72,7 @@ const OurWork = () => {
         <Box
           color="blue"
           m="0 auto"
-          bg="#436850"
+          bg="#789461"
           py="100px"
           px={isMobile && "15px"}
         >
@@ -80,7 +80,7 @@ const OurWork = () => {
             We focus our efforts in achieving three strategic goals
           </Heading>
         </Box>
-        <Flex color="#87A922" justify="center" bg="#436850" w="100%">
+        <Flex color="#87A922" justify="center" bg="#789461" w="100%">
           <Box w="90%" bg="white">
             <Center w="100%">
               <VStack h="fit-content" w={isMobile ? "80%" : "60%"} pt="40px">
@@ -148,7 +148,7 @@ const OurWork = () => {
                         backgroundRepeat="no-repeat"
                         backgroundPosition="center"
                       ></GridItem>
-                      <GridItem w="100%" h="20" bg="#436850" color="white">
+                      <GridItem w="100%" h="20" bg="#789461" color="white">
                         <Text fontSize="lg">
                           Expand and strengthen Sawyer Camp Farmers CIG as a
                           national collaborative network of organizations that
@@ -169,7 +169,7 @@ const OurWork = () => {
                         backgroundRepeat="no-repeat"
                         backgroundPosition="center"
                       ></GridItem>
-                      <GridItem w="100%" h="20" bg="#436850" color="white">
+                      <GridItem w="100%" h="20" bg="#789461" color="white">
                         <Text fontSize="lg">
                           Catalyze credible sustainability and climate
                           commitments through an expanded set of nature-based
@@ -189,7 +189,7 @@ const OurWork = () => {
                         backgroundRepeat="no-repeat"
                         backgroundPosition="center"
                       ></GridItem>
-                      <GridItem w="100%" h="20" bg="#436850" color="white">
+                      <GridItem w="100%" h="20" bg="#789461" color="white">
                         <Text fontSize="lg">
                           Improve rural livelihoods through innovative,
                           scalable, and locally adapted technological solutions
