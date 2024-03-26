@@ -15,20 +15,31 @@ export const submitNewsletter = createAsyncThunk(
   async (data, thunkAPI) => {
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_BASE_URL}/contact-us/send-email`,
+        `${process.env.REACT_APP_BASE_URL}/newsletter/send-email`,
         data
       );
-      thunkAPI.dispatch(
-        setAlert({
-          message:
-            response.data.message ||
-            "Thank you for subscribing! We will send you updates soon.",
-          status: "success",
-          title: "Success!",
-          show: true,
-          isSuccessful: true,
-        })
-      );
+      if (response.data.message) {
+        thunkAPI.dispatch(
+          setAlert({
+            message: response.data.message,
+            status: "success",
+            title: "Success!",
+            show: true,
+            isSuccessful: true,
+          })
+        );
+      } else {
+        thunkAPI.dispatch(
+          setAlert({
+            message: "There was an error sending your message",
+            status: "error",
+            title: "Error!",
+            show: true,
+            isSuccessful: false,
+          })
+        );
+      }
+      
       return response.data;
     } catch (error) {
       thunkAPI.dispatch(

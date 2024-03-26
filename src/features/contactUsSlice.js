@@ -17,19 +17,31 @@ export const submitContactUs = createAsyncThunk(
         `${process.env.REACT_APP_BASE_URL}/contact-us/send-email`,
         data
       );
-      thunkAPI.dispatch(
-        setAlert({
-          message:
-            response.data.message ||
-            "Thank you for contacting us, we will get back to you soon",
-          status: "success",
-          title: "Success!",
-          show: true,
-          isSuccessful: true,
-        })
-      );
+      if (response.data.message) {
+        thunkAPI.dispatch(
+          setAlert({
+            message: response.data.message,
+            status: "success",
+            title: "Success!",
+            show: true,
+            isSuccessful: true,
+          })
+        );
+      } else {
+        thunkAPI.dispatch(
+          setAlert({
+            message: "There was an error sending your message",
+            status: "error",
+            title: "Error!",
+            show: true,
+            isSuccessful: false,
+          })
+        )
+      }
+      
       return response.data;
     } catch (error) {
+      console.log(error);
       thunkAPI.dispatch(
         setAlert({
           message: "An error occured, please try again later",
