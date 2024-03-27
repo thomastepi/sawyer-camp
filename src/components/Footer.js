@@ -28,10 +28,18 @@ const Footer = () => {
           <Center>
             <VStack align="left">
               <HStack spacing={4}>
-                <ChakraLink>
+                <ChakraLink
+                  href="https://linkedin.com/in/thomastepi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FontAwesomeIcon icon={faLinkedin} />
                 </ChakraLink>
-                <ChakraLink>
+                <ChakraLink
+                  href="https://twitter.com/tomtepi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FontAwesomeIcon icon={faTwitter} />
                 </ChakraLink>
               </HStack>

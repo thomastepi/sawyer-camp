@@ -21,10 +21,18 @@ const Header = () => {
       <Center bg="#EEEEEE" color="green" height="3rem">
         <Flex width="90%" justify="space-between" h="inherit">
           <HStack spacing={6}>
-            <ChakraLink>
+            <ChakraLink
+              href="https://linkedin.com/in/thomastepi"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FontAwesomeIcon color="green" icon={faLinkedin} size="2x" />
             </ChakraLink>
-            <ChakraLink>
+            <ChakraLink
+              href="https://twitter.com/tomtepi"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FontAwesomeIcon color="green" icon={faTwitter} size="2x" />
             </ChakraLink>
           </HStack>

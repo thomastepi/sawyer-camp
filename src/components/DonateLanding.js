@@ -1,5 +1,4 @@
 import React from "react";
-import SharedLayout from "./SharedLayout";
 import FixedBg from "./FixedBg";
 import { Link } from "react-router-dom";
 import {
@@ -9,39 +8,33 @@ import {
   Button,
   Center,
   VStack,
-  useBreakpointValue,
+  //useBreakpointValue,
 } from "@chakra-ui/react";
-import img from "../assets/images/rasta-man.jpg";
+import img from "../assets/images/black-coffee.jpg";
 const DonateLanding = () => {
-  const isMobile = useBreakpointValue({ base: true, md: false });
+  //const isMobile = useBreakpointValue({ base: true, md: false });
   return (
-    <SharedLayout color="green">
+    <Box color="#87A922">
       <FixedBg image={img} />
-      <Box
-        w={isMobile ? "90%" : "50%"}
-        align="center"
-        p="4rem"
-        bg="white"
-        my="50px"
-      >
-        <Center>
-          <VStack spacing={8}>
-            <Heading>
-              Please donate to Sawyer Camp Farmers CIG to support regenerative
-              agriculture
-            </Heading>
-            <Text>
-              Your valuable contribution helps advance sustainable and
-              regenerative agriculture projects that restore nature, support
-              rural livelihoods, and transform food supply chains nationally.
-            </Text>
-            <Button colorScheme="teal">
-              <Link to="/paypal">Donate</Link>
-            </Button>
-          </VStack>
-        </Center>
+      <Box bg="white" w="100%" py="100px">
+        <Heading color="green" w="80%" m="0 auto" align="center">
+          Please donate to Sawyer Camp Farmers CIG to support regenerative
+          agriculture
+        </Heading>
       </Box>
-    </SharedLayout>
+      <Center bg="teal" mb="15px">
+        <VStack spacing={8} w="80%" bg="white" p="50px">
+          <Text align="center" fontSize="2xl">
+            Your valuable contribution helps advance sustainable and
+            regenerative agriculture projects that restore nature, support rural
+            livelihoods, and transform food supply chains nationally.
+          </Text>
+          <Button colorScheme="teal">
+            <Link to="/paypal">Donate</Link>
+          </Button>
+        </VStack>
+      </Center>
+    </Box>
   );
 };
 
