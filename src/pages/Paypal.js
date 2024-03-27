@@ -56,7 +56,7 @@ const Paypal = () => {
     <>
       <Header />
       <Box>
-        <Box bg="teal" color="white">
+        <Box bg="#789461" color="white">
           <Center py="50px" h="20rem">
             <VStack w={isMobile ? "90%" : "50%"} spacing={9}>
               <Heading align="center" size="2xl">
@@ -125,17 +125,17 @@ const Paypal = () => {
             </Box>
           </>
         </Center>
-        <Center spacing={8} h="30rem" bg="#BBE2EC">
+        <Center color="white" spacing={8} h="30rem" bg="#789461">
           <VStack spacing="60px" w={isMobile ? "90%" : "50%"}>
-            <Heading align="center">
+            <Heading align="center" size="2xl">
               Wanting to make a larger contribution?
             </Heading>
-            <Text align="center">
+            <Text align="center" fontSize="lg">
               We would love to reach out to you. Please contact us if you or
               your organization have an interest in making a transformational
               contribution to Sawyer Camp Farmers CIG.
             </Text>
-            <Button colorScheme="teal">
+            <Button colorScheme="green">
               <Link to="/contact-us">Get in touch</Link>
             </Button>
           </VStack>
