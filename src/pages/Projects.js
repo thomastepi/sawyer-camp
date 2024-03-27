@@ -19,7 +19,7 @@ const Projects = () => {
     <>
       <Header />
       <Box w="100%" color="#87A922">
-        <Center bg="#9BCF53" h="20rem">
+        <Center bg="#789461" h="20rem">
           <Center w="70%" bg="white" h="20rem">
             <VStack spacing={9}>
               <Heading fontSize="3xl" color="green">

@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 const DonateMiddle = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
   return (
-    <Box w="100%" bg="teal" mt="80px" color="white">
+    <Box w="100%" bg="#789461" mt="80px" color="white">
       <Center>
         <HStack w="80%" py="70px" spacing={9}>
           <Box>
@@ -23,7 +23,7 @@ const DonateMiddle = () => {
                 Your small gift can have a lasting impact for agriculture and
                 nature.
               </Heading>
-              <Button colorScheme="teal">
+              <Button colorScheme="green">
                 <Link to="/paypal">Donate Now</Link>
               </Button>
             </VStack>

@@ -22,14 +22,14 @@ const DonateLanding = () => {
           agriculture
         </Heading>
       </Box>
-      <Center bg="teal" mb="15px">
+      <Center bg="#789461" mb="15px">
         <VStack spacing={8} w="80%" bg="white" p="50px">
           <Text align="center" fontSize="2xl">
             Your valuable contribution helps advance sustainable and
             regenerative agriculture projects that restore nature, support rural
             livelihoods, and transform food supply chains nationally.
           </Text>
-          <Button colorScheme="teal">
+          <Button colorScheme="green">
             <Link to="/paypal">Donate</Link>
           </Button>
         </VStack>

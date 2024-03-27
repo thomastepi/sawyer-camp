@@ -25,7 +25,7 @@ const DonateLayer = () => {
           families everywhere.
         </Heading>
       </Center>
-      <Box w="100%" align="center" bg="teal">
+      <Box w="100%" align="center" bg="#789461">
         <Center w="80%" bg="white" py="50px">
           <Box>
             <Text fontSize='md' w={isMobile ? "90%" : "50%"}>
@@ -40,7 +40,7 @@ const DonateLayer = () => {
       </Box>
       <Center w="100%">
         <Center pb="60px" w="40%" bg="white">
-          <Button colorScheme="teal">
+          <Button colorScheme="green">
             <Link to="/paypal">Support Our Work</Link>
           </Button>
         </Center>
