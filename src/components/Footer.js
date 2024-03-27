@@ -64,6 +64,9 @@ const Footer = () => {
               <ChakraLink as={ReactRouterLink} to="/contact-us">
                 <Text as="b">Get in Touch</Text>
               </ChakraLink>
+              <ChakraLink as={ReactRouterLink} to="/membership">
+                <Text as="b">Become a Member</Text>
+              </ChakraLink>
             </VStack>
           </Center>
         </Flex>

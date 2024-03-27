@@ -37,24 +37,28 @@ const Header = () => {
             </ChakraLink>
           </HStack>
           <HStack spacing={6}>
-            <ChakraLink
-              as={ReactRouterLink}
-              to="/membership"
-              height="100%"
-              display="flex"
-              alignItems="center"
-            >
-              Become a Member
-            </ChakraLink>
-            <ChakraLink
-              as={ReactRouterLink}
-              to="/contact-us"
-              height="100%"
-              display="flex"
-              alignItems="center"
-            >
-              Contact Us
-            </ChakraLink>
+            {isMobile ? null : (
+              <ChakraLink
+                as={ReactRouterLink}
+                to="/membership"
+                height="100%"
+                display="flex"
+                alignItems="center"
+              >
+                Become a Member
+              </ChakraLink>
+            )}
+            {isMobile ? null : (
+              <ChakraLink
+                as={ReactRouterLink}
+                to="/contact-us"
+                height="100%"
+                display="flex"
+                alignItems="center"
+              >
+                Contact Us
+              </ChakraLink>
+            )}
             <ChakraLink
               as={ReactRouterLink}
               bg="green"

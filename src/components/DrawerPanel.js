@@ -48,6 +48,12 @@ const DrawerPanel = () => {
                   <ReactRouterLink to="/blog">
                     <Text>Blog</Text>
                   </ReactRouterLink>
+                  <ReactRouterLink to="/contact-us">
+                    <Text>Contact Us</Text>
+                  </ReactRouterLink>
+                  <ReactRouterLink to="/membership">
+                    <Text>Become a Member</Text>
+                  </ReactRouterLink>
                 </VStack>
               </Box>
             </Box>
