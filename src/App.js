@@ -17,6 +17,7 @@ import {
   ProjectDescription,
   Donate,
   Paypal,
+  Membership,
 } from "./pages";
 import { ScrollToTop } from "./components";
 
@@ -44,6 +45,7 @@ function App() {
             />
             <Route path="/donate" element={<Donate />} />
             <Route path="/paypal" element={<Paypal />} />
+            <Route path="/membership" element={<Membership />} />
           </Routes>
         </Router>
       </ChakraProvider>

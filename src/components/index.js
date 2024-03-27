@@ -13,6 +13,7 @@ import DonateMiddle from "./DonateMiddle";
 import Paypal from "../pages/Paypal";
 import ScrollToTop from "./ScrollToTop";
 import DisplayAlert from "./DisplayAlert";
+import Membership from "../pages/Membership";
 
 export {
   Header,
@@ -30,4 +31,5 @@ export {
   Paypal,
   ScrollToTop,
   DisplayAlert,
+  Membership
 };

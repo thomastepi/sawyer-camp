@@ -7,6 +7,7 @@ import ContactUs from "./ContactUs";
 import ProjectDescription from "./ProjectDescription";
 import Donate from "./Donate";
 import Paypal from "./Paypal";
+import Membership from "./Membership";
 
 export {
   Home,
@@ -18,4 +19,5 @@ export {
   ProjectDescription,
   Donate,
   Paypal,
+  Membership
 };
