@@ -11,30 +11,30 @@ The Sawyer Camp Farmers Common Initiative Group website is built using React.js,
 To run the project locally on your machine, follow these steps:
 
 1. Clone the repository to your local machine:
-
+   ```bash
    git clone https://github.com/thomastepi/sawyer-camp.git
-
+   ```
 2. Navigate to the project directory:
-
+   ```bash
    cd sawyer-camp-farmers
-
+   ```
 3. Install dependencies:
-
+   ```bash
    npm install
-
+   ```
 4. Create a `.env` file in the project root and add the following environment variables:
 
-   REACT_APP_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
-   REACT_APP_PAYPAL_CLIENT_ID=your_paypal_client_id
-   REACT_APP_BASE_URL=your_base_url
-   REACT_APP_TYPEFORM_ID=your_typeform_id
+   _REACT_APP_GOOGLE_MAPS_API_KEY=your_google_maps_api_key_
+   _REACT_APP_PAYPAL_CLIENT_ID=your_paypal_client_id_
+   _REACT_APP_BASE_URL=your_base_url_
+   _REACT_APP_TYPEFORM_ID=your_typeform_id_
 
 > Note: You need to generate your own values for these environment variables.
 
 5. Start the development server:
-
+   ```bash
    npm start
-
+   ```
 6. Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to view the website.
 
 ## Contributing
