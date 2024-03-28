@@ -16,7 +16,7 @@ To run the project locally on your machine, follow these steps:
    ```
 2. Navigate to the project directory:
    ```bash
-   cd sawyer-camp-farmers
+   cd sawyer-camp
    ```
 3. Install dependencies:
    ```bash
