@@ -7,6 +7,8 @@ const initialState = {
   email: "",
   message: "",
   isLoading: false,
+  status: "",
+  show: false,
 };
 
 export const submitContactUs = createAsyncThunk(
@@ -23,22 +25,22 @@ export const submitContactUs = createAsyncThunk(
             message: response.data.message,
             status: "success",
             title: "Success!",
-            show: true,
-            isSuccessful: true,
           })
         );
+        thunkAPI.dispatch(setContactUsStatus("success"));
+        thunkAPI.dispatch(setContactUsShow(true));
       } else {
         thunkAPI.dispatch(
           setAlert({
             message: "There was an error sending your message",
             status: "error",
             title: "Error!",
-            show: true,
-            isSuccessful: false,
           })
-        )
+        );
+        thunkAPI.dispatch(setContactUsStatus("error"));
+        thunkAPI.dispatch(setContactUsShow(true));
       }
-      
+
       return response.data;
     } catch (error) {
       console.log(error);
@@ -47,10 +49,10 @@ export const submitContactUs = createAsyncThunk(
           message: "An error occured, please try again later",
           status: "error",
           title: "Error!",
-          show: true,
-          isSuccessful: false,
         })
       );
+      thunkAPI.dispatch(setContactUsStatus("error"));
+      thunkAPI.dispatch(setContactUsShow(true));
       return error.message;
     }
   }
@@ -72,6 +74,12 @@ const contactUsSlice = createSlice({
     setisLoading: (state, action) => {
       state.isLoading = action.payload;
     },
+    setContactUsStatus: (state, action) => {
+      state.status = action.payload;
+    },
+    setContactUsShow: (state, action) => {
+      state.show = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(submitContactUs.pending, (state, action) => {
@@ -86,7 +94,13 @@ const contactUsSlice = createSlice({
   },
 });
 
-export const { setName, setEmail, setMessage, setisLoading } =
-  contactUsSlice.actions;
+export const {
+  setName,
+  setEmail,
+  setMessage,
+  setisLoading,
+  setContactUsStatus,
+  setContactUsShow,
+} = contactUsSlice.actions;
 
 export default contactUsSlice.reducer;

@@ -8,7 +8,6 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 import { setName, setEmail, setMessage } from "../features/contactUsSlice";
-import { setAlert } from "../features/alertSlice";
 import { submitContactUs } from "../features/contactUsSlice";
 import img from "../assets/images/rubber_tree.jpg";
 
@@ -34,7 +33,7 @@ import {
 const ContactUs = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
   const dispatch = useDispatch();
-  const { isLoading } = useSelector((state) => state.contactUs);
+  const { isLoading, status, show } = useSelector((state) => state.contactUs);
   const alert = useSelector((state) => state.alert);
   const formik = useFormik({
     initialValues: {
@@ -61,16 +60,10 @@ const ContactUs = () => {
   });
 
   useEffect(() => {
-    if (alert.isSuccessful) {
+    if (status === "success") {
       formik.resetForm();
-      dispatch(
-        setAlert({
-          ...alert,
-          isSuccessful: false,
-        })
-      );
     }
-  }, [alert.isSuccessful, dispatch, formik, alert]);
+  }, [status, dispatch, formik]);
 
   return (
     <Box w="100%" color="#87A922">
@@ -199,7 +192,7 @@ const ContactUs = () => {
                   >
                     Send
                   </Button>
-                  {alert.show && (
+                  {show && (
                     <DisplayAlert
                       message={alert.message}
                       alertStatus={alert.status}

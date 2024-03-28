@@ -9,6 +9,14 @@ import {
 } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
 import { setAlert } from "../features/alertSlice";
+import {
+  setNewsletterStatus,
+  setNewsletterShow,
+} from "../features/newsletterSlice";
+import {
+  setContactUsStatus,
+  setContactUsShow,
+} from "../features/contactUsSlice";
 
 const DisplayAlert = ({ message, alertStatus, title }) => {
   const dispatch = useDispatch();
@@ -31,10 +39,13 @@ const DisplayAlert = ({ message, alertStatus, title }) => {
                 message: "",
                 status: "success",
                 title: "",
-                isSuccessful: false,
                 show: false,
               })
             );
+            dispatch(setNewsletterStatus(""));
+            dispatch(setNewsletterShow(false));
+            dispatch(setContactUsStatus(""));
+            dispatch(setContactUsShow(false));
           }}
         />
       </Alert>

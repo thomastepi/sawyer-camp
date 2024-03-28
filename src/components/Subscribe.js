@@ -4,7 +4,6 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 import { submitNewsletter } from "../features/newsletterSlice";
-import { setAlert } from "../features/alertSlice";
 import DisplayAlert from "./DisplayAlert";
 import {
   setEmail,
@@ -30,7 +29,7 @@ import {
 const Subscribe = ({ image, heading, headingText }) => {
   const isMobile = useBreakpointValue({ base: true, md: false });
   const dispatch = useDispatch();
-  const { isLoading } = useSelector((state) => state.newsletter);
+  const { isLoading, status, show } = useSelector((state) => state.newsletter);
   const alert = useSelector((state) => state.alert);
 
   const formik = useFormik({
@@ -62,16 +61,10 @@ const Subscribe = ({ image, heading, headingText }) => {
   });
 
   useEffect(() => {
-    if (alert.isSuccessful) {
+    if (status === "success") {
       formik.resetForm();
-      dispatch(
-        setAlert({
-          ...alert,
-          isSuccessful: false,
-        })
-      );
     }
-  }, [alert.isSuccessful, dispatch, formik, alert]);
+  }, [status, dispatch, formik]);
 
   return (
     <Center w="100%">
@@ -164,7 +157,7 @@ const Subscribe = ({ image, heading, headingText }) => {
                   >
                     Send
                   </Button>
-                  {alert.show && (
+                  {show && (
                     <DisplayAlert
                       message={alert.message}
                       alertStatus={alert.status}

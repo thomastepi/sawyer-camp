@@ -8,6 +8,8 @@ const initialState = {
   lastName: "",
   company: "",
   isLoading: false,
+  status: "",
+  show: false,
 };
 
 export const submitNewsletter = createAsyncThunk(
@@ -24,22 +26,22 @@ export const submitNewsletter = createAsyncThunk(
             message: response.data.message,
             status: "success",
             title: "Success!",
-            show: true,
-            isSuccessful: true,
           })
         );
+        thunkAPI.dispatch(setNewsletterStatus("success"));
+        thunkAPI.dispatch(setNewsletterShow(true));
       } else {
         thunkAPI.dispatch(
           setAlert({
             message: "There was an error sending your message",
             status: "error",
             title: "Error!",
-            show: true,
-            isSuccessful: false,
           })
         );
+        thunkAPI.dispatch(setNewsletterStatus("error"));
+        thunkAPI.dispatch(setNewsletterShow(true));
       }
-      
+
       return response.data;
     } catch (error) {
       thunkAPI.dispatch(
@@ -47,10 +49,10 @@ export const submitNewsletter = createAsyncThunk(
           message: "An error occured, please try again later",
           status: "error",
           title: "Error!",
-          show: true,
-          isSuccessful: false,
         })
       );
+      thunkAPI.dispatch(setNewsletterStatus("error"));
+      thunkAPI.dispatch(setNewsletterShow(true));
       return error.message;
     }
   }
@@ -75,12 +77,18 @@ const newsletterSlice = createSlice({
     setisLoading: (state, action) => {
       state.isLoading = action.payload;
     },
+    setNewsletterStatus: (state, action) => {
+      state.status = action.payload;
+    },
+    setNewsletterShow: (state, action) => {
+      state.show = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(submitNewsletter.pending, (state, action) => {
       state.isLoading = true;
     });
-    builder.addCase(submitNewsletter.fulfilled, (state, action, dispatch) => {
+    builder.addCase(submitNewsletter.fulfilled, (state, action) => {
       state.isLoading = false;
     });
     builder.addCase(submitNewsletter.rejected, (state, action) => {
@@ -89,7 +97,14 @@ const newsletterSlice = createSlice({
   },
 });
 
-export const { setEmail, setFirstName, setLastName, setCompany, setisLoading } =
-  newsletterSlice.actions;
+export const {
+  setEmail,
+  setFirstName,
+  setLastName,
+  setCompany,
+  setisLoading,
+  setNewsletterStatus,
+  setNewsletterShow,
+} = newsletterSlice.actions;
 
 export default newsletterSlice.reducer;
