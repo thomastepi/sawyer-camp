@@ -24,10 +24,10 @@ To run the project locally on your machine, follow these steps:
    ```
 4. Create a `.env` file in the project root and add the following environment variables:
 
-   _REACT_APP_GOOGLE_MAPS_API_KEY=your_google_maps_api_key_
-   _REACT_APP_PAYPAL_CLIENT_ID=your_paypal_client_id_
-   _REACT_APP_BASE_URL=your_base_url_
-   _REACT_APP_TYPEFORM_ID=your_typeform_id_
+   REACT_APP_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+   REACT_APP_PAYPAL_CLIENT_ID=your_paypal_client_id
+   REACT_APP_BASE_URL=your_base_url
+   REACT_APP_TYPEFORM_ID=your_typeform_id
 
 > Note: You need to generate your own values for these environment variables.
 
