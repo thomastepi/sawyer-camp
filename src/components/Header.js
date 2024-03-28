@@ -7,6 +7,7 @@ import {
   Text,
   Center,
   Flex,
+  Image,
   Link as ChakraLink,
   useBreakpointValue,
 } from "@chakra-ui/react";
@@ -18,7 +19,7 @@ const Header = () => {
   const isMobile = useBreakpointValue({ base: true, md: false });
   return (
     <>
-      <Center bg="#EEEEEE" color="green" height="3rem">
+      <Center bg="#EEEEEE" color="green">
         <Flex width="90%" justify="space-between" h="inherit">
           <HStack spacing={6}>
             <ChakraLink
@@ -37,27 +38,19 @@ const Header = () => {
             </ChakraLink>
           </HStack>
           <HStack spacing={6}>
-            {isMobile ? null : (
-              <ChakraLink
-                as={ReactRouterLink}
-                to="/membership"
-                height="100%"
-                display="flex"
-                alignItems="center"
-              >
-                Become a Member
-              </ChakraLink>
+            {!isMobile && (
+              <Center>
+                <ChakraLink as={ReactRouterLink} to="/membership" height="100%">
+                  Become a Member
+                </ChakraLink>
+              </Center>
             )}
-            {isMobile ? null : (
-              <ChakraLink
-                as={ReactRouterLink}
-                to="/contact-us"
-                height="100%"
-                display="flex"
-                alignItems="center"
-              >
-                Contact Us
-              </ChakraLink>
+            {!isMobile && (
+              <Center>
+                <ChakraLink as={ReactRouterLink} to="/contact-us" height="100%">
+                  Contact Us
+                </ChakraLink>
+              </Center>
             )}
             <ChakraLink
               as={ReactRouterLink}
@@ -70,22 +63,23 @@ const Header = () => {
               border="solid 2px green"
               _hover={{ bg: "white", color: "green", transition: "0.5s" }}
               to="/donate"
+              py="15px"
             >
               Donate
             </ChakraLink>
           </HStack>
         </Flex>
       </Center>
-      <Box w="100%" bg="#D2E3C8" height="6rem" align="center">
-        <Center width="90%" height="100%">
+      <Box bg="#D2E3C8" p="7px" align="center">
+        <Center width="70%">
           <Flex justify="space-between" alignItems="center">
             <Box w={isMobile ? "15%" : "8%"} paddingTop="6px">
               <ReactRouterLink to="/">
-                <img src={logo} alt="logo" />
+                <Image src={logo} alt="logo" />
               </ReactRouterLink>
             </Box>
-            {isMobile ? <DrawerPanel /> : null}
-            {isMobile ? null : (
+            {isMobile && <DrawerPanel />}
+            {!isMobile && (
               <Box color="green">
                 <HStack spacing={24}>
                   <ReactRouterLink to="/about-us">

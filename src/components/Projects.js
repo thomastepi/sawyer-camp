@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Box,
@@ -13,7 +13,22 @@ import img from "../assets/images/group.jpg";
 import SharedLayout from "./SharedLayout";
 
 const Projects = () => {
+  const ref = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
   const isMobile = useBreakpointValue({ base: true, md: false });
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const [entry] = entries;
+      setIsVisible(entry.isIntersecting);
+    });
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    return () => {
+      observer.disconnect();
+    };
+  }, [ref]);
   return (
     <SharedLayout
       justifyContent="center"
@@ -32,7 +47,12 @@ const Projects = () => {
             </Text>
           </Box>
           <Box py="55px" bg="#436850" px="30px" color="white">
-            <HStack spacing={5}>
+            <HStack
+              spacing={5}
+              ref={ref}
+              opacity={isVisible ? 1 : 0}
+              transition="opacity 4s ease-in-out"
+            >
               <Box align="left" w="90%">
                 <Text fontSize="2xl">
                   We employ modern techniques to process ripe palm fruits,

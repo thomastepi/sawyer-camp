@@ -8,11 +8,9 @@ import {
   Button,
   Center,
   VStack,
-  //useBreakpointValue,
 } from "@chakra-ui/react";
 import img from "../assets/images/black-coffee.jpg";
 const DonateLanding = () => {
-  //const isMobile = useBreakpointValue({ base: true, md: false });
   return (
     <Box color="#87A922">
       <FixedBg image={img} />
