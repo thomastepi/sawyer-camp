@@ -8,8 +8,9 @@ import {
   Heading,
   Image,
   Button,
+  Center,
 } from "@chakra-ui/react";
-import img from "../assets/images/teke.jpg";
+import img from "../assets/images/ayisatu.jpg";
 import { Header, Footer } from "../components";
 import useIsMobile from "../hooks/useIsMobile";
 
@@ -32,9 +33,13 @@ function Membership() {
               agriculture the country needs through collective impact.
             </Text>
           </VStack>
-          <Box color="white" bg="#436850" m="0 auto" w="90%">
-            <HStack p={isMobileView && "50px"}>
-              <VStack w={isMobileView ? "100%" : "70%"} spacing={9}>
+          <Center color="white" bg="#436850" m="0 auto" w="90%">
+            <HStack
+              spacing={"10"}
+              p={isMobileView && "20px"}
+              flexDir={isMobileView && "column"}
+            >
+              <VStack w={isMobileView ? "100%" : "100%"} spacing={9}>
                 <Heading align="center">
                   Join our Regional collaborative network{" "}
                 </Heading>
@@ -48,13 +53,11 @@ function Membership() {
                   </PopupButton>
                 </Button>
               </VStack>
-              {!isMobileView && (
-                <Box w="50%">
-                  <Image w="50%" src={img} alt="Teke" />
-                </Box>
-              )}
+              <Box w={isMobileView ? "90%" : "50%"}>
+                <Image w="100%" src={img} alt="Teke" />
+              </Box>
             </HStack>
-          </Box>
+          </Center>
         </>
       </Box>
       <Footer />

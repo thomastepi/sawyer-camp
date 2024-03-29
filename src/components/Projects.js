@@ -41,12 +41,13 @@ const Projects = () => {
           </Box>
           <Box py="55px" bg="#436850" px="30px" color="white">
             <HStack
+              flexDir={isMobileView && "column"}
               spacing={5}
               ref={ref}
               opacity={isVisible ? 1 : 0}
               transition="opacity 4s ease-in-out"
             >
-              <Box align="left" w="90%">
+              <Box align={isMobileView ? "center" : "left"} w="90%">
                 <Text fontSize="2xl">
                   We employ modern techniques to process ripe palm fruits,
                   yielding top-quality palm oil supplied to both local and
@@ -56,17 +57,19 @@ const Projects = () => {
                   <Link to="/about-us">Learn More</Link>
                 </Button>
               </Box>
-              {!isMobileView && (
-                <Box w="50%" display="flex" alignItems="center">
-                  <Image
-                    boxSize="250px"
-                    objectFit="cover"
-                    src={img}
-                    w="100%"
-                    alt="photo of a group of people working in a field"
-                  />
-                </Box>
-              )}
+              <Box
+                w={isMobileView ? "100%" : "70%"}
+                display="flex"
+                alignItems="center"
+              >
+                <Image
+                  boxSize="250px"
+                  objectFit="cover"
+                  src={img}
+                  w="100%"
+                  alt="photo of a group of people working in a field"
+                />
+              </Box>
             </HStack>
           </Box>
         </VStack>

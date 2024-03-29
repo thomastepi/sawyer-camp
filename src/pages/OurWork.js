@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import pic1 from "../assets/images/farm-women.jpg";
 import pic2 from "../assets/images/palmnuts.jpg";
 import pic3 from "../assets/images/assorted-fruits.jpg";
-import pic4 from "../assets/images/ayisatu.jpg";
+import pic4 from "../assets/images/teke.jpg";
 import { Footer } from "../components";
 import {
   Button,
@@ -48,7 +48,10 @@ const OurWork = () => {
       <Header />
       <Box bg="" color="#87A922">
         <Box m="0 auto" w="70%" py="65px">
-          <Center>
+          <HStack
+            spacing={isMobileView && "14"}
+            flexDir={isMobileView && "column"}
+          >
             <Box>
               <VStack spacing={8} px="30px">
                 <Heading size="2xl">Our Strategy</Heading>
@@ -60,12 +63,10 @@ const OurWork = () => {
                 </Text>
               </VStack>
             </Box>
-            {!isMobileView && (
-              <Box w="60%">
-                <Image src={pic4} alt="assorted fruits" />
-              </Box>
-            )}
-          </Center>
+            <Box w="80%">
+              <Image src={pic4} alt="assorted fruits" />
+            </Box>
+          </HStack>
         </Box>
       </Box>
       <>
