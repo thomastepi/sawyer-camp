@@ -8,13 +8,13 @@ import {
   Heading,
   Image,
   Button,
-  useBreakpointValue,
 } from "@chakra-ui/react";
 import img from "../assets/images/teke.jpg";
 import { Header, Footer } from "../components";
+import useIsMobile from "../hooks/useIsMobile";
 
 function Membership() {
-  const isMobile = useBreakpointValue({ base: true, md: false });
+  const isMobileView = useIsMobile();
   const id = process.env.REACT_APP_TYPEFORM_ID;
 
   return (
@@ -33,9 +33,11 @@ function Membership() {
             </Text>
           </VStack>
           <Box color="white" bg="#436850" m="0 auto" w="90%">
-            <HStack p={isMobile && "50px"}>
-              <VStack w={isMobile ? "100%" : "70%"} spacing={9}>
-                <Heading align='center'>Join our Regional collaborative network </Heading>
+            <HStack p={isMobileView && "50px"}>
+              <VStack w={isMobileView ? "100%" : "70%"} spacing={9}>
+                <Heading align="center">
+                  Join our Regional collaborative network{" "}
+                </Heading>
                 <Button p="25px">
                   <PopupButton
                     id={id}
@@ -46,7 +48,7 @@ function Membership() {
                   </PopupButton>
                 </Button>
               </VStack>
-              {!isMobile && (
+              {!isMobileView && (
                 <Box w="50%">
                   <Image w="50%" src={img} alt="Teke" />
                 </Box>

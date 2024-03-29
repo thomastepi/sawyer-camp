@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setName, setEmail, setMessage } from "../features/contactUsSlice";
 import { submitContactUs } from "../features/contactUsSlice";
 import img from "../assets/images/rubber_tree.jpg";
+import useIsMobile from "../hooks/useIsMobile";
 
 import {
   Box,
@@ -27,11 +28,10 @@ import {
   Textarea,
   Button,
   Link as ChakraLink,
-  useBreakpointValue,
 } from "@chakra-ui/react";
 
 const ContactUs = () => {
-  const isMobile = useBreakpointValue({ base: true, md: false });
+  const isMobileView = useIsMobile();
   const dispatch = useDispatch();
   const { isLoading, status, show } = useSelector((state) => state.contactUs);
   const alert = useSelector((state) => state.alert);
@@ -69,7 +69,7 @@ const ContactUs = () => {
     <Box w="100%" color="#87A922">
       <Header />
       <Center h="20rem">
-        <VStack spacing={4} pl={isMobile && "20px"}>
+        <VStack spacing={4} pl={isMobileView && "20px"}>
           <Heading>Get in Touch</Heading>
           <Text fontSize="2xl">
             We want to hear your questions, comments, suggestions and feedback.
@@ -86,11 +86,11 @@ const ContactUs = () => {
           h="30rem"
           w="100%"
           templateColumns={
-            isMobile ? "repeat(1, 1fr 2fr)" : "repeat(1, 1fr 2fr 1fr)"
+            isMobileView ? "repeat(1, 1fr 2fr)" : "repeat(1, 1fr 2fr 1fr)"
           }
         >
           <Center bg="#E1F0DA">
-            <VStack align="left" spacing={7} pl={isMobile && "10px"}>
+            <VStack align="left" spacing={7} pl={isMobileView && "10px"}>
               <Box>
                 <Text as="b" fontSize="2xl">
                   Address
@@ -125,7 +125,7 @@ const ContactUs = () => {
             </VStack>
           </Center>
           <Center bg="#FFF">
-            <Box w={isMobile ? "80%" : "50%"}>
+            <Box w={isMobileView ? "80%" : "50%"}>
               <form onSubmit={formik.handleSubmit}>
                 <VStack spacing={4}>
                   <FormControl
@@ -203,7 +203,7 @@ const ContactUs = () => {
               </form>
             </Box>
           </Center>
-          {isMobile ? null : (
+          {isMobileView ? null : (
             <Center bg="grey" bgImg={img}>
               <Box></Box>
             </Center>

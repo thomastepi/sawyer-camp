@@ -9,12 +9,12 @@ import {
   HStack,
   VStack,
   Center,
-  useBreakpointValue,
 } from "@chakra-ui/react";
 import img3 from "../assets/images/img_8.jpg";
+import useIsMobile from "../hooks/useIsMobile";
 
 const AboutUs = () => {
-  const isMobile = useBreakpointValue({ base: true, md: false });
+  const isMobileView = useIsMobile();
   return (
     <>
       <Header />
@@ -23,7 +23,7 @@ const AboutUs = () => {
         <>
           <Box display="block" align="center">
             <Box bg="white">
-              <Center py="100px" w={isMobile ? "90%" : "50%"} color="green">
+              <Center py="100px" w={isMobileView ? "90%" : "50%"} color="green">
                 <VStack>
                   <Heading align="center">Our Story</Heading>
                   <Text color="#87A922" fontSize="2xl" py={5}>
@@ -41,7 +41,7 @@ const AboutUs = () => {
             </Box>
             <Box>
               <HStack
-                w={isMobile ? "90%" : "50%"}
+                w={isMobileView ? "90%" : "50%"}
                 color="#87A922"
                 bg="white"
                 p="10px"
@@ -75,7 +75,7 @@ const AboutUs = () => {
                 >
                   <>
                     <Box align="left" w="70%">
-                      <Text fontSize={isMobile ? "sm" : "2xl"}>
+                      <Text fontSize={isMobileView ? "sm" : "2xl"}>
                         Sawyer Camp Farmers CIG was established in 1992 as a
                         community-based organization with the objective to
                         address three major gaps that emerge from the knowledge

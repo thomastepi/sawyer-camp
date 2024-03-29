@@ -1,22 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  Heading,
-  Box,
-  Text,
-  Button,
-  Center,
-  useBreakpointValue,
-} from "@chakra-ui/react";
+import { Heading, Box, Text, Button, Center } from "@chakra-ui/react";
+import useIsMobile from "../hooks/useIsMobile";
 
 const DonateLayer = () => {
-  const isMobile = useBreakpointValue({ base: true, md: false });
+  const isMobileView = useIsMobile();
   return (
     <Box color="green">
       <Center>
         <Heading
           size="2xl"
-          w={isMobile ? "90%" : "80%"}
+          w={isMobileView ? "90%" : "80%"}
           align="center"
           py="70px"
           color="white"
@@ -28,7 +22,7 @@ const DonateLayer = () => {
       <Box w="100%" align="center" bg="#789461">
         <Center w="80%" bg="white" py="50px">
           <Box>
-            <Text fontSize="md" w={isMobile ? "90%" : "50%"}>
+            <Text fontSize="md" w={isMobileView ? "90%" : "50%"}>
               Through our work we develop actionable solutions for climate
               change adaptation and mitigation in agriculture, support
               smallholder farmers with knowledge and tools for sustainable and
@@ -39,7 +33,7 @@ const DonateLayer = () => {
         </Center>
       </Box>
       <Center w="100%">
-        <Center pb="60px" w={isMobile ? "80%" : "40%"} bg="white">
+        <Center pb="60px" w={isMobileView ? "80%" : "40%"} bg="white">
           <Button colorScheme="green">
             <Link to="/paypal">Support Our Work</Link>
           </Button>

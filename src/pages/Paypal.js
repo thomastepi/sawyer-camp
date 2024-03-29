@@ -12,15 +12,15 @@ import {
   RadioGroup,
   Button,
   HStack,
-  useBreakpointValue,
 } from "@chakra-ui/react";
 import { Header, Footer } from "../components/index";
+import useIsMobile from "../hooks/useIsMobile";
 
 const Paypal = () => {
   const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
   const [currency, setCurrency] = useState(options.currency);
   const [amount, setAmount] = useState(10);
-  const isMobile = useBreakpointValue({ base: true, md: false });
+  const isMobileView = useIsMobile();
 
   const onCurrencyChange = ({ target: { value } }) => {
     setCurrency(value);
@@ -58,7 +58,7 @@ const Paypal = () => {
       <Box>
         <Box bg="#789461" color="white">
           <Center py="50px" h="20rem">
-            <VStack w={isMobile ? "90%" : "50%"} spacing={9}>
+            <VStack w={isMobileView ? "90%" : "50%"} spacing={9}>
               <Heading align="center" size="2xl">
                 Your Support Makes a Difference
               </Heading>
@@ -126,7 +126,7 @@ const Paypal = () => {
           </>
         </Center>
         <Center color="white" spacing={8} h="30rem" bg="#789461">
-          <VStack spacing="60px" w={isMobile ? "90%" : "50%"}>
+          <VStack spacing="60px" w={isMobileView ? "90%" : "50%"}>
             <Heading align="center" size="2xl">
               Wanting to make a larger contribution?
             </Heading>

@@ -18,14 +18,14 @@ import {
   GridItem,
   HStack,
   Image,
-  useBreakpointValue,
 } from "@chakra-ui/react";
+import useIsMobile from "../hooks/useIsMobile";
 
 const OurWork = () => {
   const [showCard1, setShowCard1] = useState(true);
   const [showCard2, setShowCard2] = useState(false);
   const [showCard3, setShowCard3] = useState(false);
-  const isMobile = useBreakpointValue({ base: true, md: false });
+  const isMobileView = useIsMobile();
 
   const handleCard1 = () => {
     setShowCard1(true);
@@ -60,7 +60,7 @@ const OurWork = () => {
                 </Text>
               </VStack>
             </Box>
-            {!isMobile && (
+            {!isMobileView && (
               <Box w="60%">
                 <Image src={pic4} alt="assorted fruits" />
               </Box>
@@ -74,7 +74,7 @@ const OurWork = () => {
           m="0 auto"
           bg="#789461"
           py="100px"
-          px={isMobile && "15px"}
+          px={isMobileView && "15px"}
         >
           <Heading color="white" fontSize="3xl" align="center">
             We focus our efforts in achieving three strategic goals
@@ -83,7 +83,11 @@ const OurWork = () => {
         <Flex color="#87A922" justify="center" bg="#789461" w="100%">
           <Box w="90%" bg="white">
             <Center w="100%">
-              <VStack h="fit-content" w={isMobile ? "80%" : "60%"} pt="40px">
+              <VStack
+                h="fit-content"
+                w={isMobileView ? "80%" : "60%"}
+                pt="40px"
+              >
                 <ButtonGroup variant="flush">
                   <HStack spacing={10} w="100%">
                     <Button

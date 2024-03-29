@@ -11,11 +11,11 @@ import {
   Flex,
   Center,
   Link,
-  useBreakpointValue,
 } from "@chakra-ui/react";
+import useIsMobile from "../hooks/useIsMobile";
 
 const Footer = () => {
-  const isMobile = useBreakpointValue({ base: true, md: false });
+  const isMobileView = useIsMobile();
   return (
     <>
       <Center
@@ -24,7 +24,7 @@ const Footer = () => {
         borderTop="green solid 2px"
         color="#87A922"
       >
-        <Flex w={isMobile ? "90%" : "60%"} h="100%" justify="space-between">
+        <Flex w={isMobileView ? "90%" : "60%"} h="100%" justify="space-between">
           <Center>
             <VStack align="left">
               <HStack spacing={4}>

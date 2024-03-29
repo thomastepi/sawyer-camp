@@ -9,14 +9,14 @@ import {
   Flex,
   Image,
   Link as ChakraLink,
-  useBreakpointValue,
 } from "@chakra-ui/react";
 import logo from "../assets/images/logo.png";
 import DrawerPanel from "./DrawerPanel";
+import useIsMobile from "../hooks/useIsMobile";
 import { Link as ReactRouterLink } from "react-router-dom";
 
 const Header = () => {
-  const isMobile = useBreakpointValue({ base: true, md: false });
+  const isMobileView = useIsMobile();
   return (
     <>
       <Center bg="#EEEEEE" color="green">
@@ -38,14 +38,14 @@ const Header = () => {
             </ChakraLink>
           </HStack>
           <HStack spacing={6}>
-            {!isMobile && (
+            {!isMobileView && (
               <Center>
                 <ChakraLink as={ReactRouterLink} to="/membership" height="100%">
                   Become a Member
                 </ChakraLink>
               </Center>
             )}
-            {!isMobile && (
+            {!isMobileView && (
               <Center>
                 <ChakraLink as={ReactRouterLink} to="/contact-us" height="100%">
                   Contact Us
@@ -73,13 +73,13 @@ const Header = () => {
       <Box bg="#D2E3C8" p="7px" align="center">
         <Center width="70%">
           <Flex justify="space-between" alignItems="center">
-            <Box w={isMobile ? "15%" : "8%"} paddingTop="6px">
+            <Box w={isMobileView ? "15%" : "8%"} paddingTop="6px">
               <ReactRouterLink to="/">
                 <Image src={logo} alt="logo" />
               </ReactRouterLink>
             </Box>
-            {isMobile && <DrawerPanel />}
-            {!isMobile && (
+            {isMobileView && <DrawerPanel />}
+            {!isMobileView && (
               <Box color="green">
                 <HStack spacing={24}>
                   <ReactRouterLink to="/about-us">

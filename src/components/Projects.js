@@ -1,21 +1,14 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  Box,
-  HStack,
-  VStack,
-  Text,
-  Image,
-  Button,
-  useBreakpointValue,
-} from "@chakra-ui/react";
+import { Box, HStack, VStack, Text, Image, Button } from "@chakra-ui/react";
 import img from "../assets/images/group.jpg";
 import SharedLayout from "./SharedLayout";
+import useIsMobile from "../hooks/useIsMobile";
 
 const Projects = () => {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-  const isMobile = useBreakpointValue({ base: true, md: false });
+  const isMobileView = useIsMobile();
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -39,7 +32,7 @@ const Projects = () => {
       <Box align="center">
         <VStack w="80%" color="#87A922">
           <Box padding={8}>
-            <Text fontSize={isMobile ? "2xl" : "4xl"}>
+            <Text fontSize={isMobileView ? "2xl" : "4xl"}>
               We are a community-driven union empowering local farmers in the
               Banga Bakundu area of Cameroon. Through education and access to
               resources, we cultivate sustainable practices and supply a variety
@@ -63,7 +56,7 @@ const Projects = () => {
                   <Link to="/about-us">Learn More</Link>
                 </Button>
               </Box>
-              {!isMobile && (
+              {!isMobileView && (
                 <Box w="50%" display="flex" alignItems="center">
                   <Image
                     boxSize="250px"

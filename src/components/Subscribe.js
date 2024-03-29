@@ -23,11 +23,11 @@ import {
   FormLabel,
   FormErrorMessage,
   FormHelperText,
-  useBreakpointValue,
 } from "@chakra-ui/react";
+import useIsMobile from "../hooks/useIsMobile";
 
 const Subscribe = ({ image, heading, headingText }) => {
-  const isMobile = useBreakpointValue({ base: true, md: false });
+  const isMobileView = useIsMobile();
   const dispatch = useDispatch();
   const { isLoading, status, show } = useSelector((state) => state.newsletter);
   const alert = useSelector((state) => state.alert);
@@ -69,7 +69,7 @@ const Subscribe = ({ image, heading, headingText }) => {
   return (
     <Center w="100%">
       <FixedBg image={image} />
-      <Center py="50px" w={isMobile ? "80%" : "30%"}>
+      <Center py="50px" w={isMobileView ? "80%" : "30%"}>
         <Box
           align="center"
           px="10px"

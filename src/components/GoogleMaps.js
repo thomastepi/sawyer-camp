@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { GoogleMap, useJsApiLoader, Marker, InfoWindow } from "@react-google-maps/api";
+import {
+  GoogleMap,
+  useJsApiLoader,
+  Marker,
+  InfoWindow,
+} from "@react-google-maps/api";
 
 const containerStyle = {
   width: "100%",
@@ -28,11 +33,7 @@ function MapWithInfoWindow() {
   };
 
   return isLoaded ? (
-    <GoogleMap
-      mapContainerStyle={containerStyle}
-      center={center}
-      zoom={10}
-    >
+    <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
       {selectedMarker && (
         <InfoWindow
           position={{ lat: selectedMarker.lat, lng: selectedMarker.lng }}
@@ -46,7 +47,14 @@ function MapWithInfoWindow() {
       )}
       <Marker
         position={{ lat: 4.401, lng: 9.442 }}
-        onClick={() => handleMarkerClick({ lat: 4.401, lng: 9.442, title: "Sawyer Camp", description: "Banga Bakundu" })}
+        onClick={() =>
+          handleMarkerClick({
+            lat: 4.401,
+            lng: 9.442,
+            title: "Sawyer Camp",
+            description: "Banga Bakundu",
+          })
+        }
       />
     </GoogleMap>
   ) : (
@@ -55,4 +63,3 @@ function MapWithInfoWindow() {
 }
 
 export default React.memo(MapWithInfoWindow);
-

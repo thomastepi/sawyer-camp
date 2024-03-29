@@ -11,7 +11,6 @@ import {
   Heading,
   Button,
   Flex,
-  useBreakpointValue,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import {
@@ -19,9 +18,10 @@ import {
   faArrowAltCircleRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import useIsMobile from "../hooks/useIsMobile";
 
 const ProjectDescription = () => {
-  const isMobile = useBreakpointValue({ base: true, md: false });
+  const isMobileView = useIsMobile();
   const { projectId } = useParams();
   const parsedProjectId = parseInt(projectId);
 
@@ -44,7 +44,7 @@ const ProjectDescription = () => {
     <Box key={project.id}>
       <Header />
       <Center color="#87A922">
-        <Box w={isMobile ? "80%" : "50%"} py="50px">
+        <Box w={isMobileView ? "80%" : "50%"} py="50px">
           <VStack spacing={7} align="left">
             <Link to="/projects">
               <Button leftIcon={<FontAwesomeIcon icon={faArrowCircleLeft} />}>

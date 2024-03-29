@@ -25,7 +25,7 @@ const Projects = () => {
               <Heading fontSize="3xl" color="green">
                 Our Projects
               </Heading>
-              <Text align='center' fontSize="xl" color="green">
+              <Text align="center" fontSize="xl" color="green">
                 Explore how we are moving sustainability forward through our
                 global expertise and local implementation
               </Text>

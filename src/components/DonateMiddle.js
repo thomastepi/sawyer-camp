@@ -7,12 +7,12 @@ import {
   Heading,
   Text,
   Button,
-  useBreakpointValue,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import useIsMobile from "../hooks/useIsMobile";
 
 const DonateMiddle = () => {
-  const isMobile = useBreakpointValue({ base: true, md: false });
+  const isMobileView = useIsMobile();
   return (
     <Box w="100%" bg="#789461" mt="80px" color="white">
       <Center>
@@ -28,7 +28,7 @@ const DonateMiddle = () => {
               </Button>
             </VStack>
           </Box>
-          {isMobile ? null : (
+          {isMobileView ? null : (
             <Box>
               <VStack spacing={8}>
                 <Text>
