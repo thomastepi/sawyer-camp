@@ -14,21 +14,19 @@ import useIsMobile from "../hooks/useIsMobile";
 const DonateMiddle = () => {
   const isMobileView = useIsMobile();
   return (
-    <Box w="100%" bg="#789461" mt="80px" color="white">
+    <Box w="100%" bg="#789461" color="white">
       <Center>
         <HStack w="80%" py="70px" spacing={9}>
           <Box>
-            <VStack spacing={8}>
-              <Heading>
-                Your small gift can have a lasting impact for agriculture and
-                nature.
-              </Heading>
-              <Button colorScheme="green">
-                <Link to="/paypal">Donate Now</Link>
-              </Button>
-            </VStack>
+            <Heading pb="30px">
+              Your small gift can have a lasting impact for agriculture and
+              nature.
+            </Heading>
+            <Button colorScheme="green">
+              <Link to="/paypal">Donate Now</Link>
+            </Button>
           </Box>
-          {isMobileView ? null : (
+          {!isMobileView && (
             <Box>
               <VStack spacing={8}>
                 <Text>

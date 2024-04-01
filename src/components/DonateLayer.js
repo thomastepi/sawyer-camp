@@ -22,7 +22,11 @@ const DonateLayer = () => {
       <Box w="100%" align="center" bg="#789461">
         <Center w="80%" bg="white" py="50px">
           <Box>
-            <Text fontSize="md" w={isMobileView ? "90%" : "50%"}>
+            <Text
+              fontSize="lg"
+              w={isMobileView ? "90%" : "50%"}
+              color="#87A922"
+            >
               Through our work we develop actionable solutions for climate
               change adaptation and mitigation in agriculture, support
               smallholder farmers with knowledge and tools for sustainable and
@@ -31,14 +35,14 @@ const DonateLayer = () => {
             </Text>
           </Box>
         </Center>
-      </Box>
-      <Center w="100%">
-        <Center pb="60px" w={isMobileView ? "80%" : "40%"} bg="white">
-          <Button colorScheme="green">
-            <Link to="/paypal">Support Our Work</Link>
-          </Button>
+        <Center w="100%">
+          <Center pb="60px" w={isMobileView ? "80%" : "80%"} bg="white">
+            <Button colorScheme="green">
+              <Link to="/paypal">Support Our Work</Link>
+            </Button>
+          </Center>
         </Center>
-      </Center>
+      </Box>
     </Box>
   );
 };

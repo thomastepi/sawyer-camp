@@ -1,14 +1,7 @@
 import React from "react";
 import FixedBg from "./FixedBg";
 import { Link } from "react-router-dom";
-import {
-  Heading,
-  Box,
-  Text,
-  Button,
-  Center,
-  VStack,
-} from "@chakra-ui/react";
+import { Heading, Box, Text, Button, Center, VStack } from "@chakra-ui/react";
 import img from "../assets/images/black-coffee.jpg";
 const DonateLanding = () => {
   return (
