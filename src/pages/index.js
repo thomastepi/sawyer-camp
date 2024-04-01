@@ -8,6 +8,7 @@ import ProjectDescription from "./ProjectDescription";
 import Donate from "./Donate";
 import Paypal from "./Paypal";
 import Membership from "./Membership";
+import ErrorPage from "./ErrorPage";
 
 export {
   Home,
@@ -19,5 +20,6 @@ export {
   ProjectDescription,
   Donate,
   Paypal,
-  Membership
+  Membership,
+  ErrorPage,
 };

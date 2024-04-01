@@ -2,11 +2,7 @@ import React from "react";
 import "./App.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   Home,
   AboutUs,
@@ -18,6 +14,7 @@ import {
   Donate,
   Paypal,
   Membership,
+  ErrorPage,
 } from "./pages";
 import { ScrollToTop } from "./components";
 
@@ -46,6 +43,7 @@ function App() {
             <Route path="/donate" element={<Donate />} />
             <Route path="/paypal" element={<Paypal />} />
             <Route path="/membership" element={<Membership />} />
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
         </Router>
       </ChakraProvider>
