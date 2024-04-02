@@ -39,6 +39,7 @@ function App() {
             <Route
               path="/project/:projectId"
               element={<ProjectDescription />}
+              errorElement={<ErrorPage />}
             />
             <Route path="/donate" element={<Donate />} />
             <Route path="/paypal" element={<Paypal />} />
