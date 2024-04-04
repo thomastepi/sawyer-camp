@@ -3,7 +3,7 @@
   --heart: "M460.5 0L307 91.6364L153.5 0L0 114.545V274.909L307 504L614 274.909V114.545L460.5 0Z";
 }
 
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Merriweather", "Roboto Serif",
     "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
@@ -11,16 +11,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
-}
+} */
 
 html {
   scroll-behavior: smooth;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
+} */
 
 *,
 ::after,
@@ -30,4 +30,8 @@ code {
 
 button {
   border-radius: 0 !important;
+}
+
+h2 {
+  font-family: "Montserrat" !important;
 }

@@ -43,7 +43,7 @@ function Membership() {
                 <Heading align="center">
                   Join our Regional collaborative network{" "}
                 </Heading>
-                <Button p="25px">
+                <Button p="25px" colorScheme="green">
                   <PopupButton
                     id={id}
                     style={{ fontSize: 20 }}

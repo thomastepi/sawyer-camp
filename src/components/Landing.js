@@ -49,7 +49,7 @@ export const Landing = () => {
           bottom="9"
         >
           <Box fontSize="3xl" py={10}>
-            <Heading fontSize="6xl">Sawyer Camp Farmers</Heading>
+            <Heading fontSize="7xl">Sawyer Camp Farmers</Heading>
             <Heading>Common Initiative Group</Heading>
           </Box>
           <Box display="flex" justifyContent="center" py={6}>

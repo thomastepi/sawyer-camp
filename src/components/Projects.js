@@ -13,7 +13,9 @@ const Projects = () => {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       const [entry] = entries;
-      setIsVisible(entry.isIntersecting);
+      setTimeout(() => {
+        setIsVisible(entry.isIntersecting);
+      }, 1000);
     });
     if (ref.current) {
       observer.observe(ref.current);
@@ -45,7 +47,7 @@ const Projects = () => {
               spacing={5}
               ref={ref}
               opacity={isVisible ? 1 : 0}
-              transition="opacity 4s ease-in-out"
+              transition="opacity 0.5s ease-in-out"
             >
               <Box align={isMobileView ? "center" : "left"} w="90%">
                 <Text fontSize="2xl">
