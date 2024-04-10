@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import projects from "../utils/projects";
-import { Footer, Header } from "../components";
+import { SharedLayout } from "../components";
 import {
   Box,
   Text,
@@ -41,42 +41,44 @@ const ProjectDescription = () => {
   const { name, location, image, article } = project;
 
   return (
-    <Box key={project.id}>
-      <Header />
-      <Center color="#87A922">
-        <Box w={isMobileView ? "80%" : "50%"} py="50px">
-          <VStack spacing={7} align="left">
-            <Link to="/projects">
-              <Button leftIcon={<FontAwesomeIcon icon={faArrowCircleLeft} />}>
-                Back
-              </Button>
-            </Link>
-            <Heading color="green">{name}</Heading>
-            <Text>{location}</Text>
-            <Image src={image} />
-            <Heading color="green" size="md">
-              About The Project
-            </Heading>
-            {article}
-            <Flex justify="space-between">
-              <Link to={`/project/${projects[prevProjectIndex].id}`}>
+    <SharedLayout>
+      <Box key={project.id} mt='150px'>
+        <Center color="#87A922">
+          <Box w={isMobileView ? "80%" : "50%"} py="50px">
+            <VStack spacing={7} align="left">
+              <Link to="/projects">
                 <Button leftIcon={<FontAwesomeIcon icon={faArrowCircleLeft} />}>
-                  Prev
+                  Back
                 </Button>
               </Link>
-              <Link to={`/project/${projects[nextProjectIndex].id}`}>
-                <Button
-                  rightIcon={<FontAwesomeIcon icon={faArrowAltCircleRight} />}
-                >
-                  Next
-                </Button>
-              </Link>
-            </Flex>
-          </VStack>
-        </Box>
-      </Center>
-      <Footer />
-    </Box>
+              <Heading color="green">{name}</Heading>
+              <Text>{location}</Text>
+              <Image src={image} />
+              <Heading color="green" size="md">
+                About The Project
+              </Heading>
+              {article}
+              <Flex justify="space-between">
+                <Link to={`/project/${projects[prevProjectIndex].id}`}>
+                  <Button
+                    leftIcon={<FontAwesomeIcon icon={faArrowCircleLeft} />}
+                  >
+                    Prev
+                  </Button>
+                </Link>
+                <Link to={`/project/${projects[nextProjectIndex].id}`}>
+                  <Button
+                    rightIcon={<FontAwesomeIcon icon={faArrowAltCircleRight} />}
+                  >
+                    Next
+                  </Button>
+                </Link>
+              </Flex>
+            </VStack>
+          </Box>
+        </Center>
+      </Box>
+    </SharedLayout>
   );
 };
 

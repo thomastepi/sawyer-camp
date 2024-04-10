@@ -1,13 +1,12 @@
 import React from "react";
 import { DonateLanding, DonateLayer, DonateMiddle } from "../components";
-import { Header, Footer, } from "../components";
+import { SharedLayout } from "../components";
 import { Box } from "@chakra-ui/react";
 
 const Donate = () => {
   return (
-    <>
-      <Header />
-      <Box>
+    <SharedLayout>
+      <Box mt="130px">
         <Box>
           <DonateLanding />
         </Box>
@@ -18,8 +17,7 @@ const Donate = () => {
           <DonateMiddle />
         </Box>
       </Box>
-      <Footer />
-    </>
+    </SharedLayout>
   );
 };
 

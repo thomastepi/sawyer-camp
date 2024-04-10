@@ -1,8 +1,7 @@
 import React from "react";
-import Header from "../components/Header";
 import projects from "../utils/projects";
-import { Footer } from "../components";
 import { Link } from "react-router-dom";
+import { SharedLayout } from "../components";
 import {
   Box,
   Text,
@@ -16,9 +15,8 @@ import {
 
 const Projects = () => {
   return (
-    <>
-      <Header />
-      <Box w="100%" color="#87A922">
+    <SharedLayout>
+      <Box w="100%" color="#87A922" mt="130px">
         <Center bg="#789461" h="20rem">
           <Center w="70%" bg="white" h="20rem">
             <VStack spacing={9}>
@@ -83,8 +81,7 @@ const Projects = () => {
           </Box>
         </Flex>
       </Box>
-      <Footer />
-    </>
+    </SharedLayout>
   );
 };
 

@@ -1,19 +1,13 @@
 import React from "react";
 import img from "../assets/images/green-leaf.jpg";
-import {
-  Landing,
-  Team,
-  Projects,
-  Subscribe,
-  Footer,
-  GoogleMaps,
-} from "../components";
+import { Landing, Team, WhatWeDo, Subscribe, GoogleMaps } from "../components";
+import { SharedLayout } from "../components";
 
 const Home = () => {
   return (
-    <>
+    <SharedLayout>
       <Landing />
-      <Projects />
+      <WhatWeDo />
       <Team />
       <Subscribe
         image={img}
@@ -21,8 +15,7 @@ const Home = () => {
         headingText="Subscribe to our Newsletter"
       />
       <GoogleMaps />
-      <Footer />
-    </>
+    </SharedLayout>
   );
 };
 

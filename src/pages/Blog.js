@@ -1,21 +1,18 @@
 import React from "react";
-import Header from "../components/Header";
-import { Subscribe, Footer } from "../components";
+import { Subscribe } from "../components";
 import img from "../assets/images/plantain_bunch.jpg";
 import { Box } from "@chakra-ui/react";
+import { SharedLayout } from "../components";
 
 const Blog = () => {
   const heading = "Our Latest Stories";
   const headingText = `Right in your inbox.`;
   return (
-    <>
-      <Header />
-      <Box>
+    <SharedLayout>
+      <Box mt="150px">
         <Subscribe image={img} heading={heading} headingText={headingText} />
       </Box>
-
-      <Footer />
-    </>
+    </SharedLayout>
   );
 };
 

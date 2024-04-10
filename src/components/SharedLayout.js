@@ -1,12 +1,14 @@
 import React from "react";
-import "../assets/css/sharedLayout.css";
-import { VStack } from "@chakra-ui/react";
+import { Header, Footer } from ".";
+import { Box } from "@chakra-ui/react";
 
-const SharedLayout = ({ children, ...boxProps }) => {
+export const SharedLayout = ({ children }) => {
   return (
-    <>
-      <VStack {...boxProps}>{children}</VStack>
-    </>
+    <Box>
+      <Header />
+      {children}
+      <Footer />
+    </Box>
   );
 };
 

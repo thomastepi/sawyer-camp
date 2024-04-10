@@ -1,8 +1,7 @@
 import Header from "./Header";
 import Landing from "./Landing";
 import Team from "./Team";
-import Projects from "./Projects";
-import Stats from "./Stats";
+import WhatWeDo from "./WhatWeDo";
 import Subscribe from "./Subscribe";
 import Footer from "./Footer";
 import FixedBg from "./FixedBg";
@@ -14,13 +13,13 @@ import Paypal from "../pages/Paypal";
 import ScrollToTop from "./ScrollToTop";
 import DisplayAlert from "./DisplayAlert";
 import Membership from "../pages/Membership";
+import SharedLayout from "./SharedLayout";
 
 export {
   Header,
   Landing,
   Team,
-  Projects,
-  Stats,
+  WhatWeDo,
   Footer,
   Subscribe,
   FixedBg,
@@ -31,5 +30,6 @@ export {
   Paypal,
   ScrollToTop,
   DisplayAlert,
-  Membership
+  Membership,
+  SharedLayout,
 };

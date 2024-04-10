@@ -11,7 +11,7 @@ import {
   Center,
 } from "@chakra-ui/react";
 import img from "../assets/images/ayisatu.jpg";
-import { Header, Footer } from "../components";
+import { SharedLayout } from "../components";
 import useIsMobile from "../hooks/useIsMobile";
 
 function Membership() {
@@ -19,9 +19,8 @@ function Membership() {
   const id = process.env.REACT_APP_TYPEFORM_ID;
 
   return (
-    <>
-      <Header />
-      <Box color="#87A922">
+    <SharedLayout>
+      <Box color="#87A922" pt="130px">
         <>
           <VStack py="80px" spacing={9} w="60%" m="0 auto">
             <Heading color="green" size="3xl">
@@ -60,8 +59,7 @@ function Membership() {
           </Center>
         </>
       </Box>
-      <Footer />
-    </>
+    </SharedLayout>
   );
 }
 

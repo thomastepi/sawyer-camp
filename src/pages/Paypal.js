@@ -1,5 +1,6 @@
 import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
 import React, { useState } from "react";
+import { SharedLayout } from "../components";
 import { Link } from "react-router-dom";
 import {
   Box,
@@ -13,7 +14,6 @@ import {
   Button,
   HStack,
 } from "@chakra-ui/react";
-import { Header, Footer } from "../components/index";
 import useIsMobile from "../hooks/useIsMobile";
 
 const Paypal = () => {
@@ -53,9 +53,8 @@ const Paypal = () => {
   };
 
   return (
-    <>
-      <Header />
-      <Box>
+    <SharedLayout>
+      <Box mt="150px">
         <Box bg="#789461" color="white">
           <Center py="50px" h="20rem">
             <VStack w={isMobileView ? "90%" : "50%"} spacing={9}>
@@ -141,9 +140,7 @@ const Paypal = () => {
           </VStack>
         </Center>
       </Box>
-
-      <Footer />
-    </>
+    </SharedLayout>
   );
 };
 

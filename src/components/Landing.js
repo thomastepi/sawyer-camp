@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SharedLayout from "./SharedLayout";
-import { Heading, Box, Button, HStack } from "@chakra-ui/react";
-import Header from "./Header";
+import { Heading, Box, Button, HStack, VStack } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import img from "../assets/images/coffee-seed.jpg";
 import img2 from "../assets/images/rubber_trees.jpg";
@@ -34,9 +32,8 @@ export const Landing = () => {
   };
   return (
     <>
-      <Header />
-      <SharedLayout
-        minHeight="80vh"
+      <VStack
+        h="100vh"
         alignItems="center"
         backgroundColor="#2A4365"
         color="white"
@@ -62,7 +59,7 @@ export const Landing = () => {
             </HStack>
           </Box>
         </Box>
-      </SharedLayout>
+      </VStack>
     </>
   );
 };
