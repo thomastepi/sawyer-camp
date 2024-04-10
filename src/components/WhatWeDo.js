@@ -39,10 +39,10 @@ const WhatWeDo = () => {
             <Heading color="green">What we do</Heading>
             <Box padding={8}>
               <Text fontSize={isMobileView ? "2xl" : "4xl"}>
-                We are a community-driven union empowering local farmers in the
-                Banga Bakundu area of Cameroon. Through education and access to
-                resources, we cultivate sustainable practices and supply a
-                variety of high-quality cash crops to the regional market.
+                Empowering local farmers in Banga Bakundu, Cameroon, our
+                community-driven union cultivates sustainable practices and
+                supplies the region with high-quality cash crops. We achieve
+                this through education and resource access.
               </Text>
             </Box>
             <Box py="55px" bg="#436850" px="30px" color="white">
@@ -55,9 +55,9 @@ const WhatWeDo = () => {
               >
                 <Box align={isMobileView ? "center" : "left"} w="90%">
                   <Text fontSize="2xl">
-                    We employ modern techniques to process ripe palm fruits,
-                    yielding top-quality palm oil supplied to both local and
-                    national markets.
+                    Harnessing modern methods, we transform ripe palm fruits
+                    into exceptional palm oil, nourishing both our communities
+                    and the nation.
                   </Text>
                   <Button
                     colorScheme="green"

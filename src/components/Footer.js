@@ -74,7 +74,9 @@ const Footer = () => {
       <Box bg="white">
         <Center m="0 auto" borderTop="green solid 2px" w="80%" py={5}>
           <VStack spacing={2} color="#87A922">
-            <Text>Website created by Thomas Tepi - 2023</Text>
+            <Text>
+              Website created by Thomas Tepi • © {new Date().getFullYear()}
+            </Text>
             <Link
               target="_blank"
               rel="noopener noreferre"

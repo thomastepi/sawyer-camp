@@ -26,10 +26,10 @@ function Membership() {
             <Heading color="green" size="3xl">
               Membership
             </Heading>
-            <Text fontSize="lg" align="center">
-              The Sawyer Camp Farmers Common Initiative Group is a regional
-              collaborative network of farmers committed to shaping the
-              agriculture the country needs through collective impact.
+            <Text fontSize="2xl" align="center">
+              The Sawyer Camp Farmers Common Initiative Group represents a
+              community-driven coalition of regional farmers dedicated to
+              reshaping agriculture through unified action and shared vision.
             </Text>
           </VStack>
           <Center color="white" bg="#436850" m="0 auto" w="90%">
@@ -40,7 +40,7 @@ function Membership() {
             >
               <VStack w={isMobileView ? "100%" : "100%"} spacing={9}>
                 <Heading align="center">
-                  Join our Regional collaborative network{" "}
+                  Be part of our collaborative network
                 </Heading>
                 <Button p="25px" colorScheme="green">
                   <PopupButton

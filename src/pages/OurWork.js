@@ -13,8 +13,6 @@ import {
   Box,
   Heading,
   Text,
-  Grid,
-  GridItem,
   HStack,
   Image,
 } from "@chakra-ui/react";
@@ -53,24 +51,23 @@ const OurWork = () => {
             >
               <Box>
                 <VStack spacing={8} px="30px">
-                  <Heading size="2xl" align="center">
-                    Our Strategy
+                  <Heading size="2xl" align="center" color='green'>
+                    Building a Network of Sustainable Farmers
                   </Heading>
-                  <Text fontSize="lg" align="center">
-                    We have extensive experience with various approaches to
-                    sustainability in agriculture, from certification to the
-                    design and implementation of customized tools for companies
-                    and agencies.
+                  <Text fontSize="2xl" align="center">
+                    Our strategy centers on fostering a thriving community of
+                    smallholder farmers through resource provision, education,
+                    and collaboration.
                   </Text>
                 </VStack>
               </Box>
               <Box w="80%">
-                <Image src={pic4} alt="assorted fruits" />
+                <Image src={pic4} alt="photo of teke" />
               </Box>
             </HStack>
           </Box>
         </Box>
-        <>
+        <Box>
           <Box
             color="blue"
             m="0 auto"
@@ -79,11 +76,17 @@ const OurWork = () => {
             px={isMobileView && "15px"}
           >
             <Heading color="white" fontSize="3xl" align="center">
-              We focus our efforts in achieving three strategic goals
+              We focus our efforts in achieving three key goals
             </Heading>
           </Box>
-          <Flex color="#87A922" justify="center" bg="#789461" w="100%">
-            <Box w="90%" bg="white">
+          <Flex
+            color="#87A922"
+            justify="center"
+            bg="#789461"
+            w="100%"
+            mb="70px"
+          >
+            <Box w="100%" bg="white">
               <Center w="100%">
                 <VStack
                   h="fit-content"
@@ -143,85 +146,99 @@ const OurWork = () => {
                     display="block"
                   >
                     {showCard1 && (
-                      <Grid
-                        templateRows="repeat(2, 1fr)"
-                        gap={6}
-                        align="center"
-                      >
-                        <GridItem
+                      <VStack spacing={0}>
+                        <Box
                           w="100%"
-                          h="100%"
-                          py="9rem"
+                          h="60vh"
                           bg="blue.500"
                           backgroundImage={pic1}
                           backgroundSize="cover"
                           backgroundRepeat="no-repeat"
                           backgroundPosition="center"
-                        ></GridItem>
-                        <GridItem w="100%" h="20" bg="#789461" color="white">
-                          <Text fontSize="lg">
-                            Expand and strengthen Sawyer Camp Farmers CIG as a
-                            national collaborative network of organizations that
-                            secures a sustainable future for people, food, and
-                            nature.
+                        ></Box>
+                        <VStack w="100%" bg="#789461" color="white" py="40px">
+                          <Heading align="center">
+                            Empower Farmers, Strengthen Communities
+                          </Heading>
+                          <Text
+                            fontSize={isMobileView ? "md" : "2xl"}
+                            align="center"
+                          >
+                            We aim to expand and strengthen Sawyer Camp Farmers
+                            CIG as a national collaborative network, equipping
+                            smallholder farmers with the resources, knowledge,
+                            and support they need to thrive. By working
+                            together, we can ensure a sustainable future for
+                            farmers, their families, and our communities.
                           </Text>
-                        </GridItem>
-                      </Grid>
+                        </VStack>
+                      </VStack>
                     )}
                     {showCard2 && (
-                      <Grid
-                        templateRows="repeat(2, 1fr)"
-                        gap={6}
-                        align="center"
-                      >
-                        <GridItem
+                      <VStack spacing={0}>
+                        <Box
                           w="100%"
-                          py="9rem"
+                          h="60vh"
                           bg="blue.500"
                           backgroundImage={pic2}
                           backgroundSize="cover"
                           backgroundRepeat="no-repeat"
                           backgroundPosition="center"
-                        ></GridItem>
-                        <GridItem w="100%" h="20" bg="#789461" color="white">
-                          <Text fontSize="lg">
-                            Catalyze credible sustainability and climate
-                            commitments through an expanded set of nature-based
-                            tools, partners, and delivery channels.
+                        ></Box>
+                        <VStack w="100%" bg="#789461" color="white" py="40px">
+                          <Heading align="center">
+                            Cultivate Sustainable Practices, Nurture the
+                            Environment
+                          </Heading>
+                          <Text
+                            fontSize={isMobileView ? "md" : "2xl"}
+                            align="center"
+                          >
+                            We are committed to catalyzing credible
+                            sustainability and climate commitments by promoting
+                            best practices and nature-based solutions. Through
+                            education, training, and partnerships, we empower
+                            farmers to adopt sustainable practices that protect
+                            the environment and ensure long-term food security.
                           </Text>
-                        </GridItem>
-                      </Grid>
+                        </VStack>
+                      </VStack>
                     )}
                     {showCard3 && (
-                      <Grid
-                        templateRows="repeat(2, 1fr)"
-                        gap={6}
-                        align="center"
-                      >
-                        <GridItem
+                      <VStack spacing={0}>
+                        <Box
                           w="100%"
-                          py="9rem"
+                          h="60vh"
                           bg="blue.500"
                           backgroundImage={pic3}
                           backgroundSize="cover"
                           backgroundRepeat="no-repeat"
                           backgroundPosition="center"
-                        ></GridItem>
-                        <GridItem w="100%" h="20" bg="#789461" color="white">
-                          <Text fontSize="lg">
-                            Improve rural livelihoods through innovative,
-                            scalable, and locally adapted technological
-                            solutions in agriculture.
+                        ></Box>
+                        <VStack w="100%" bg="#789461" color="white" py="40px">
+                          <Heading align="center">
+                            Innovate for Success, Scale for Impact
+                          </Heading>
+                          <Text
+                            fontSize={isMobileView ? "md" : "2xl"}
+                            align="center"
+                          >
+                            We believe in improving rural livelihoods through
+                            innovative, scalable, and locally-adapted
+                            technological solutions in agriculture. Our goal is
+                            to identify and implement practical solutions that
+                            address the specific needs of our farmers, enhancing
+                            their productivity and resilience.
                           </Text>
-                        </GridItem>
-                      </Grid>
+                        </VStack>
+                      </VStack>
                     )}
                   </Box>
                 </VStack>
               </Center>
             </Box>
           </Flex>
-        </>
+        </Box>
       </Box>
     </SharedLayout>
   );

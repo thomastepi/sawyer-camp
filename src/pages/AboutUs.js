@@ -25,9 +25,10 @@ const AboutUs = () => {
               <VStack>
                 <Heading align="center">Our Story</Heading>
                 <Text color="#87A922" fontSize="2xl" py={5}>
-                  We began in 1989 when Mr. Tepi Emmanuel, our founder, returned
-                  from the USA armed with a Master's degree in Agricultural
-                  Economics from the University of Illinois.
+                  Our story began in 1989, rooted in the vision of Mr. Emmanuel
+                  Tepi. Armed with a Master's degree in Agricultural Economics
+                  from the University of Illinois, he embarked on a mission to
+                  empower our community.
                 </Text>
                 <a href="#our-story">
                   <Button colorScheme="green" variant="solid">
@@ -42,20 +43,19 @@ const AboutUs = () => {
               w={isMobileView ? "90%" : "50%"}
               color="#87A922"
               bg="white"
-              p="10px"
+              p="30px"
               mt="70px"
             >
               <Box align="center">
                 <Heading color="green" align="center">
-                  Our Mission
+                  Building a Sustainable Future Together
                 </Heading>
                 <Text fontSize="2xl" p={5}>
-                  Our mission at Sawyer Camp is to empower local farmers with
-                  sustainable agricultural practices, fostering economic growth,
-                  and ensuring environmental stewardship. Through education,
-                  collaboration, and access to resources, we strive to cultivate
-                  thriving communities while delivering high-quality produce to
-                  customers.
+                  At Sawyer Camp, we empower local farmers with sustainable
+                  practices, nurturing a future of economic growth and
+                  environmental stewardship. Collaboration, education, and
+                  resource access are the cornerstones of our mission: thriving
+                  communities delivering high-quality produce.
                 </Text>
               </Box>
             </HStack>
@@ -71,24 +71,23 @@ const AboutUs = () => {
                 zIndex="1"
                 w="70%"
               >
-                <Box align="left" w="70%">
-                  <Text fontSize={isMobileView ? "sm" : "2xl"}>
-                    Sawyer Camp Farmers CIG was established in 1992 as a
-                    community-based organization with the objective to address
-                    three major gaps that emerge from the knowledge and
-                    experiences of sustainable and rural farming processes.
-                    These are:
-                    <Box pl="25px">
-                      <ul>
-                        <li>Climate</li>
-                        <li>Biodiversity Loss</li>
-                        <li>Rural Poverty</li>
-                      </ul>
-                    </Box>
-                    The organization has since evolved into a union of farmers
-                    working together to address these gaps through education and
-                    access to resources. We cultivate sustainable practices and
-                    supply a variety of high-quality cash crops nationwide.
+                <Box align="left" w={isMobileView ? "90%" : "70%"}>
+                  <Text fontSize={isMobileView ? "lg" : "2xl"}>
+                    Sawyer Camp Farmers CIG, established in 1992, rose to the
+                    challenge of safeguarding our rural communities. Climate
+                    change, biodiversity loss, and rural poverty threatened the
+                    livelihoods of our farmers and the future of our land.
+                    Determined to find a solution, we united as a
+                    community-based organization.
+                    <br />
+                    <br />
+                    Today, Sawyer Camp Farmers CIG is a flourishing union of
+                    farmers. We've not only mitigated those initial challenges,
+                    but we're also fostering economic prosperity and
+                    environmental responsibility. Our unwavering dedication to
+                    sustainable practices cultivates a thriving ecosystem and
+                    high-quality cash crops that have become a staple in the
+                    national market.
                   </Text>
                 </Box>
               </Box>

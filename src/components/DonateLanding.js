@@ -9,16 +9,16 @@ const DonateLanding = () => {
       <FixedBg image={img} />
       <Box bg="white" w="100%" py="100px">
         <Heading color="green" w="80%" m="0 auto" align="center">
-          Please donate to Sawyer Camp Farmers CIG to support regenerative
-          agriculture
+          Please donate to Sawyer Camp Farmers CIG to empower Sustainable
+          Agriculture
         </Heading>
       </Box>
       <Center bg="#789461" mb="15px">
         <VStack spacing={8} w="80%" bg="white" p="50px">
           <Text align="center" fontSize="2xl">
-            Your valuable contribution helps advance sustainable and
-            regenerative agriculture projects that restore nature, support rural
-            livelihoods, and transform food supply chains nationally.
+            Make a Difference. Invest in a healthier planet and a more resilient
+            food system. Your contribution supports our mission to advance
+            sustainable and regenerative agriculture practices.
           </Text>
           <Button colorScheme="green">
             <Link to="/paypal">Donate</Link>

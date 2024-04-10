@@ -54,17 +54,17 @@ const Paypal = () => {
 
   return (
     <SharedLayout>
-      <Box mt="150px">
-        <Box bg="#789461" color="white">
-          <Center py="50px" h="20rem">
+      <Box bg="#789461" pt="150px">
+        <Box color="white">
+          <Center py="90px">
             <VStack w={isMobileView ? "90%" : "50%"} spacing={9}>
               <Heading align="center" size="2xl">
-                Your Support Makes a Difference
+                Empower Our Cause
               </Heading>
             </VStack>
           </Center>
         </Box>
-        <Center p="50px" bg="white" w="90%" m="0 auto">
+        <Center p="50px" bg="white" w="100%" m="0 auto">
           <>
             <Box>
               {isPending ? (
@@ -124,18 +124,17 @@ const Paypal = () => {
             </Box>
           </>
         </Center>
-        <Center color="white" spacing={8} h="30rem" bg="#789461">
+        <Center color="white" spacing={8} h="30rem">
           <VStack spacing="60px" w={isMobileView ? "90%" : "50%"}>
             <Heading align="center" size="2xl">
-              Wanting to make a larger contribution?
+              Considering a Larger Impact?
             </Heading>
             <Text align="center" fontSize="lg">
-              We would love to reach out to you. Please contact us if you or
-              your organization have an interest in making a transformational
-              contribution to Sawyer Camp Farmers CIG.
+              Your generosity inspires us! Let's discuss how your organization
+              can partner with us to make a lasting difference.
             </Text>
             <Button colorScheme="green">
-              <Link to="/contact-us">Get in touch</Link>
+              <Link to="/contact-us">Connect with Us</Link>
             </Button>
           </VStack>
         </Center>

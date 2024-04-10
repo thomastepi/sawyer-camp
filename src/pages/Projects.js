@@ -20,12 +20,10 @@ const Projects = () => {
         <Center bg="#789461" h="20rem">
           <Center w="70%" bg="white" h="20rem">
             <VStack spacing={9}>
-              <Heading fontSize="3xl" color="green">
-                Our Projects
-              </Heading>
-              <Text align="center" fontSize="xl" color="green">
-                Explore how we are moving sustainability forward through our
-                global expertise and local implementation
+              <Heading size='3xl' color="green">Our Projects</Heading>
+              <Text align="center" fontSize="2xl">
+                Discover our dedication to sustainability as we combine global
+                insights with local action to drive positive change.
               </Text>
             </VStack>
           </Center>

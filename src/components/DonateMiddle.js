@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Box,
-  HStack,
-  Center,
-  VStack,
-  Heading,
-  Text,
-  Button,
-} from "@chakra-ui/react";
+import { Box, HStack, Center, Heading, Text, Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import useIsMobile from "../hooks/useIsMobile";
 
@@ -19,8 +11,8 @@ const DonateMiddle = () => {
         <HStack w="80%" py="70px" spacing={9}>
           <Box>
             <Heading pb="30px">
-              Your small gift can have a lasting impact for agriculture and
-              nature.
+              Help us cultivate a future where agriculture and nature flourish -
+              donate today!
             </Heading>
             <Button colorScheme="green">
               <Link to="/paypal">Donate Now</Link>
@@ -28,22 +20,15 @@ const DonateMiddle = () => {
           </Box>
           {!isMobileView && (
             <Box>
-              <VStack spacing={8}>
-                <Text>
-                  Smallholder farmers are uniquely poised to implement the
-                  changes agriculture needs to become truly sustainable and
-                  regenerative, and to help fix our food system globally.{" "}
-                </Text>
-                <Text>
-                  We are committed to supporting rural communities with
-                  resources, training, project implementation and coaching. Your
-                  contribution of <span style={{ fontSize: "20px" }}>$30</span>,{" "}
-                  <span style={{ fontSize: "20px" }}>$50</span>, or{" "}
-                  <span style={{ fontSize: "20px" }}>$100</span> can make a
-                  profound impact in the work we do to transform agriculture for
-                  the sake of our food, nature, and rural communities.
-                </Text>
-              </VStack>
+              <Text fontSize="2xl">
+                Small farmers are key to building a truly sustainable food
+                system. Investment in their success empowers them to implement
+                innovative practices that benefit our planet and communities.
+                <br />
+                <br />
+                Donate $30, $50, or $100 to invest in a healthier future for
+                all.
+              </Text>
             </Box>
           )}
         </HStack>

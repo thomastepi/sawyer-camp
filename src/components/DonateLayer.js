@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Heading, Box, Text, Button, Center } from "@chakra-ui/react";
+import { Heading, Box, Text, Button, Center, VStack } from "@chakra-ui/react";
 import useIsMobile from "../hooks/useIsMobile";
 
 const DonateLayer = () => {
@@ -15,32 +15,34 @@ const DonateLayer = () => {
           py="70px"
           color="white"
         >
-          Agriculture can be a tool for change for nature, food, and rural
-          families everywhere.
+          Together, we can cultivate a future where healthy food, thriving
+          ecosystems, and strong rural communities go hand-in-hand.
         </Heading>
       </Center>
-      <Box w="100%" align="center" bg="#789461">
-        <Center w="80%" bg="white" py="50px">
-          <Box>
-            <Text
-              fontSize="lg"
-              w={isMobileView ? "90%" : "50%"}
-              color="#87A922"
-            >
-              Through our work we develop actionable solutions for climate
-              change adaptation and mitigation in agriculture, support
-              smallholder farmers with knowledge and tools for sustainable and
-              regenerative production, and implement large-scale impact projects
-              that impact the livelihoods of rural farming communities.
+      <Box w="100%" align="center" bg="#789461" fontSize="lg">
+        <Center
+          w={isMobileView ? "100%" : "80%"}
+          bg="white"
+          py="50px"
+          color="#87A922"
+          flexDir={"column"}
+        >
+          <VStack>
+            <Text as="b" w="90%">
+              Your support empowers us to:
             </Text>
-          </Box>
-        </Center>
-        <Center w="100%">
-          <Center pb="60px" w={isMobileView ? "80%" : "80%"} bg="white">
+            <Text>* Develop solutions for climate change in agriculture.</Text>
+
+            <Text>* Equip small farmers with sustainable practices.</Text>
+            <Text>
+              * Launch large-scale projects impacting rural communities.
+            </Text>
+          </VStack>
+          <Box pt="30px">
             <Button colorScheme="green">
               <Link to="/paypal">Support Our Work</Link>
             </Button>
-          </Center>
+          </Box>
         </Center>
       </Box>
     </Box>

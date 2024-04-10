@@ -1,6 +1,4 @@
 import React, { useEffect } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import { SharedLayout } from "../components";
 import { GoogleMaps, DisplayAlert } from "../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -69,13 +67,12 @@ const ContactUs = () => {
   return (
     <SharedLayout>
       <Box w="100%" color="#87A922" mt="150px">
-        <Header />
         <Center h="20rem">
           <VStack spacing={4} pl={isMobileView && "20px"}>
-            <Heading>Get in Touch</Heading>
+            <Heading color="green">Connect with Us</Heading>
             <Text fontSize="2xl">
-              We want to hear your questions, comments, suggestions and
-              feedback. Let's work together.
+              Help us make Sawyer Camp Farmers CIG even better! Share your
+              feedback and suggestions. Let's build something great together.
             </Text>
             <Text as="b" fontSize="3xl">
               Let's Chat
@@ -97,13 +94,15 @@ const ContactUs = () => {
                   <Text as="b" fontSize="2xl">
                     Address
                   </Text>
-                  <Text>Banga Bakundu, South West</Text>
+                  <Text>Banga Bakundu, South West Region, Cameroon</Text>
                 </Box>
                 <Box>
                   <Text as="b" fontSize="2xl">
                     Phone
                   </Text>
-                  <Text>+237 6 77 73 19 51</Text>
+                  <Text>
+                    Tel/Whatsapp: <br /> +237 6 51 77 18 43
+                  </Text>
                 </Box>
                 <Box>
                   <Text as="b" fontSize="2xl">
@@ -116,10 +115,18 @@ const ContactUs = () => {
                     Social
                   </Text>
                   <HStack spacing={3} pt={2}>
-                    <ChakraLink>
+                    <ChakraLink
+                      href="https://linkedin.com/in/thomastepi"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <FontAwesomeIcon icon={faLinkedin} />{" "}
                     </ChakraLink>
-                    <ChakraLink>
+                    <ChakraLink
+                      href="https://twitter.com/tomtepi"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <FontAwesomeIcon icon={faTwitter} />
                     </ChakraLink>
                   </HStack>
@@ -220,7 +227,6 @@ const ContactUs = () => {
         <Box h="25rem">
           <GoogleMaps />
         </Box>
-        <Footer />
       </Box>
     </SharedLayout>
   );
