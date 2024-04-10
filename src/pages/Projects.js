@@ -20,7 +20,7 @@ const Projects = () => {
         <Center bg="#789461" h="20rem">
           <Center w="70%" bg="white" h="20rem">
             <VStack spacing={9}>
-              <Heading size='3xl' color="green">Our Projects</Heading>
+              <Heading size='3xl' color="green" align="center">Our Projects</Heading>
               <Text align="center" fontSize="2xl">
                 Discover our dedication to sustainability as we combine global
                 insights with local action to drive positive change.

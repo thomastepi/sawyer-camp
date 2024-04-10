@@ -1,15 +1,7 @@
 import React from "react";
 import { FixedBg } from "../components";
 import { SharedLayout } from "../components";
-import {
-  Box,
-  Text,
-  Heading,
-  Button,
-  HStack,
-  VStack,
-  Center,
-} from "@chakra-ui/react";
+import { Box, Text, Heading, Button, VStack, Center } from "@chakra-ui/react";
 import img3 from "../assets/images/img_8.jpg";
 import useIsMobile from "../hooks/useIsMobile";
 
@@ -38,8 +30,12 @@ const AboutUs = () => {
               </VStack>
             </Center>
           </Box>
+
+          <Heading color="white" align="center" mt="70px" size="3xl">
+            Building a Sustainable Future Together
+          </Heading>
           <Box>
-            <HStack
+            <Box
               w={isMobileView ? "90%" : "50%"}
               color="#87A922"
               bg="white"
@@ -47,9 +43,6 @@ const AboutUs = () => {
               mt="70px"
             >
               <Box align="center">
-                <Heading color="green" align="center">
-                  Building a Sustainable Future Together
-                </Heading>
                 <Text fontSize="2xl" p={5}>
                   At Sawyer Camp, we empower local farmers with sustainable
                   practices, nurturing a future of economic growth and
@@ -58,7 +51,7 @@ const AboutUs = () => {
                   communities delivering high-quality produce.
                 </Text>
               </Box>
-            </HStack>
+            </Box>
 
             <Box bg="white" bgSize="cover" bgPos="center">
               <Box
@@ -73,9 +66,9 @@ const AboutUs = () => {
               >
                 <Box align="left" w={isMobileView ? "90%" : "70%"}>
                   <Text fontSize={isMobileView ? "lg" : "2xl"}>
-                    Sawyer Camp Farmers CIG, established in 1992, rose to the
-                    challenge of safeguarding our rural communities. Climate
-                    change, biodiversity loss, and rural poverty threatened the
+                    Sawyer Camp Farmers CIG rose to the challenge of
+                    safeguarding our rural communities. Climate change,
+                    biodiversity loss, and rural poverty threatened the
                     livelihoods of our farmers and the future of our land.
                     Determined to find a solution, we united as a
                     community-based organization.
