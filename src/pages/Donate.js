@@ -6,8 +6,8 @@ import { Box } from "@chakra-ui/react";
 const Donate = () => {
   return (
     <SharedLayout>
-      <Box mt="130px">
-        <Box>
+      <Box>
+        <Box bg="white" pt="130px">
           <DonateLanding />
         </Box>
         <Box>

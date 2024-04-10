@@ -44,7 +44,7 @@ const OurWork = () => {
 
   return (
     <SharedLayout>
-      <Box pt="130px">
+      <Box pt="100px">
         <Box color="#87A922">
           <Box m="0 auto" w="70%" py="65px">
             <HStack
@@ -53,7 +53,9 @@ const OurWork = () => {
             >
               <Box>
                 <VStack spacing={8} px="30px">
-                  <Heading size="2xl">Our Strategy</Heading>
+                  <Heading size="2xl" align="center">
+                    Our Strategy
+                  </Heading>
                   <Text fontSize="lg" align="center">
                     We have extensive experience with various approaches to
                     sustainability in agriculture, from certification to the

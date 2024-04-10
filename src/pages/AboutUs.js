@@ -17,10 +17,10 @@ const AboutUs = () => {
   const isMobileView = useIsMobile();
   return (
     <SharedLayout>
-      <Box pt="130px">
+      <Box>
         <FixedBg image={img3} />
         <Box display="block" align="center">
-          <Box bg="white">
+          <Box bg="white" pt="130px">
             <Center py="100px" w={isMobileView ? "90%" : "50%"} color="green">
               <VStack>
                 <Heading align="center">Our Story</Heading>
