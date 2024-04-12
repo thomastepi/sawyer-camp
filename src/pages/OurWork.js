@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import pic1 from "../assets/images/farm-women.jpg";
 import pic2 from "../assets/images/palmnuts.jpg";
 import pic3 from "../assets/images/assorted-fruits.jpg";
@@ -51,7 +53,7 @@ const OurWork = () => {
             >
               <Box>
                 <VStack spacing={8} px="30px">
-                  <Heading size="2xl" align="center" color='green'>
+                  <Heading size="2xl" align="center" color="green">
                     Building a Network of Sustainable Farmers
                   </Heading>
                   <Text fontSize="2xl" align="center">
@@ -61,8 +63,13 @@ const OurWork = () => {
                   </Text>
                 </VStack>
               </Box>
-              <Box w="80%">
-                <Image src={pic4} alt="photo of teke" />
+              <Box w="70%">
+                <LazyLoadImage
+                  src={pic4}
+                  alt="photo of teke"
+                  effect="blur"
+                  width="100%"
+                />
               </Box>
             </HStack>
           </Box>
@@ -147,15 +154,13 @@ const OurWork = () => {
                   >
                     {showCard1 && (
                       <VStack spacing={0}>
-                        <Box
-                          w="100%"
-                          h="60vh"
-                          bg="blue.500"
-                          backgroundImage={pic1}
-                          backgroundSize="cover"
-                          backgroundRepeat="no-repeat"
-                          backgroundPosition="center"
-                        ></Box>
+                        <Box w="100%" h="60vh">
+                          <Image
+                            src={pic1}
+                            alt="photo of farm women"
+                            width="100%"
+                          />
+                        </Box>
                         <VStack w="100%" bg="#789461" color="white" py="40px">
                           <Heading align="center">
                             Empower Farmers, Strengthen Communities
@@ -176,15 +181,13 @@ const OurWork = () => {
                     )}
                     {showCard2 && (
                       <VStack spacing={0}>
-                        <Box
-                          w="100%"
-                          h="60vh"
-                          bg="blue.500"
-                          backgroundImage={pic2}
-                          backgroundSize="cover"
-                          backgroundRepeat="no-repeat"
-                          backgroundPosition="center"
-                        ></Box>
+                        <Box w="100%" h="60vh">
+                          <Image
+                            src={pic2}
+                            alt="photo of market"
+                            width="100%"
+                          />
+                        </Box>
                         <VStack w="100%" bg="#789461" color="white" py="40px">
                           <Heading align="center">
                             Cultivate Sustainable Practices, Nurture the
@@ -206,15 +209,13 @@ const OurWork = () => {
                     )}
                     {showCard3 && (
                       <VStack spacing={0}>
-                        <Box
-                          w="100%"
-                          h="60vh"
-                          bg="blue.500"
-                          backgroundImage={pic3}
-                          backgroundSize="cover"
-                          backgroundRepeat="no-repeat"
-                          backgroundPosition="center"
-                        ></Box>
+                        <Box w="100%" h="60vh">
+                          <Image
+                            src={pic3}
+                            alt="photo of fruits"
+                            width="100%"
+                          />
+                        </Box>
                         <VStack w="100%" bg="#789461" color="white" py="40px">
                           <Heading align="center">
                             Innovate for Success, Scale for Impact

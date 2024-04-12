@@ -14,6 +14,17 @@ export const Landing = () => {
   const isMobile = useIsMobile();
 
   useEffect(() => {
+    const preloadLinks = imgURLs.map((imageUrl) => {
+      const preloadLink = document.createElement("link");
+      preloadLink.rel = "preload";
+      preloadLink.as = "image";
+      preloadLink.href = imageUrl;
+      preloadLink.fetchpriority = "high";
+      return preloadLink;
+    });
+
+    preloadLinks.forEach((link) => document.head.appendChild(link));
+
     const intervalId = setInterval(() => {
       setCurrentImgIndex((prevIndex) =>
         prevIndex === imgURLs.length - 1 ? 0 : prevIndex + 1
@@ -28,14 +39,15 @@ export const Landing = () => {
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
-    transition: "background-image 1s ease-in-out",
+    backgroundAttachment: "fixed",
+    transition: "background-image 3s ease-in-out",
   };
   return (
     <>
       <VStack
         h="100vh"
         alignItems="center"
-        backgroundColor="#2A4365"
+        backgroundColor="grey.900"
         color="white"
         {...backgroundImageStyle}
         position="relative"
@@ -60,18 +72,6 @@ export const Landing = () => {
           </Box>
         </Box>
       </VStack>
-      <link rel="preload" as="image" href="../assets/images/coffee-seed.jpg" />
-      <link
-        rel="preload"
-        as="image"
-        href="../assets/images/rubber_trees.webp"
-      />
-      <link
-        rel="preload"
-        as="image"
-        href="../assets/images/plantain_bunch.webp"
-      />
-      <link rel="preload" as="image" href="../assets/images/seedling.webp" />
     </>
   );
 };

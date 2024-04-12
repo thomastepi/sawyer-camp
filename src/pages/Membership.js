@@ -6,10 +6,11 @@ import {
   VStack,
   HStack,
   Heading,
-  Image,
   Button,
   Center,
 } from "@chakra-ui/react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import img from "../assets/images/ayisatu.jpg";
 import { SharedLayout } from "../components";
 import useIsMobile from "../hooks/useIsMobile";
@@ -53,7 +54,12 @@ function Membership() {
                 </Button>
               </VStack>
               <Box w={isMobileView ? "90%" : "50%"}>
-                <Image w="100%" src={img} alt="Teke" />
+                <LazyLoadImage
+                  src={img}
+                  alt="photo of ayisatu"
+                  effect="blur"
+                  width="100%"
+                />
               </Box>
             </HStack>
           </Center>
