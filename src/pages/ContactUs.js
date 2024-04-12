@@ -70,8 +70,8 @@ const ContactUs = () => {
       <Box w="100%" color="#87A922" mt="150px">
         <Center h="20rem">
           <VStack spacing={4} pl={isMobileView && "20px"}>
-            <Heading color="green">Connect with Us</Heading>
-            <Text fontSize="2xl">
+            <Heading align="center" color="green">Connect with Us</Heading>
+            <Text fontSize="2xl" align="center">
               Help us make Sawyer Camp Farmers CIG even better! Share your
               feedback and suggestions. Let's build something great together.
             </Text>
