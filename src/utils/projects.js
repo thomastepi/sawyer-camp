@@ -1,4 +1,4 @@
-import img1 from "../assets/images/seedling.jpg";
+import img1 from "../assets/images/seedling.webp";
 import img2 from "../assets/images/coffee-seed.jpg";
 import { VStack, Text } from "@chakra-ui/react";
 

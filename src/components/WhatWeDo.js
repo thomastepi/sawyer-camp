@@ -9,20 +9,24 @@ import {
   Button,
   Heading,
 } from "@chakra-ui/react";
-import img from "../assets/images/group.jpg";
+import img from "../assets/images/palm-tree.jpg";
 import useIsMobile from "../hooks/useIsMobile";
 
 const WhatWeDo = () => {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [hasBeenVisible, setHasBeenVisible] = useState(false);
   const isMobileView = useIsMobile();
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       const [entry] = entries;
-      setTimeout(() => {
-        setIsVisible(entry.isIntersecting);
-      }, 1000);
+      if (entry.isIntersecting && !hasBeenVisible) {
+        setHasBeenVisible(true);
+        setTimeout(() => {
+          setIsVisible(entry.isIntersecting);
+        }, 1000);
+      }
     });
     if (ref.current) {
       observer.observe(ref.current);
@@ -30,7 +34,7 @@ const WhatWeDo = () => {
     return () => {
       observer.disconnect();
     };
-  }, [ref]);
+  }, [ref, hasBeenVisible]);
   return (
     <Box minHeight="100vh" bg="white" pt="70px">
       <VStack justifyContent="center" alignItems="center">

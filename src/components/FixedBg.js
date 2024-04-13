@@ -1,8 +1,8 @@
-import React from 'react';
-import {Box } from "@chakra-ui/react";
-import img from "../assets/images/sky.jpg";
+import React from "react";
+import { Box } from "@chakra-ui/react";
+import img from "../assets/images/farm-forest.jpg";
 
-const FixedBg = ({image}) => {
+const FixedBg = ({ image }) => {
   const bgImgStyle = {
     position: "fixed",
     top: "0",
@@ -12,14 +12,15 @@ const FixedBg = ({image}) => {
     backgroundImage: image || img,
     backgroundSize: "cover",
     backgroundPosition: "center",
-    opacity: "0.8",
+    backgroundReapeat: "no-repeat",
+    opacity: "1",
     zIndex: "-1",
   };
   return (
-    <Box  position="relative" overflow="hidden">
+    <Box position="relative" overflow="hidden">
       <Box {...bgImgStyle}></Box>
     </Box>
-  )
-}
+  );
+};
 
-export default FixedBg
+export default FixedBg;

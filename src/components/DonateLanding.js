@@ -2,7 +2,7 @@ import React from "react";
 import FixedBg from "./FixedBg";
 import { Link } from "react-router-dom";
 import { Heading, Box, Text, Button, Center, VStack } from "@chakra-ui/react";
-import img from "../assets/images/black-coffee.jpg";
+import img from "../assets/images/nature.jpg";
 const DonateLanding = () => {
   return (
     <Box color="#87A922">

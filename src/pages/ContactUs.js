@@ -9,8 +9,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { setName, setEmail, setMessage } from "../features/contactUsSlice";
 import { submitContactUs } from "../features/contactUsSlice";
 import img from "../assets/images/rubber_tree.jpg";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
 import useIsMobile from "../hooks/useIsMobile";
 import {
   Box,
@@ -70,7 +68,9 @@ const ContactUs = () => {
       <Box w="100%" color="#87A922" mt="150px">
         <Center h="20rem">
           <VStack spacing={4} pl={isMobileView && "20px"}>
-            <Heading align="center" color="green">Connect with Us</Heading>
+            <Heading align="center" color="green">
+              Connect with Us
+            </Heading>
             <Text fontSize="2xl" align="center">
               Help us make Sawyer Camp Farmers CIG even better! Share your
               feedback and suggestions. Let's build something great together.
@@ -83,13 +83,13 @@ const ContactUs = () => {
         </Center>
         <Box w="100%">
           <Grid
-            h="30rem"
+            h="100%"
             w="100%"
             templateColumns={
               isMobileView ? "repeat(1, 1fr 2fr)" : "repeat(1, 1fr 2fr 1fr)"
             }
           >
-            <Center bg="#E1F0DA">
+            <Center bg="#E1F0DA" py="50px">
               <VStack align="left" spacing={7} pl={isMobileView && "10px"}>
                 <Box>
                   <Text as="b" fontSize="2xl">
@@ -218,15 +218,16 @@ const ContactUs = () => {
               </Box>
             </Center>
             {isMobileView ? null : (
-              <Center bg="grey">
-                <Box w="100%">
-                  <LazyLoadImage
-                    src={img}
-                    alt="photo of rubber tree"
-                    effect="blur"
-                    width="100%"
-                  />
-                </Box>
+              <Center>
+                <Box
+                  w="100%"
+                  bgImg={img}
+                  h="100%"
+                  bg="grey.100"
+                  bgRepeat="no-repeat"
+                  bgSize="cover"
+                  bgPos="center"
+                ></Box>
               </Center>
             )}
           </Grid>

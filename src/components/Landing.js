@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Heading, Box, Button, HStack, VStack } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import img from "../assets/images/coffee-seed.jpg";
-import img2 from "../assets/images/rubber_trees.webp";
-import img3 from "../assets/images/plantain_bunch.webp";
-import img4 from "../assets/images/seedling.webp";
+import img from "../assets/images/rubber_trees.webp";
+import img1 from "../assets/images/cow.jpg";
+import img2 from "../assets/images/pines.jpg";
+import img3 from "../assets/images/fowl.jpg";
 import useIsMobile from "../hooks/useIsMobile";
 
-const imgURLs = [img, img2, img3, img4];
+const imgURLs = [img, img1, img2, img3];
 
 export const Landing = () => {
   const [currentImgIndex, setCurrentImgIndex] = useState(0);

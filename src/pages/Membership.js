@@ -39,27 +39,24 @@ function Membership() {
               p={isMobileView && "20px"}
               flexDir={isMobileView && "column"}
             >
-              <VStack w={isMobileView ? "100%" : "100%"} spacing={9}>
-                <Heading align="center">
-                  Be part of our collaborative network
-                </Heading>
-                <Button p="25px" colorScheme="green">
-                  <PopupButton
-                    id={id}
-                    style={{ fontSize: 20 }}
-                    className="my-button"
-                  >
-                    Become a Member
-                  </PopupButton>
-                </Button>
-              </VStack>
-              <Box w={isMobileView ? "90%" : "50%"}>
-                <LazyLoadImage
-                  src={img}
-                  alt="photo of ayisatu"
-                  effect="blur"
-                  width="100%"
-                />
+              <Box w="100%">
+                <VStack spacing={9}>
+                  <Heading align="center">
+                    Be part of our collaborative network
+                  </Heading>
+                  <Button p="25px" colorScheme="green">
+                    <PopupButton
+                      id={id}
+                      style={{ fontSize: 20 }}
+                      className="my-button"
+                    >
+                      Become a Member
+                    </PopupButton>
+                  </Button>
+                </VStack>
+              </Box>
+              <Box w={isMobileView ? "90%" : "70%"} display="flex">
+                <LazyLoadImage src={img} alt="photo of ayisatu" effect="blur" />
               </Box>
             </HStack>
           </Center>

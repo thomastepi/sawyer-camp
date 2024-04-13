@@ -2,7 +2,7 @@ import React from "react";
 import { FixedBg } from "../components";
 import { SharedLayout } from "../components";
 import { Box, Text, Heading, Button, VStack, Center } from "@chakra-ui/react";
-import img3 from "../assets/images/img_8.jpg";
+import img3 from "../assets/images/dawn.jpg";
 import useIsMobile from "../hooks/useIsMobile";
 
 const AboutUs = () => {

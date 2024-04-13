@@ -1,6 +1,6 @@
 import React from "react";
 import { Subscribe } from "../components";
-import img from "../assets/images/plantain_bunch.jpg";
+import img from "../assets/images/green-leaves.jpg";
 import { Box } from "@chakra-ui/react";
 import { SharedLayout } from "../components";
 
