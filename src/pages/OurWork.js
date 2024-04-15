@@ -1,46 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "../assets/css/ourWork.css";
+import { Carousel } from "react-responsive-carousel";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import pic1 from "../assets/images/farm-women.jpg";
-import pic2 from "../assets/images/palmnuts.jpg";
-import pic3 from "../assets/images/assorted-fruits.jpg";
-import pic4 from "../assets/images/teke.jpg";
+import goals from "../utils/goals";
+import img from "../assets/images/teke.jpg";
 import { SharedLayout } from "../components";
-import {
-  Button,
-  ButtonGroup,
-  Center,
-  Flex,
-  VStack,
-  Box,
-  Heading,
-  Text,
-  HStack,
-  Image,
-} from "@chakra-ui/react";
+import { VStack, Box, Heading, Text, HStack, Image } from "@chakra-ui/react";
 import useIsMobile from "../hooks/useIsMobile";
 
 const OurWork = () => {
-  const [showCard1, setShowCard1] = useState(true);
-  const [showCard2, setShowCard2] = useState(false);
-  const [showCard3, setShowCard3] = useState(false);
   const isMobileView = useIsMobile();
-
-  const handleCard1 = () => {
-    setShowCard1(true);
-    setShowCard2(false);
-    setShowCard3(false);
-  };
-  const handleCard2 = () => {
-    setShowCard1(false);
-    setShowCard2(true);
-    setShowCard3(false);
-  };
-  const handleCard3 = () => {
-    setShowCard1(false);
-    setShowCard2(false);
-    setShowCard3(true);
-  };
 
   return (
     <SharedLayout>
@@ -65,7 +36,7 @@ const OurWork = () => {
               </Box>
               <Box w="70%">
                 <LazyLoadImage
-                  src={pic4}
+                  src={img}
                   alt="photo of teke"
                   effect="blur"
                   width="100%"
@@ -86,159 +57,37 @@ const OurWork = () => {
               We focus our efforts in achieving three key goals
             </Heading>
           </Box>
-          <Flex
-            color="#87A922"
-            justify="center"
-            bg="#789461"
-            w="100%"
-            mb="70px"
-          >
-            <Box w="100%" bg="white">
-              <Center w="100%">
-                <VStack
-                  h="fit-content"
-                  w={isMobileView ? "80%" : "60%"}
-                  pt="40px"
-                >
-                  <ButtonGroup variant="flush">
-                    <HStack spacing={10} w="100%">
-                      <Button
-                        onClick={handleCard1}
-                        _hover={{
-                          backgroundColor: "#74E291",
-                          color: "white",
-                          transition: "0.5s",
-                        }}
-                        px="30px"
-                        bg={showCard1 ? "#9BCF53" : "white"}
-                        color={showCard1 ? "white" : "#87A922"}
-                        borderRadius="0"
-                      >
-                        Goal 1
-                      </Button>
-                      <Button
-                        onClick={handleCard2}
-                        _hover={{
-                          backgroundColor: "#74E291",
-                          color: "white",
-                          transition: "0.5s",
-                        }}
-                        px="30px"
-                        bg={showCard2 ? "#9BCF53" : "white"}
-                        color={showCard2 ? "white" : "#87A922"}
-                        borderRadius="0"
-                      >
-                        Goal 2
-                      </Button>
-                      <Button
-                        onClick={handleCard3}
-                        _hover={{
-                          backgroundColor: "#74E291",
-                          color: "white",
-                          transition: "0.5s",
-                        }}
-                        px="30px"
-                        bg={showCard3 ? "#9BCF53" : "white"}
-                        color={showCard3 ? "white" : "#87A922"}
-                        borderRadius="0"
-                      >
-                        Goal 3
-                      </Button>
-                    </HStack>
-                  </ButtonGroup>
-                  <Box
-                    w="90%"
-                    justifyContent="center"
-                    alignItems="center"
-                    display="block"
-                  >
-                    {showCard1 && (
-                      <VStack spacing={0}>
-                        <Box w="100%" h="60vh">
-                          <Image
-                            src={pic1}
-                            alt="photo of farm women"
-                            width="100%"
-                          />
-                        </Box>
-                        <VStack w="100%" bg="#789461" color="white" py="40px">
-                          <Heading align="center">
-                            Empower Farmers, Strengthen Communities
-                          </Heading>
-                          <Text
-                            fontSize={isMobileView ? "md" : "2xl"}
-                            align="center"
-                          >
-                            We aim to expand and strengthen Sawyer Camp Farmers
-                            CIG as a national collaborative network, equipping
-                            smallholder farmers with the resources, knowledge,
-                            and support they need to thrive. By working
-                            together, we can ensure a sustainable future for
-                            farmers, their families, and our communities.
-                          </Text>
-                        </VStack>
+          <Box m="0 auto" w={isMobileView ? "90%" : "70%"} mt="30px">
+            <Carousel
+              infiniteLoop
+              autoPlay="true"
+              transitionTime="1000"
+              interval="5000"
+            >
+              {goals.map((goal) => {
+                return (
+                  <Box w="100%" pos="relative" key={goal.id} color="white">
+                    <Image src={goal.image} alt={goal.alt} zIndex="-1" />
+                    <Box
+                      pos="absolute"
+                      p="10px"
+                      zIndex="1"
+                      bgColor="black"
+                      bottom="30"
+                      left="30"
+                      right="30"
+                      opacity="0.8"
+                    >
+                      <VStack>
+                        <Heading>{goal.title}</Heading>
+                        <Text>{goal.text}</Text>
                       </VStack>
-                    )}
-                    {showCard2 && (
-                      <VStack spacing={0}>
-                        <Box w="100%" h="60vh">
-                          <Image
-                            src={pic2}
-                            alt="photo of market"
-                            width="100%"
-                          />
-                        </Box>
-                        <VStack w="100%" bg="#789461" color="white" py="40px">
-                          <Heading align="center">
-                            Cultivate Sustainable Practices, Nurture the
-                            Environment
-                          </Heading>
-                          <Text
-                            fontSize={isMobileView ? "md" : "2xl"}
-                            align="center"
-                          >
-                            We are committed to catalyzing credible
-                            sustainability and climate commitments by promoting
-                            best practices and nature-based solutions. Through
-                            education, training, and partnerships, we empower
-                            farmers to adopt sustainable practices that protect
-                            the environment and ensure long-term food security.
-                          </Text>
-                        </VStack>
-                      </VStack>
-                    )}
-                    {showCard3 && (
-                      <VStack spacing={0}>
-                        <Box w="100%" h="60vh">
-                          <Image
-                            src={pic3}
-                            alt="photo of fruits"
-                            width="100%"
-                          />
-                        </Box>
-                        <VStack w="100%" bg="#789461" color="white" py="40px">
-                          <Heading align="center">
-                            Innovate for Success, Scale for Impact
-                          </Heading>
-                          <Text
-                            fontSize={isMobileView ? "md" : "2xl"}
-                            align="center"
-                          >
-                            We believe in improving rural livelihoods through
-                            innovative, scalable, and locally-adapted
-                            technological solutions in agriculture. Our goal is
-                            to identify and implement practical solutions that
-                            address the specific needs of our farmers, enhancing
-                            their productivity and resilience.
-                          </Text>
-                        </VStack>
-                      </VStack>
-                    )}
+                    </Box>
                   </Box>
-                </VStack>
-              </Center>
-            </Box>
-          </Flex>
+                );
+              })}
+            </Carousel>
+          </Box>
         </Box>
       </Box>
     </SharedLayout>
