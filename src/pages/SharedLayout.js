@@ -1,10 +1,10 @@
 import React from "react";
-import { Header, Footer } from ".";
+import { Header, Footer } from "../components";
 import { Box } from "@chakra-ui/react";
 
 export const SharedLayout = ({ children }) => {
   return (
-    <Box>
+    <Box as="section">
       <Header />
       {children}
       <Footer />

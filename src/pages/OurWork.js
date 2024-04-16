@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../assets/css/ourWork.css";
 import { Carousel } from "react-responsive-carousel";
@@ -7,11 +7,23 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import goals from "../utils/goals";
 import img from "../assets/images/teke.jpg";
 import { SharedLayout } from "../components";
-import { VStack, Box, Heading, Text, HStack, Image } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import {
+  VStack,
+  Box,
+  Heading,
+  Text,
+  HStack,
+  Image,
+  Button,
+} from "@chakra-ui/react";
 import useIsMobile from "../hooks/useIsMobile";
+
+const MotionBox = motion(Box);
 
 const OurWork = () => {
   const isMobileView = useIsMobile();
+  const [showText, setShowText] = useState(false);
 
   return (
     <SharedLayout>
@@ -57,12 +69,13 @@ const OurWork = () => {
               We focus our efforts in achieving three key goals
             </Heading>
           </Box>
-          <Box m="0 auto" w={isMobileView ? "90%" : "70%"} mt="30px">
+          <Box m="0 auto" w={isMobileView ? "90%" : "43%"} my="30px">
             <Carousel
               infiniteLoop
               autoPlay="true"
               transitionTime="1000"
-              interval="5000"
+              interval="9000"
+              showThumbs={false}
             >
               {goals.map((goal) => {
                 return (
@@ -76,11 +89,31 @@ const OurWork = () => {
                       bottom="30"
                       left="30"
                       right="30"
-                      opacity="0.8"
+                      opacity={0.8}
                     >
-                      <VStack>
-                        <Heading>{goal.title}</Heading>
-                        <Text>{goal.text}</Text>
+                      <VStack spacing={5}>
+                        <Heading size="md">{goal.title}</Heading>
+                        <Button
+                          onClick={() => {
+                            setShowText(!showText);
+                          }}
+                        >
+                          {showText ? "Show Less" : "Show More"}
+                        </Button>
+                        <MotionBox
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{
+                            opacity: showText ? 1 : 0,
+                            y: showText ? 0 : 20,
+                          }}
+                          transition={{ duration: 0.9 }}
+                        >
+                          {showText && (
+                            <Text fontSize={isMobileView && "sm"}>
+                              {goal.text}
+                            </Text>
+                          )}
+                        </MotionBox>
                       </VStack>
                     </Box>
                   </Box>

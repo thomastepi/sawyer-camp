@@ -1,8 +1,7 @@
 import React from "react";
-import { FixedBg } from "../components";
-import { SharedLayout } from "../components";
+import { FixedBg, SharedLayout } from "../components";
 import { Box, Text, Heading, Button, VStack, Center } from "@chakra-ui/react";
-import img3 from "../assets/images/dawn.jpg";
+import img from "../assets/images/nature.jpg";
 import useIsMobile from "../hooks/useIsMobile";
 
 const AboutUs = () => {
@@ -10,7 +9,7 @@ const AboutUs = () => {
   return (
     <SharedLayout>
       <Box>
-        <FixedBg image={img3} />
+        <FixedBg image={img} />
         <Box display="block" align="center">
           <Box bg="white" pt="130px">
             <Center py="100px" w={isMobileView ? "90%" : "50%"} color="green">

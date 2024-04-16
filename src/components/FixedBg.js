@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@chakra-ui/react";
-import img from "../assets/images/farm-forest.jpg";
+import img from "../assets/images/nature.jpg";
 
 const FixedBg = ({ image }) => {
   const bgImgStyle = {
@@ -9,6 +9,7 @@ const FixedBg = ({ image }) => {
     left: "0",
     width: "100%",
     height: "100%",
+    bg: "#344955",
     backgroundImage: image || img,
     backgroundSize: "cover",
     backgroundPosition: "center",

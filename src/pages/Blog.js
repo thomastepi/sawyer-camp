@@ -1,8 +1,7 @@
 import React from "react";
-import { Subscribe } from "../components";
+import { Subscribe, SharedLayout } from "../components";
 import img from "../assets/images/green-leaves.jpg";
 import { Box } from "@chakra-ui/react";
-import { SharedLayout } from "../components";
 
 const Blog = () => {
   const heading = "Our Latest Stories";

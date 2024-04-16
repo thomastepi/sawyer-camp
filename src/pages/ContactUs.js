@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
-import { SharedLayout } from "../components";
-import { GoogleMaps, DisplayAlert } from "../components";
+import { GoogleMaps, DisplayAlert, SharedLayout } from "../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { useFormik } from "formik";

@@ -13,7 +13,7 @@ import Paypal from "../pages/Paypal";
 import ScrollToTop from "./ScrollToTop";
 import DisplayAlert from "./DisplayAlert";
 import Membership from "../pages/Membership";
-import SharedLayout from "./SharedLayout";
+import SharedLayout from "../pages/SharedLayout";
 
 export {
   Header,
