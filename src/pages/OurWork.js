@@ -17,6 +17,11 @@ import {
   Image,
   Button,
 } from "@chakra-ui/react";
+import {
+  faArrowCircleUp,
+  faArrowAltCircleDown,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useIsMobile from "../hooks/useIsMobile";
 
 const MotionBox = motion(Box);
@@ -76,6 +81,7 @@ const OurWork = () => {
               transitionTime="1000"
               interval="9000"
               showThumbs={false}
+              showStatus={false}
             >
               {goals.map((goal) => {
                 return (
@@ -93,27 +99,40 @@ const OurWork = () => {
                     >
                       <VStack spacing={5}>
                         <Heading size="md">{goal.title}</Heading>
-                        <Button
-                          onClick={() => {
-                            setShowText(!showText);
-                          }}
-                        >
-                          {showText ? "Show Less" : "Show More"}
-                        </Button>
-                        <MotionBox
-                          initial={{ opacity: 0, y: 20 }}
-                          animate={{
-                            opacity: showText ? 1 : 0,
-                            y: showText ? 0 : 20,
-                          }}
-                          transition={{ duration: 0.9 }}
-                        >
-                          {showText && (
-                            <Text fontSize={isMobileView && "sm"}>
-                              {goal.text}
-                            </Text>
-                          )}
-                        </MotionBox>
+                        {!isMobileView && (
+                          <>
+                            <Button
+                              onClick={() => {
+                                setShowText(!showText);
+                              }}
+                              rightIcon={
+                                <FontAwesomeIcon
+                                  icon={
+                                    showText
+                                      ? faArrowCircleUp
+                                      : faArrowAltCircleDown
+                                  }
+                                />
+                              }
+                            >
+                              {showText ? "Show Less" : "Show More"}
+                            </Button>
+                            <MotionBox
+                              initial={{ opacity: 0, y: 20 }}
+                              animate={{
+                                opacity: showText ? 1 : 0,
+                                y: showText ? 0 : 20,
+                              }}
+                              transition={{ duration: 0.9 }}
+                            >
+                              {showText && (
+                                <Text fontSize={isMobileView && "sm"}>
+                                  {goal.text}
+                                </Text>
+                              )}
+                            </MotionBox>
+                          </>
+                        )}
                       </VStack>
                     </Box>
                   </Box>
