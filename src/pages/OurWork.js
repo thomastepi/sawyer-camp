@@ -118,10 +118,10 @@ const OurWork = () => {
                               {showText ? "Show Less" : "Show More"}
                             </Button>
                             <MotionBox
-                              initial={{ opacity: 0, y: 20 }}
+                              initial={{ opacity: 0, y: 90 }}
                               animate={{
                                 opacity: showText ? 1 : 0,
-                                y: showText ? 0 : 20,
+                                y: showText ? 0 : 90,
                               }}
                               transition={{ duration: 0.9 }}
                             >
