@@ -17,8 +17,8 @@ const Home = () => {
       <Team />
       <Subscribe
         image={img}
-        heading="News"
-        headingText="Subscribe to our Newsletter"
+        heading="Dont Miss Out!"
+        headingText="Sign up for our newsletter"
       />
       <GoogleMaps />
     </SharedLayout>

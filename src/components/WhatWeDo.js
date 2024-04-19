@@ -40,7 +40,7 @@ const WhatWeDo = () => {
       <VStack justifyContent="center" alignItems="center">
         <Box align="center">
           <VStack w="80%" color="#87A922" spacing={9}>
-            <Heading color="green">What we do</Heading>
+            <Heading color="green">What We Do</Heading>
             <Box padding={8}>
               <Text fontSize={isMobileView ? "2xl" : "4xl"}>
                 Empowering local farmers in Banga Bakundu, Cameroon, our

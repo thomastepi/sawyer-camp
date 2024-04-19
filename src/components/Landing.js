@@ -66,10 +66,10 @@ export const Landing = () => {
             bottom="9"
           >
             <MotionBox
-              initial={{ opacity: 0, x: 90 }}
+              initial={{ opacity: 0, y: -90 }}
               animate={{
                 opacity: showItems ? 1 : 0,
-                x: showItems ? 0 : 90,
+                y: showItems ? 0 : -90,
               }}
               transition={{ duration: 0.9 }}
             >
@@ -85,10 +85,10 @@ export const Landing = () => {
               )}
             </MotionBox>
             <MotionBox
-              initial={{ opacity: 0, x: -90 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{
                 opacity: showItems ? 1 : 0,
-                x: showItems ? 0 : -90,
+                y: showItems ? 0 : 40,
               }}
               transition={{ duration: 0.9 }}
             >

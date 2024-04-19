@@ -17,7 +17,7 @@ const AboutUs = () => {
                 <Heading align="center">Our Story</Heading>
                 <Text color="#87A922" fontSize="2xl" py={5}>
                   Our story began in 1989, rooted in the vision of Mr. Emmanuel
-                  Tepi. Armed with a Master's degree in Agricultural Economics
+                  Atud. Armed with a Master's degree in Agricultural Economics
                   from the University of Illinois, he embarked on a mission to
                   empower our community.
                 </Text>

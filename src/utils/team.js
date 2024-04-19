@@ -1,4 +1,4 @@
-import pic from "../assets/images/pic.jpg";
+import pic from "../assets/images/fombe.jpg";
 import pic2 from "../assets/images/lan.jpg";
 import pic3 from "../assets/images/ni.jpg";
 import pic4 from "../assets/images/ayisatu3.jpg";
@@ -7,33 +7,33 @@ import pic6 from "../assets/images/schnei.jpg";
 
 const team = [
   {
-    name: "Emmanuel Tepi",
-    title: "Founder/CEO",
+    name: "Emmanuel Atud",
+    title: "President",
     image: pic3,
   },
   {
     name: "Lanita Teke",
-    title: "Executive Director",
+    title: "Vice President",
     image: pic2,
   },
   {
-    name: "Thomas Tepi",
-    title: "Director, Corporate Services",
+    name: "Asanga-Fombe",
+    title: "Membership Coordinator",
     image: pic,
   },
   {
     name: "Ayisatu Mbah",
-    title: "Senior Manager, Strategic Programs",
+    title: "Secretary/Treasurer",
     image: pic4,
   },
   {
     name: "Glory Esubu",
-    title: "Manager, Finance and Administration",
+    title: "Marketting & Outreach Coordinator",
     image: pic5,
   },
   {
     name: "Schneider Kimbeng",
-    title: "Manager, Human Resources",
+    title: "Resource Coordinator",
     image: pic6,
   },
 ];
