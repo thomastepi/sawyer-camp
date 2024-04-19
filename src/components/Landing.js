@@ -35,7 +35,7 @@ export const Landing = () => {
       setCurrentImgIndex((prevIndex) =>
         prevIndex === imgURLs.length - 1 ? 0 : prevIndex + 1
       );
-    }, 5000);
+    }, 9000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -45,7 +45,6 @@ export const Landing = () => {
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
-    backgroundAttachment: "fixed",
     transition: "background-image 3s ease-in-out",
   };
   return (

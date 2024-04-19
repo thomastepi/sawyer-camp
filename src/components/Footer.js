@@ -19,36 +19,20 @@ const Footer = () => {
   return (
     <>
       <Center
-        h="20rem"
+        //h="20rem"
+        py="50px"
         bg="#EEEEEE"
         borderTop="green solid 2px"
         color="#87A922"
       >
-        <Flex w={isMobileView ? "90%" : "60%"} h="100%" justify="space-between">
-          <Center>
-            <VStack align="left">
-              <HStack spacing={4}>
-                <ChakraLink
-                  href="https://linkedin.com/in/thomastepi"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FontAwesomeIcon icon={faLinkedin} />
-                </ChakraLink>
-                <ChakraLink
-                  href="https://twitter.com/tomtepi"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FontAwesomeIcon icon={faTwitter} />
-                </ChakraLink>
-              </HStack>
-              <ChakraLink>info@sawyercamp.com</ChakraLink>
-              <Text>2024 Sawyer-Camp Farmers CIG</Text>
-            </VStack>
-          </Center>
-          <Center>
-            <VStack align="left">
+        <Flex
+          w={isMobileView ? "95%" : "60%"}
+          h="100%"
+          justify="space-between"
+          flexDir={isMobileView && "column"}
+        >
+          <Box mb={isMobileView && "40px"}>
+            <VStack align={isMobileView ? "center" : "left"}>
               <ChakraLink as={ReactRouterLink} to="/">
                 <Text as="b">Home</Text>
               </ChakraLink>
@@ -68,7 +52,29 @@ const Footer = () => {
                 <Text as="b">Become a Member</Text>
               </ChakraLink>
             </VStack>
-          </Center>
+          </Box>
+          <Box>
+            <VStack>
+              <HStack spacing={4}>
+                <ChakraLink
+                  href="https://linkedin.com/in/thomastepi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </ChakraLink>
+                <ChakraLink
+                  href="https://twitter.com/tomtepi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FontAwesomeIcon icon={faTwitter} />
+                </ChakraLink>
+              </HStack>
+              <ChakraLink>info@sawyercamp.com</ChakraLink>
+              <Text>2024 Sawyer-Camp Farmers CIG</Text>
+            </VStack>
+          </Box>
         </Flex>
       </Center>
       <Box bg="white">

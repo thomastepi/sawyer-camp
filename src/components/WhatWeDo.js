@@ -50,15 +50,13 @@ const WhatWeDo = () => {
               </Text>
             </Box>
             <Box py="55px" bg="#436850" px="30px" color="white">
-              <HStack
-                flexDir={isMobileView && "column"}
-                spacing={5}
-                ref={ref}
-                opacity={isVisible ? 1 : 0}
-                transition="opacity 0.5s ease-in-out"
-              >
+              <HStack flexDir={isMobileView && "column"} spacing={5} ref={ref}>
                 <Box align={isMobileView ? "center" : "left"} w="90%">
-                  <Text fontSize="2xl">
+                  <Text
+                    fontSize="2xl"
+                    opacity={isVisible ? 1 : 0}
+                    transition="opacity 0.5s ease-in-out"
+                  >
                     Harnessing modern methods, we transform ripe palm fruits
                     into exceptional palm oil, nourishing both our communities
                     and the nation.
@@ -68,6 +66,8 @@ const WhatWeDo = () => {
                     variant="solid"
                     marginTop={5}
                     p={5}
+                    opacity={isVisible ? 1 : 0}
+                    transition="opacity 2s ease-in-out"
                   >
                     <Link to="/about-us">Learn More</Link>
                   </Button>
@@ -78,11 +78,13 @@ const WhatWeDo = () => {
                   alignItems="center"
                 >
                   <Image
+                    opacity={isVisible ? 1 : 0}
+                    transition="opacity 0.5s ease-in-out"
                     boxSize="250px"
                     objectFit="cover"
                     src={img}
                     w="100%"
-                    alt="photo of a group of people working in a field"
+                    alt="photo of palm tree"
                   />
                 </Box>
               </HStack>
