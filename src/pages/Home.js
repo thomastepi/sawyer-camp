@@ -1,5 +1,4 @@
 import React from "react";
-import img from "../assets/images/green-leaf.jpg";
 import {
   Landing,
   Team,
@@ -16,7 +15,7 @@ const Home = () => {
       <WhatWeDo />
       <Team />
       <Subscribe
-        image={img}
+        image={"https://ik.imagekit.io/thormars/Sawyer-Camp/green-leaf.jpg"}
         heading="Dont Miss Out!"
         headingText="Sign up for our newsletter"
       />

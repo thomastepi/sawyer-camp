@@ -1,40 +1,33 @@
-import pic from "../assets/images/fombe.jpg";
-import pic2 from "../assets/images/lan.jpg";
-import pic3 from "../assets/images/ni.jpg";
-import pic4 from "../assets/images/ayisatu3.jpg";
-import pic5 from "../assets/images/glory.jpg";
-import pic6 from "../assets/images/schnei.jpg";
-
 const team = [
   {
     name: "Emmanuel Atud",
     title: "President",
-    image: pic3,
+    image: "https://ik.imagekit.io/thormars/Sawyer-Camp/ni.jpg",
   },
   {
     name: "Lanita Teke",
     title: "Vice President",
-    image: pic2,
+    image: "https://ik.imagekit.io/thormars/Sawyer-Camp/lan.jpg",
   },
   {
     name: "Asanga-Fombe",
     title: "Membership Coordinator",
-    image: pic,
+    image: "https://ik.imagekit.io/thormars/Sawyer-Camp/fombe.jpg",
   },
   {
     name: "Ayisatu Mbah",
     title: "Secretary/Treasurer",
-    image: pic4,
+    image: "https://ik.imagekit.io/thormars/Sawyer-Camp/ayisatu3.jpg",
   },
   {
     name: "Glory Esubu",
     title: "Marketting & Outreach Coordinator",
-    image: pic5,
+    image: "https://ik.imagekit.io/thormars/Sawyer-Camp/glory.jpg",
   },
   {
     name: "Schneider Kimbeng",
     title: "Resource Coordinator",
-    image: pic6,
+    image: "https://ik.imagekit.io/thormars/Sawyer-Camp/schnei.jpg",
   },
 ];
 

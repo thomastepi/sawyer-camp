@@ -2,11 +2,12 @@ import React from "react";
 import FixedBg from "./FixedBg";
 import { Link } from "react-router-dom";
 import { Heading, Box, Text, Button, Center, VStack } from "@chakra-ui/react";
-import img from "../assets/images/nature.jpg";
 const DonateLanding = () => {
   return (
     <Box color="#87A922">
-      <FixedBg image={img} />
+      <FixedBg
+        image={"https://ik.imagekit.io/thormars/Sawyer-Camp/nature.jpg"}
+      />
       <Box bg="white" w="100%" py="100px">
         <Heading color="green" w="80%" m="0 auto" align="center">
           Please donate to Sawyer Camp Farmers CIG to empower Sustainable

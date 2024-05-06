@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Heading, Box, Button, HStack, VStack, Center } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import img from "../assets/images/rubber_trees.webp";
-import img1 from "../assets/images/cow.jpg";
-import img2 from "../assets/images/pines.jpg";
-import img3 from "../assets/images/fowl.jpg";
 import useIsMobile from "../hooks/useIsMobile";
 import { motion } from "framer-motion";
 
 const MotionBox = motion(Box);
-const imgURLs = [img, img1, img2, img3];
+const url1 = "https://ik.imagekit.io/thormars/Sawyer-Camp/rubber_trees.jpg";
+const url2 = "https://ik.imagekit.io/thormars/Sawyer-Camp/cow.jpg";
+const url3 = "https://ik.imagekit.io/thormars/Sawyer-Camp/pines.jpg";
+const url4 = "https://ik.imagekit.io/thormars/Sawyer-Camp/fowl.jpg";
+const imgURLs = [url1, url2, url3, url4];
 
 export const Landing = () => {
   const [currentImgIndex, setCurrentImgIndex] = useState(0);

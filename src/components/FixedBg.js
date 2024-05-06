@@ -1,6 +1,7 @@
 import React from "react";
 import { Box } from "@chakra-ui/react";
-import img from "../assets/images/nature.jpg";
+
+const img = "https://ik.imagekit.io/thormars/Sawyer-Camp/nature.jpg";
 
 const FixedBg = ({ image }) => {
   const bgImgStyle = {

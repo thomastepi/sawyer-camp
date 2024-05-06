@@ -1,5 +1,3 @@
-import img1 from "../assets/images/seedling.webp";
-import img2 from "../assets/images/coffee-seed.jpg";
 import { VStack, Text } from "@chakra-ui/react";
 
 const projects = [
@@ -7,7 +5,7 @@ const projects = [
     id: 1,
     name: "The Cocoa Coffee Seedling Project (CCSP)",
     location: "Banga-Bakundu, Cameroon",
-    image: img1,
+    image: "https://ik.imagekit.io/thormars/Sawyer-Camp/seedling.webp",
     article: (
       <VStack spacing={6}>
         <Text>
@@ -55,7 +53,7 @@ const projects = [
     id: 2,
     name: "Green Harvest Initiative",
     location: "Ikiliwindi, South West Region, Cameroon",
-    image: img2,
+    image: "https://ik.imagekit.io/thormars/Sawyer-Camp/coffee-seed.jpg",
     article: (
       <VStack spacing={6}>
         <Text>

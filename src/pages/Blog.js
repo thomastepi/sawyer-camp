@@ -1,6 +1,5 @@
 import React from "react";
 import { Subscribe, SharedLayout } from "../components";
-import img from "../assets/images/green-leaves.jpg";
 import { Box } from "@chakra-ui/react";
 
 const Blog = () => {
@@ -9,7 +8,11 @@ const Blog = () => {
   return (
     <SharedLayout>
       <Box mt="150px">
-        <Subscribe image={img} heading={heading} headingText={headingText} />
+        <Subscribe
+          image={"https://ik.imagekit.io/thormars/Sawyer-Camp/green-leaves.jpg"}
+          heading={heading}
+          headingText={headingText}
+        />
       </Box>
     </SharedLayout>
   );

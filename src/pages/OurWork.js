@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../assets/css/ourWork.css";
 import { Carousel } from "react-responsive-carousel";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
+//import { LazyLoadImage } from "react-lazy-load-image-component";
+//import "react-lazy-load-image-component/src/effects/blur.css";
 import goals from "../utils/goals";
-import img from "../assets/images/teke.jpg";
 import { SharedLayout } from "../components";
 import { motion } from "framer-motion";
 import {
@@ -52,10 +51,9 @@ const OurWork = () => {
                 </VStack>
               </Box>
               <Box w="70%">
-                <LazyLoadImage
-                  src={img}
+                <img
+                  src={"https://ik.imagekit.io/thormars/Sawyer-Camp/teke.jpg"}
                   alt="photo of teke"
-                  effect="blur"
                   width="100%"
                 />
               </Box>

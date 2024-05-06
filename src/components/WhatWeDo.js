@@ -9,7 +9,6 @@ import {
   Button,
   Heading,
 } from "@chakra-ui/react";
-import img from "../assets/images/palm-tree.jpg";
 import useIsMobile from "../hooks/useIsMobile";
 
 const WhatWeDo = () => {
@@ -82,7 +81,7 @@ const WhatWeDo = () => {
                     transition="opacity 0.5s ease-in-out"
                     boxSize="250px"
                     objectFit="cover"
-                    src={img}
+                    src={"https://ik.imagekit.io/thormars/Sawyer-Camp/palm-tree.jpg"}
                     w="100%"
                     alt="photo of palm tree"
                   />

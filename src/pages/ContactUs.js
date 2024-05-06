@@ -7,7 +7,6 @@ import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 import { setName, setEmail, setMessage } from "../features/contactUsSlice";
 import { submitContactUs } from "../features/contactUsSlice";
-import img from "../assets/images/rubber_tree.jpg";
 import useIsMobile from "../hooks/useIsMobile";
 import {
   Box,
@@ -220,7 +219,9 @@ const ContactUs = () => {
               <Center>
                 <Box
                   w="100%"
-                  bgImg={img}
+                  bgImg={
+                    "https://ik.imagekit.io/thormars/Sawyer-Camp/rubber_trees.jpg"
+                  }
                   h="100%"
                   bg="grey.100"
                   bgRepeat="no-repeat"
