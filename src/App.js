@@ -15,6 +15,7 @@ import {
   Paypal,
   Membership,
   ErrorPage,
+  Article,
 } from "./pages";
 import { ScrollToTop } from "./components";
 
@@ -44,6 +45,7 @@ function App() {
             <Route path="/donate" element={<Donate />} />
             <Route path="/paypal" element={<Paypal />} />
             <Route path="/membership" element={<Membership />} />
+            <Route path="/article/:articleId" element={<Article />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </Router>

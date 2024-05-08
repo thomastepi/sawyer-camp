@@ -9,6 +9,7 @@ import Donate from "./Donate";
 import Paypal from "./Paypal";
 import Membership from "./Membership";
 import ErrorPage from "./ErrorPage";
+import Article from "./Article";
 
 export {
   Home,
@@ -22,4 +23,5 @@ export {
   Paypal,
   Membership,
   ErrorPage,
+  Article,
 };

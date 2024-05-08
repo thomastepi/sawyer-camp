@@ -53,7 +53,7 @@ function Membership() {
                 </VStack>
               </Box>
               <Box w={isMobileView ? "90%" : "70%"} display="flex">
-                <img src={"https://ik.imagekit.io/thormars/Sawyer-Camp/ayisatu.jpg"} alt="photo of ayisatu"  />
+                <img src={"https://ik.imagekit.io/thormars/Sawyer-Camp/ayisatu.jpg"} alt="ayisatu"  />
               </Box>
             </HStack>
           </Center>

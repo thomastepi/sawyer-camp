@@ -53,7 +53,7 @@ const OurWork = () => {
               <Box w="70%">
                 <img
                   src={"https://ik.imagekit.io/thormars/Sawyer-Camp/teke.jpg"}
-                  alt="photo of teke"
+                  alt="teke"
                   width="100%"
                 />
               </Box>

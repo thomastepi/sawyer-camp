@@ -14,6 +14,7 @@ import ScrollToTop from "./ScrollToTop";
 import DisplayAlert from "./DisplayAlert";
 import Membership from "../pages/Membership";
 import SharedLayout from "../pages/SharedLayout";
+import BlogBox from "./BlogBox";
 
 export {
   Header,
@@ -32,4 +33,5 @@ export {
   DisplayAlert,
   Membership,
   SharedLayout,
+  BlogBox,
 };
