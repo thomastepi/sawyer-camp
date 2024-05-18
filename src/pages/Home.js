@@ -18,7 +18,7 @@ const Home = () => {
       <Team />
       <Center w="100%" mt="40px">
         <Box w="80%">
-          <BlogBox />
+          <BlogBox title="Latest News" />
         </Box>
       </Center>
       <Subscribe

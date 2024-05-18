@@ -44,37 +44,35 @@ const Projects = () => {
             >
               {projects.map((project) => {
                 return (
-                  <>
-                    <Box
-                      position="relative"
-                      bgImage={project.image}
-                      h="30rem"
-                      backgroundSize="cover"
-                      backgroundRepeat="no-repeat"
-                      backgroundPosition="center"
-                      key={project.id}
+                  <Box
+                    position="relative"
+                    bgImage={project.image}
+                    h="30rem"
+                    backgroundSize="cover"
+                    backgroundRepeat="no-repeat"
+                    backgroundPosition="center"
+                    key={project.id}
+                  >
+                    <Center
+                      position="absolute"
+                      right="0"
+                      top="20"
+                      w="70%"
+                      h="20rem"
+                      bg="white"
+                      px="30px"
                     >
-                      <Center
-                        position="absolute"
-                        right="0"
-                        top="20"
-                        w="70%"
-                        h="20rem"
-                        bg="white"
-                        px="30px"
-                      >
-                        <VStack spacing="50px">
-                          <Heading fontSize="2xl" as="b">
-                            {project.name}
-                          </Heading>
-                          <Text>{project.location}</Text>
-                          <Button colorScheme="green" variant="outline">
-                            <Link to={`/project/${project.id}`}>Read More</Link>
-                          </Button>
-                        </VStack>
-                      </Center>
-                    </Box>
-                  </>
+                      <VStack spacing="50px">
+                        <Heading fontSize="2xl" as="b">
+                          {project.name}
+                        </Heading>
+                        <Text>{project.location}</Text>
+                        <Button colorScheme="green" variant="outline">
+                          <Link to={`/project/${project.id}`}>Read More</Link>
+                        </Button>
+                      </VStack>
+                    </Center>
+                  </Box>
                 );
               })}
             </Grid>

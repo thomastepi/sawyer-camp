@@ -72,7 +72,7 @@ const Footer = () => {
                 </ChakraLink>
               </HStack>
               <ChakraLink>info@sawyercamp.com</ChakraLink>
-              <Text>2024 Sawyer-Camp Farmers CIG</Text>
+              <Text>Sawyer-Camp Farmers CIG  • © {new Date().getFullYear()}</Text>
             </VStack>
           </Box>
         </Flex>
@@ -81,7 +81,7 @@ const Footer = () => {
         <Center m="0 auto" borderTop="green solid 2px" w="80%" py={5}>
           <VStack spacing={2} color="#87A922">
             <Text>
-              Website created by Thomas Tepi • © {new Date().getFullYear()}
+              Made with ❤️ by Thomas Tepi
             </Text>
             <Link
               target="_blank"

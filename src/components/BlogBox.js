@@ -8,17 +8,21 @@ import {
   Heading,
   Card,
   CardBody,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
 import { article } from "../utils/article";
 
-const BlogBox = () => {
+const BlogBox = ({ title }) => {
   const navigate = useNavigate();
+  const isMobile = useBreakpointValue({ base: true, md: true, lg: false });
   return (
     <>
       <Box bg="white" w="100%" p={4} color="black" boxShadow="md" rounded="md">
-        <Heading color="green">Latest News</Heading>
-        <Center justifyContent="start" mt="6">
+        <Heading size="2xl" align="center" color="green" py="9">
+          {title}
+        </Heading>
+        <Center mt="6" gap="6" flexDir={isMobile && "column"}>
           {article.map((item) => {
             return (
               <Card

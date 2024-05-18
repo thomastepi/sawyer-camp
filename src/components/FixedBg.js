@@ -14,7 +14,7 @@ const FixedBg = ({ image }) => {
     backgroundImage: image || img,
     backgroundSize: "cover",
     backgroundPosition: "center",
-    backgroundReapeat: "no-repeat",
+    backgroundRepeat: "no-repeat",
     opacity: "1",
     zIndex: "-1",
   };
