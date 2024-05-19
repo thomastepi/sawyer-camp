@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Heading, Box, Button, HStack, VStack, Center } from "@chakra-ui/react";
+import { Heading, Box, Button, VStack, Center } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import useIsMobile from "../hooks/useIsMobile";
 import { motion } from "framer-motion";
@@ -40,13 +40,6 @@ export const Landing = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  const backgroundImageStyle = {
-    backgroundImage: imgURLs[currentImgIndex],
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center",
-    transition: "background-image 3s ease-in-out",
-  };
   return (
     <>
       <VStack
@@ -54,9 +47,25 @@ export const Landing = () => {
         alignItems="center"
         backgroundColor="grey.900"
         color="white"
-        {...backgroundImageStyle}
         position="relative"
+        overflow="hidden"
       >
+        {imgURLs.map((url, index) => (
+          <Box
+            key={index}
+            position="absolute"
+            top="0"
+            left="0"
+            right="0"
+            bottom="0"
+            backgroundImage={`url(${url})`}
+            backgroundSize="cover"
+            backgroundRepeat="no-repeat"
+            backgroundPosition="center"
+            transition="opacity 3s ease-in-out"
+            opacity={currentImgIndex === index ? 1 : 0}
+          />
+        ))}
         <Center>
           <Box
             align="center"
@@ -94,12 +103,10 @@ export const Landing = () => {
             >
               {showItems && (
                 <>
-                  <Box display="flex" justifyContent="center" py={6}>
-                    <HStack spacing={6} color="white">
-                      <Button p={7} colorScheme="green" variant="solid">
-                        <Link to="/membership">Become a Member</Link>
-                      </Button>
-                    </HStack>
+                  <Box py={6}>
+                    <Button p={7} colorScheme="green" variant="solid">
+                      <Link to="/membership">Become a Member</Link>
+                    </Button>
                   </Box>
                 </>
               )}

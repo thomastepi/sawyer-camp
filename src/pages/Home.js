@@ -22,7 +22,7 @@ const Home = () => {
         </Box>
       </Center>
       <Subscribe
-        image={"https://ik.imagekit.io/thormars/Sawyer-Camp/green-leaf.jpg"}
+        image={"https://ik.imagekit.io/thormars/Sawyer-Camp/empower.jpg"}
         heading="Dont Miss Out!"
         headingText="Sign up for our newsletter"
       />

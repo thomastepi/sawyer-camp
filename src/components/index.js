@@ -15,6 +15,7 @@ import DisplayAlert from "./DisplayAlert";
 import Membership from "../pages/Membership";
 import SharedLayout from "../pages/SharedLayout";
 import BlogBox from "./BlogBox";
+import HeadingBox from "./HeadingBox";
 
 export {
   Header,
@@ -34,4 +35,5 @@ export {
   Membership,
   SharedLayout,
   BlogBox,
+  HeadingBox,
 };

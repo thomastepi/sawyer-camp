@@ -1,6 +1,6 @@
 import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
 import React, { useState } from "react";
-import { SharedLayout } from "../components";
+import { SharedLayout, HeadingBox } from "../components";
 import { Link } from "react-router-dom";
 import {
   Box,
@@ -16,13 +16,13 @@ import {
 } from "@chakra-ui/react";
 import useIsMobile from "../hooks/useIsMobile";
 
+const img = "https://ik.imagekit.io/thormars/Sawyer-Camp/farm-women.jpg";
+
 const Paypal = () => {
   const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
   const [currency, setCurrency] = useState(options.currency);
   const [amount, setAmount] = useState(10);
   const isMobileView = useIsMobile();
-
-  console.log(`currency: ${currency}, amount: ${amount}`);
 
   const onCurrencyChange = ({ target: { value } }) => {
     setCurrency(value);
@@ -57,21 +57,7 @@ const Paypal = () => {
   return (
     <SharedLayout>
       <Box bg="#789461">
-        <Box
-          bgImg="https://ik.imagekit.io/thormars/Sawyer-Camp/nature.jpg"
-          bgSize="cover"
-          bgRepeat="no-repeat"
-          bgPos="center"
-          color="white"
-        >
-          <Center py="90px">
-            <Box w="90%">
-              <Heading align="center" size="2xl">
-                Empower Our Cause
-              </Heading>
-            </Box>
-          </Center>
-        </Box>
+        <HeadingBox image={img} title="Empower Our Cause" />
         <Center p="50px" bg="white" w="100%" m="0 auto">
           <Box w={isMobileView ? "80%" : "45%"}>
             {isPending ? (

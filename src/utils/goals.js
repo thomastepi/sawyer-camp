@@ -1,7 +1,7 @@
 const goals = [
   {
     id: 1,
-    image: "https://ik.imagekit.io/thormars/Sawyer-Camp/farm-women.jpg",
+    image: "https://ik.imagekit.io/thormars/Sawyer-Camp/farm-girls.jpg",
     alt: "photo of farm women",
     title: "Empower Farmers, Strengthen Communities",
     text: `We aim to expand and strengthen Sawyer Camp Farmers

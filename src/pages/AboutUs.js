@@ -1,21 +1,24 @@
 import React from "react";
-import { FixedBg, SharedLayout } from "../components";
+import { FixedBg, SharedLayout, HeadingBox } from "../components";
 import { Box, Text, Heading, Button, VStack, Center } from "@chakra-ui/react";
 import useIsMobile from "../hooks/useIsMobile";
+
+const img = "https://ik.imagekit.io/thormars/Sawyer-Camp/about.jpg";
 
 const AboutUs = () => {
   const isMobileView = useIsMobile();
   return (
     <SharedLayout>
       <Box>
+        <HeadingBox image={img} title="About Us" />
         <FixedBg
           image={"https://ik.imagekit.io/thormars/Sawyer-Camp/nature.jpg"}
         />
         <Box display="block" align="center">
           <Box bg="white">
-            <Center py="100px" w={isMobileView ? "90%" : "50%"} color="green">
+            <Center py="60px" w={isMobileView ? "90%" : "50%"} color="green">
               <VStack>
-                <Heading align="center">Our Story</Heading>
+                {/* <Heading align="center">Our Story</Heading> */}
                 <Text color="#87A922" fontSize="2xl" py={5}>
                   Our story began in 1989, rooted in the vision of Mr. Emmanuel
                   Atud. Armed with a Master's degree in Agricultural Economics

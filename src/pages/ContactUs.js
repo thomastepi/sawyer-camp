@@ -1,5 +1,10 @@
 import React, { useEffect } from "react";
-import { GoogleMaps, DisplayAlert, SharedLayout } from "../components";
+import {
+  GoogleMaps,
+  DisplayAlert,
+  SharedLayout,
+  HeadingBox,
+} from "../components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { useFormik } from "formik";
@@ -11,7 +16,6 @@ import useIsMobile from "../hooks/useIsMobile";
 import {
   Box,
   Text,
-  Heading,
   VStack,
   HStack,
   Divider,
@@ -25,6 +29,8 @@ import {
   Button,
   Link as ChakraLink,
 } from "@chakra-ui/react";
+
+const img = "https://ik.imagekit.io/thormars/Sawyer-Camp/tomato-harvest.jpg";
 
 const ContactUs = () => {
   const isMobileView = useIsMobile();
@@ -64,11 +70,9 @@ const ContactUs = () => {
   return (
     <SharedLayout>
       <Box w="100%" color="#87A922">
-        <Center h="20rem">
-          <VStack spacing={4} pl={isMobileView && "20px"}>
-            <Heading align="center" color="green">
-              Connect with Us
-            </Heading>
+        <HeadingBox image={img} title="Connect with Us" />
+        <Center h="20rem" mt='20px'>
+          <VStack w="60%" spacing={4} pl={isMobileView && "20px"}>
             <Text fontSize="2xl" align="center">
               Help us make Sawyer Camp Farmers CIG even better! Share your
               feedback and suggestions. Let's build something great together.

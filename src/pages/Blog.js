@@ -1,5 +1,5 @@
 import React from "react";
-import { Subscribe, SharedLayout, BlogBox } from "../components";
+import { Subscribe, SharedLayout, BlogBox, HeadingBox } from "../components";
 import { Box, Center } from "@chakra-ui/react";
 
 const Blog = () => {
@@ -8,13 +8,20 @@ const Blog = () => {
   return (
     <SharedLayout>
       <Box>
-        <Center>
+        <HeadingBox
+          title="Blog"
+          image={"https://ik.imagekit.io/thormars/Sawyer-Camp/carrots.jpg"}
+        />
+        <Center py="20px" bg="#FFF">
           <Box w="80%">
-            <BlogBox title="BLOG" />
+            <BlogBox
+              subtitle="News from Saywer Camp Farmers CIG"
+              bgColor="#F8F4E1"
+            />
           </Box>
         </Center>
         <Subscribe
-          image={"https://ik.imagekit.io/thormars/Sawyer-Camp/green-leaves.jpg"}
+          image={"https://ik.imagekit.io/thormars/Sawyer-Camp/about.jpg"}
           heading={heading}
           headingText={headingText}
         />

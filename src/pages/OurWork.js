@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../assets/css/ourWork.css";
 import { Carousel } from "react-responsive-carousel";
-//import { LazyLoadImage } from "react-lazy-load-image-component";
-//import "react-lazy-load-image-component/src/effects/blur.css";
 import goals from "../utils/goals";
-import { SharedLayout } from "../components";
+import { SharedLayout, HeadingBox } from "../components";
 import { motion } from "framer-motion";
 import {
   VStack,
@@ -31,6 +29,10 @@ const OurWork = () => {
 
   return (
     <SharedLayout>
+      <HeadingBox
+        title="Our Work"
+        image="https://ik.imagekit.io/thormars/Sawyer-Camp/cultivate.jpg"
+      />
       <Box>
         <Box color="#87A922">
           <Box m="0 auto" w="70%" py="65px">

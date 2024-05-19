@@ -9,8 +9,10 @@ import {
   Button,
   Center,
 } from "@chakra-ui/react";
-import { SharedLayout } from "../components";
+import { SharedLayout, HeadingBox } from "../components";
 import useIsMobile from "../hooks/useIsMobile";
+
+const img = "https://ik.imagekit.io/thormars/Sawyer-Camp/members.jpg";
 
 function Membership() {
   const isMobileView = useIsMobile();
@@ -20,10 +22,10 @@ function Membership() {
     <SharedLayout>
       <Box color="#87A922">
         <>
+          <Box w="100%">
+            <HeadingBox image={img} title="Membership" />
+          </Box>
           <VStack py="80px" spacing={9} w="60%" m="0 auto">
-            <Heading color="green" size="3xl">
-              Membership
-            </Heading>
             <Text fontSize="2xl" align="center">
               The Sawyer Camp Farmers Common Initiative Group represents a
               community-driven coalition of regional farmers dedicated to
@@ -41,7 +43,12 @@ function Membership() {
                   <Heading align="center">
                     Be part of our collaborative network
                   </Heading>
-                  <Button p="25px" colorScheme="green">
+                  <Button
+                    as="div"
+                    borderRadius="0"
+                    p="25px"
+                    colorScheme="green"
+                  >
                     <PopupButton
                       id={id}
                       style={{ fontSize: 20 }}

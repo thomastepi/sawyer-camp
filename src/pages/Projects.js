@@ -1,7 +1,7 @@
 import React from "react";
 import projects from "../utils/projects";
 import { Link } from "react-router-dom";
-import { SharedLayout } from "../components";
+import { SharedLayout, HeadingBox } from "../components";
 import {
   Box,
   Text,
@@ -13,16 +13,19 @@ import {
   Button,
 } from "@chakra-ui/react";
 
+const img = "https://ik.imagekit.io/thormars/Sawyer-Camp/ridges.jpg";
+
 const Projects = () => {
   return (
     <SharedLayout>
       <Box w="100%" color="#87A922">
+        <HeadingBox image={img} title="Our Projects" />
         <Center bg="#789461" h="20rem">
           <Center w="70%" bg="white" h="20rem">
             <VStack spacing={9}>
-              <Heading size="3xl" color="green" align="center">
+              {/* <Heading size="3xl" color="green" align="center">
                 Our Projects
-              </Heading>
+              </Heading> */}
               <Text align="center" fontSize="2xl">
                 Discover our dedication to sustainability as we combine global
                 insights with local action to drive positive change.
