@@ -12,6 +12,7 @@ const HeadingBox = ({ image, title }) => {
         bgRepeat="no-repeat"
         bgPos="center"
         color="white"
+        bgColor="white"
       >
         <Center py="110px">
           <Box w="90%">

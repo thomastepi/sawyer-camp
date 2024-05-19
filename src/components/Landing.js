@@ -64,6 +64,7 @@ export const Landing = () => {
             backgroundPosition="center"
             transition="opacity 3s ease-in-out"
             opacity={currentImgIndex === index ? 1 : 0}
+            bgColor="white"
           />
         ))}
         <Center>
