@@ -50,7 +50,7 @@ export const Landing = () => {
   return (
     <>
       <VStack
-        h="100vh"
+        h="80vh"
         alignItems="center"
         backgroundColor="grey.900"
         color="white"

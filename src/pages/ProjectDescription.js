@@ -42,7 +42,7 @@ const ProjectDescription = () => {
 
   return (
     <SharedLayout>
-      <Box key={project.id} mt='150px'>
+      <Box key={project.id}>
         <Center color="#87A922">
           <Box w={isMobileView ? "80%" : "50%"} py="50px">
             <VStack spacing={7} align="left">

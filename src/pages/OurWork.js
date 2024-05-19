@@ -31,7 +31,7 @@ const OurWork = () => {
 
   return (
     <SharedLayout>
-      <Box pt="100px">
+      <Box>
         <Box color="#87A922">
           <Box m="0 auto" w="70%" py="65px">
             <HStack

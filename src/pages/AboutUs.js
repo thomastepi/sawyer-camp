@@ -12,7 +12,7 @@ const AboutUs = () => {
           image={"https://ik.imagekit.io/thormars/Sawyer-Camp/nature.jpg"}
         />
         <Box display="block" align="center">
-          <Box bg="white" pt="130px">
+          <Box bg="white">
             <Center py="100px" w={isMobileView ? "90%" : "50%"} color="green">
               <VStack>
                 <Heading align="center">Our Story</Heading>

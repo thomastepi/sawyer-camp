@@ -54,26 +54,34 @@ const Paypal = () => {
 
   return (
     <SharedLayout>
-      <Box bg="#789461" pt="150px">
-        <Box color="white">
+      <Box bg="#789461">
+        <Box
+          bgImg="https://ik.imagekit.io/thormars/Sawyer-Camp/nature.jpg"
+          bgSize="cover"
+          bgRepeat="no-repeat"
+          bgPos="center"
+          color="white"
+        >
           <Center py="90px">
-            <VStack w={isMobileView ? "90%" : "50%"} spacing={9}>
+            <Box w="90%">
               <Heading align="center" size="2xl">
                 Empower Our Cause
               </Heading>
-            </VStack>
+            </Box>
           </Center>
         </Box>
         <Center p="50px" bg="white" w="100%" m="0 auto">
-          <>
-            <Box>
-              {isPending ? (
-                <Text>LOADING...</Text>
-              ) : (
-                <VStack spacing={7} bg="white" w="100%">
-                  <RadioGroup value={amount}>
+          <Box w={isMobileView ? "80%" : "45%"}>
+            {isPending ? (
+              <Text>LOADING...</Text>
+            ) : (
+              <VStack spacing={7} bg="white" w="100%">
+                <VStack spacing={0}>
+                  <Text>Donation Amount</Text>
+                  <hr style={{ width: "100%" }} />
+                  <RadioGroup value={amount} mt="10px">
                     <HStack spacing={8}>
-                      <Box borderRadius="black solid 2px">
+                      <Box border="1px solid green" p="8px">
                         <Radio
                           value="10"
                           onChange={(e) => setAmount(e.target.value)}
@@ -82,7 +90,7 @@ const Paypal = () => {
                         </Radio>
                       </Box>
 
-                      <Box borderRadius="black solid 2px">
+                      <Box border="1px solid green" p="8px">
                         <Radio
                           value="50"
                           onChange={(e) => setAmount(e.target.value)}
@@ -91,7 +99,7 @@ const Paypal = () => {
                         </Radio>
                       </Box>
 
-                      <Box borderRadius="solid black 2px">
+                      <Box border="1px solid green" p="8px">
                         <Radio
                           value="100"
                           onChange={(e) => setAmount(e.target.value)}
@@ -101,28 +109,26 @@ const Paypal = () => {
                       </Box>
                     </HStack>
                   </RadioGroup>
-
-                  <Select value={currency} onChange={onCurrencyChange}>
-                    <option value="USD">💵 USD</option>
-                    <option value="EUR">💶 Euro</option>
-                    <option value="CAD">💵 CAD</option>
-                  </Select>
-
-                  <Box w="350px">
-                    <PayPalButtons
-                      style={{ layout: "vertical" }}
-                      createOrder={(data, actions) =>
-                        onCreateOrder(data, actions)
-                      }
-                      onApprove={(data, actions) =>
-                        onApproveOrder(data, actions)
-                      }
-                    />
-                  </Box>
                 </VStack>
-              )}
-            </Box>
-          </>
+
+                <Select value={currency} onChange={onCurrencyChange}>
+                  <option value="USD">💵 USD</option>
+                  <option value="EUR">💶 Euro</option>
+                  <option value="CAD">💵 CAD</option>
+                </Select>
+
+                <Box w="100%">
+                  <PayPalButtons
+                    style={{ layout: "vertical" }}
+                    createOrder={(data, actions) =>
+                      onCreateOrder(data, actions)
+                    }
+                    onApprove={(data, actions) => onApproveOrder(data, actions)}
+                  />
+                </Box>
+              </VStack>
+            )}
+          </Box>
         </Center>
         <Center color="white" spacing={8} h="30rem">
           <VStack spacing="60px" w={isMobileView ? "90%" : "50%"}>

@@ -12,7 +12,7 @@ const Article = () => {
   return (
     <>
       <SharedLayout>
-        <Center mt="170px">
+        <Center mt="25px">
           <Box w={isMobileView ? "90%" : "70%"}>
             {article.map((item) => {
               if (item.id === id) {

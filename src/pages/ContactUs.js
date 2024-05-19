@@ -63,7 +63,7 @@ const ContactUs = () => {
 
   return (
     <SharedLayout>
-      <Box w="100%" color="#87A922" mt="150px">
+      <Box w="100%" color="#87A922">
         <Center h="20rem">
           <VStack spacing={4} pl={isMobileView && "20px"}>
             <Heading align="center" color="green">

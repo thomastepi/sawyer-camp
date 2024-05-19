@@ -18,7 +18,7 @@ function Membership() {
 
   return (
     <SharedLayout>
-      <Box color="#87A922" pt="130px">
+      <Box color="#87A922">
         <>
           <VStack py="80px" spacing={9} w="60%" m="0 auto">
             <Heading color="green" size="3xl">
@@ -53,7 +53,12 @@ function Membership() {
                 </VStack>
               </Box>
               <Box w={isMobileView ? "90%" : "70%"} display="flex">
-                <img src={"https://ik.imagekit.io/thormars/Sawyer-Camp/ayisatu.jpg"} alt="ayisatu"  />
+                <img
+                  src={
+                    "https://ik.imagekit.io/thormars/Sawyer-Camp/ayisatu.jpg"
+                  }
+                  alt="ayisatu"
+                />
               </Box>
             </HStack>
           </Center>

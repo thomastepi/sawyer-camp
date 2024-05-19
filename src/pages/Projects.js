@@ -16,7 +16,7 @@ import {
 const Projects = () => {
   return (
     <SharedLayout>
-      <Box w="100%" color="#87A922" mt="130px">
+      <Box w="100%" color="#87A922">
         <Center bg="#789461" h="20rem">
           <Center w="70%" bg="white" h="20rem">
             <VStack spacing={9}>

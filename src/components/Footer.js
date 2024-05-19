@@ -1,5 +1,5 @@
 import React from "react";
-import { Link as ReactRouterLink } from "react-router-dom";
+import { Link as ReactRouterLink, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import {
@@ -10,23 +10,23 @@ import {
   Box,
   Flex,
   Center,
-  Link,
+  Button,
 } from "@chakra-ui/react";
 import useIsMobile from "../hooks/useIsMobile";
 
 const Footer = () => {
   const isMobileView = useIsMobile();
+  const navigate = useNavigate();
   return (
     <>
       <Center
-        //h="20rem"
         py="50px"
         bg="#EEEEEE"
         borderTop="green solid 2px"
         color="#87A922"
       >
         <Flex
-          w={isMobileView ? "95%" : "60%"}
+          w={isMobileView ? "95%" : "70%"}
           h="100%"
           justify="space-between"
           flexDir={isMobileView && "column"}
@@ -53,6 +53,18 @@ const Footer = () => {
               </ChakraLink>
             </VStack>
           </Box>
+          <Box mb={isMobileView && "30px"}>
+            <VStack>
+              <Text align="center">To Support Sawyer Camp Farmers CIG</Text>
+              <Button
+                onClick={() => navigate("/donate")}
+                colorScheme="green"
+                size="md"
+              >
+                Donate
+              </Button>
+            </VStack>
+          </Box>
           <Box>
             <VStack>
               <HStack spacing={4}>
@@ -72,7 +84,9 @@ const Footer = () => {
                 </ChakraLink>
               </HStack>
               <ChakraLink>info@sawyercamp.com</ChakraLink>
-              <Text>Sawyer-Camp Farmers CIG  • © {new Date().getFullYear()}</Text>
+              <Text align="center">
+                Sawyer-Camp Farmers CIG • © {new Date().getFullYear()}
+              </Text>
             </VStack>
           </Box>
         </Flex>
@@ -80,16 +94,14 @@ const Footer = () => {
       <Box bg="white">
         <Center m="0 auto" borderTop="green solid 2px" w="80%" py={5}>
           <VStack spacing={2} color="#87A922">
-            <Text>
-              Made with ❤️ by Thomas Tepi
-            </Text>
-            <Link
+            <Text>Made with ❤️ by Thomas Tepi</Text>
+            <ChakraLink
               target="_blank"
               rel="noopener noreferre"
               href="https://www.thomastepi.com"
             >
               www.thomastepi.com
-            </Link>
+            </ChakraLink>
           </VStack>
         </Center>
       </Box>

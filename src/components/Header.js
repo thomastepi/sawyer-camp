@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import {
@@ -16,42 +16,12 @@ import useIsMobile from "../hooks/useIsMobile";
 import { Link as ReactRouterLink } from "react-router-dom";
 
 const Header = () => {
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [visible, setVisible] = useState(true);
-  const boxRef = useRef(null);
   const isMobileView = useIsMobile();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset;
-      const scrollDown = currentScrollPos > prevScrollPos;
-      setVisible(!scrollDown);
-      setPrevScrollPos(currentScrollPos);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [prevScrollPos]);
-
-  const translateY = visible ? "0" : "-200px";
-
   return (
-    <Box
-      ref={boxRef}
-      position="fixed"
-      top={0}
-      left={0}
-      right={0}
-      transform={`translateY(${translateY})`}
-      transitionProperty="transform"
-      transitionDuration=".3s"
-      transitionTimingFunction="ease-in-out"
-      zIndex="1000"
-    >
-      <Center bg="#EEEEEE" color="green">
+    <Box>
+      <Center bg="#EEEEEE" color="green"
+      >
         <Flex width="90%" justify="space-between" h="inherit">
           <HStack spacing={6}>
             <ChakraLink

@@ -7,8 +7,8 @@ const Blog = () => {
   const headingText = "Subscribe to Blog Posts";
   return (
     <SharedLayout>
-      <Box mt="150px">
-        <Center mt="50px">
+      <Box>
+        <Center>
           <Box w="80%">
             <BlogBox title="BLOG" />
           </Box>

@@ -11,7 +11,7 @@ const Donate = () => {
   return (
     <SharedLayout>
       <Box>
-        <Box bg="white" pt="130px">
+        <Box bg="white">
           <DonateLanding />
         </Box>
         <Box>
