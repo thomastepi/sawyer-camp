@@ -22,6 +22,8 @@ const Paypal = () => {
   const [amount, setAmount] = useState(10);
   const isMobileView = useIsMobile();
 
+  console.log(`currency: ${currency}, amount: ${amount}`);
+
   const onCurrencyChange = ({ target: { value } }) => {
     setCurrency(value);
     dispatch({
@@ -83,7 +85,7 @@ const Paypal = () => {
                     <HStack spacing={8}>
                       <Box border="1px solid green" p="8px">
                         <Radio
-                          value="10"
+                          value="30"
                           onChange={(e) => setAmount(e.target.value)}
                         >
                           $30
