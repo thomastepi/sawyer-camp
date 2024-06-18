@@ -68,7 +68,7 @@ const WhatWeDo = () => {
                     opacity={isVisible ? 1 : 0}
                     transition="opacity 2s ease-in-out"
                   >
-                    <Link to="/about-us">Learn More</Link>
+                    <Link to="/project/2">Learn More</Link>
                   </Button>
                 </Box>
                 <Box
