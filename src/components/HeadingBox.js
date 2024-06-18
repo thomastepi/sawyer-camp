@@ -7,6 +7,7 @@ const HeadingBox = ({ image, title }) => {
   return (
     <>
       <Box
+        bg="green"
         bgImg={image || img}
         bgSize="cover"
         bgRepeat="no-repeat"

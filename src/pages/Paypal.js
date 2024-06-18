@@ -1,5 +1,5 @@
 import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { SharedLayout, HeadingBox } from "../components";
 import { Link } from "react-router-dom";
 import {
@@ -21,7 +21,8 @@ const img = "https://ik.imagekit.io/thormars/Sawyer-Camp/farm-women.jpg";
 const Paypal = () => {
   const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
   const [currency, setCurrency] = useState(options.currency);
-  const [amount, setAmount] = useState(10);
+  const [currencySymbol, setcurrencySymbol] = useState("$");
+  const [amount, setAmount] = useState("30");
   const isMobileView = useIsMobile();
 
   const onCurrencyChange = ({ target: { value } }) => {
@@ -34,6 +35,14 @@ const Paypal = () => {
       },
     });
   };
+
+  useEffect(() => {
+    if (currency === "EUR") {
+      setcurrencySymbol("€");
+    } else {
+      setcurrencySymbol("$");
+    }
+  }, [currency]);
 
   const onCreateOrder = (data, actions) => {
     return actions.order.create({
@@ -74,7 +83,7 @@ const Paypal = () => {
                           value="30"
                           onChange={(e) => setAmount(e.target.value)}
                         >
-                          $30
+                          {currencySymbol}30
                         </Radio>
                       </Box>
 
@@ -83,7 +92,7 @@ const Paypal = () => {
                           value="50"
                           onChange={(e) => setAmount(e.target.value)}
                         >
-                          $50
+                          {currencySymbol}50
                         </Radio>
                       </Box>
 
@@ -92,20 +101,23 @@ const Paypal = () => {
                           value="100"
                           onChange={(e) => setAmount(e.target.value)}
                         >
-                          $100
+                          {currencySymbol}100
                         </Radio>
                       </Box>
                     </HStack>
                   </RadioGroup>
                 </VStack>
+                <Box w={{ base: "90%", md: "90%", lg: "70%" }}>
+                  <Select
+                    mb="20px"
+                    value={currency}
+                    onChange={onCurrencyChange}
+                  >
+                    <option value="USD">💵 USD</option>
+                    <option value="EUR">💶 Euro</option>
+                    <option value="CAD">💵 CAD</option>
+                  </Select>
 
-                <Select value={currency} onChange={onCurrencyChange}>
-                  <option value="USD">💵 USD</option>
-                  <option value="EUR">💶 Euro</option>
-                  <option value="CAD">💵 CAD</option>
-                </Select>
-
-                <Box w="100%">
                   <PayPalButtons
                     style={{ layout: "vertical" }}
                     createOrder={(data, actions) =>

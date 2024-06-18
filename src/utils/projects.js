@@ -1,4 +1,4 @@
-import { VStack, Text } from "@chakra-ui/react";
+import { VStack, Text, Heading } from "@chakra-ui/react";
 
 const projects = [
   {
@@ -51,49 +51,93 @@ const projects = [
   },
   {
     id: 2,
-    name: "Green Harvest Initiative",
-    location: "Ikiliwindi, South West Region, Cameroon",
-    image: "https://ik.imagekit.io/thormars/Sawyer-Camp/coffee-seed.jpg",
+    name: "Sustainable Palm Oil Production Expansion",
+    location: "Sawyer Camp, Banga-Bakundu, Cameroon",
+    image: "https://ik.imagekit.io/thormars/Sawyer-Camp/palm-oil-bottle.jpg",
     article: (
       <VStack spacing={6}>
         <Text>
-          The Green Harvest Initiative is a comprehensive program designed to
-          enhance the sustainability and productivity of smallholder coffee
-          farmers in the South West Region of Cameroon. By providing training,
-          resources, and support, the initiative empowers farmers to adopt
-          environmentally friendly practices, increase their crop yields, and
-          improve their livelihoods.
+          At Sawyer Camp Farmers Common Initiative Group (SCFCIG), we're
+          constantly striving for a more sustainable future. That's why our
+          Sustainable Palm Oil Production Expansion project is already well
+          underway! This exciting initiative is seeing us expand our palm oil
+          production capacity while staying true to our core values of
+          sustainability and community empowerment.
         </Text>
+        <Heading w="100%" align="left" color="green" size="md">
+          Why Sustainable Palm Oil?
+        </Heading>
         <Text>
-          At the heart of the Green Harvest Initiative is a commitment to
-          sustainable agriculture. By promoting organic farming methods,
-          agroforestry, and soil conservation techniques, the program helps
-          farmers protect the environment, preserve biodiversity, and enhance
-          the long-term viability of their land.
+          Palm oil is a valuable crop, but traditional production methods can
+          have negative environmental and social impacts. We believe responsible
+          palm oil production is not only achievable, but essential. That's why
+          the heart of our expansion project revolves around these core
+          principles.
         </Text>
-        <Text>
-          The initiative also focuses on capacity building and knowledge
-          transfer. Through training workshops, field demonstrations, and
-          one-on-one coaching, farmers learn best practices for coffee
-          cultivation, post-harvest processing, and business management. This
-          knowledge empowers farmers to improve the quality of their coffee,
-          access new markets, and increase their incomes.
+        <Heading w="100%" align="left" color="green" size="md">
+          Sustainability in Action:
+        </Heading>
+        <Text w="100%">
+          Here's how SCFCIG is ensuring our palm oil expansion is truly
+          sustainable:
         </Text>
+        <ul>
+          <li>
+            <span style={{ fontWeight: "bold" }}>
+              Zero-deforestation expansion:{" "}
+            </span>
+            We're actively planting new palm groves only on degraded land,
+            protecting vital rainforests and their rich biodiversity.
+          </li>
+          <li>
+            <span style={{ fontWeight: "bold" }}>
+              High-yield, low-impact practices:{" "}
+            </span>
+            We've adopted innovative techniques like intercropping and precision
+            agriculture. These methods maximize yields while minimizing our
+            environmental footprint.
+          </li>
+          <li>
+            <span style={{ fontWeight: "bold" }}>Soil health focus: </span> Our
+            farmers are implementing practices like composting and cover
+            cropping. This maintains healthy soil, reduces reliance on chemical
+            fertilizers, and promotes long-term productivity.
+          </li>
+          <li>
+            <span style={{ fontWeight: "bold" }}>Water conservation: </span>{" "}
+            We're utilizing efficient irrigation systems and water management
+            techniques to minimize water usage across our existing and expanding
+            plantations.
+          </li>
+          <li>
+            <span style={{ fontWeight: "bold" }}>Waste reduction: </span> We're
+            exploring ways to utilize palm waste products, such as empty fruit
+            bunches, for biofuel or compost, minimizing waste and creating
+            additional value.
+          </li>
+        </ul>
+        <Heading w="100%" align="left" color="green" size="md">
+          The Sustainable Future is Here:
+        </Heading>
         <Text>
-          In addition to technical support, the Green Harvest Initiative
-          provides farmers with access to critical resources, such as
-          high-quality seedlings, organic fertilizers, and processing equipment.
-          By investing in these inputs, the program helps farmers overcome
-          barriers to productivity and quality, enabling them to achieve greater
-          success in the coffee value chain.
+          The "Sustainable Palm Oil Production Expansion" project is a
+          significant leap forward for SCFCIG. By expanding responsibly, we're
+          contributing to a thriving palm oil industry that benefits both our
+          environment and our community. We invite you to join us on this
+          ongoing journey as we cultivate a sustainable future for Banga-Bakundu
+          and beyond.
         </Text>
+        <Heading w="100%" align="left" color="green" size="md">
+          Stay Updated!
+        </Heading>
         <Text>
-          The Green Harvest Initiative is more than a project; it is a
-          commitment to building a sustainable future for coffee farming
-          communities in the South West Region. By empowering farmers with the
-          knowledge, resources, and support they need to succeed, the initiative
-          is transforming lives, protecting the environment, and securing the
-          future of coffee production in Cameroon.
+          We'll continue to share regular updates on the project's progress here
+          on our website. This includes details on our implemented practices,
+          community involvement, and future goals.
+        </Text>
+        <Text w="100%">
+          Together, let's celebrate a brighter, more sustainable future for palm
+          oil!
         </Text>
       </VStack>
     ),

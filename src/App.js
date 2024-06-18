@@ -1,7 +1,5 @@
 import React from "react";
 import "./App.css";
-import { ChakraProvider } from "@chakra-ui/react";
-import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   Home,
@@ -18,16 +16,12 @@ import {
   Article,
 } from "./pages";
 import { ScrollToTop } from "./components";
+import { PayPalProvider, ChakraUIProvider } from "./providers";
 
 function App() {
-  const initialOptions = {
-    "client-id": process.env.REACT_APP_PAYPAL_CLIENT_ID,
-    currency: "CAD",
-    intent: "capture",
-  };
   return (
-    <PayPalScriptProvider options={initialOptions}>
-      <ChakraProvider>
+    <ChakraUIProvider>
+      <PayPalProvider>
         <Router>
           <ScrollToTop />
           <Routes>
@@ -49,8 +43,8 @@ function App() {
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </Router>
-      </ChakraProvider>
-    </PayPalScriptProvider>
+      </PayPalProvider>
+    </ChakraUIProvider>
   );
 }
 
