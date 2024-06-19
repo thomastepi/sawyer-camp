@@ -1,7 +1,8 @@
 import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
 import React, { useState, useEffect } from "react";
-import { SharedLayout, HeadingBox } from "../components";
+import { SharedLayout, HeadingBox, DisplayAlert } from "../components";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import {
   Box,
   Center,
@@ -15,6 +16,7 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import useIsMobile from "../hooks/useIsMobile";
+import { setAlert } from "../features/alertSlice";
 
 const img = "https://ik.imagekit.io/thormars/Sawyer-Camp/farm-women.jpg";
 
@@ -23,7 +25,12 @@ const Paypal = () => {
   const [currency, setCurrency] = useState(options.currency);
   const [currencySymbol, setcurrencySymbol] = useState("$");
   const [amount, setAmount] = useState("30");
+
   const isMobileView = useIsMobile();
+  const reduxDispatch = useDispatch();
+  const alert = useSelector((state) => state.alert);
+
+  const baseURL = process.env.REACT_APP_BASE_URL;
 
   const onCurrencyChange = ({ target: { value } }) => {
     setCurrency(value);
@@ -44,29 +51,55 @@ const Paypal = () => {
     }
   }, [currency]);
 
-  const onCreateOrder = (data, actions) => {
-    return actions.order.create({
-      purchase_units: [
-        {
-          amount: {
-            value: amount,
-          },
-        },
-      ],
+  const onCreateOrder = async () => {
+    const response = await fetch(`${baseURL}/api/create-order`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ amount, currency }),
     });
+
+    const order = await response.json();
+    return order.id;
   };
 
-  const onApproveOrder = (data, actions) => {
-    return actions.order.capture().then((details) => {
-      const name = details.payer.name.given_name;
-      alert(`Transaction completed by ${name}`);
-    });
+  const onApproveOrder = async (data, actions) => {
+    const response = await fetch(
+      `${baseURL}/api/capture-order/${data.orderID}`,
+      {
+        method: "POST",
+      }
+    );
+
+    const details = await response.json();
+    if (details.status === "COMPLETED") {
+      reduxDispatch(
+        setAlert({
+          message: `Thank you for your donation. Your transaction was completed successfully.`,
+          status: "success",
+          title: "Success!",
+          show: true,
+        })
+      );
+    } else {
+      reduxDispatch(
+        setAlert({
+          ...alert,
+          message: `Your transaction was cancelled. Please try again.`,
+          status: "error",
+          title: "Cancelled!",
+          show: true,
+        })
+      );
+    }
   };
 
   return (
     <SharedLayout>
       <Box bg="#789461">
         <HeadingBox image={img} title="Empower Our Cause" />
+
         <Center p="50px" bg="white" w="100%" m="0 auto">
           <Box w={isMobileView ? "80%" : "45%"}>
             {isPending ? (
@@ -120,11 +153,18 @@ const Paypal = () => {
 
                   <PayPalButtons
                     style={{ layout: "vertical" }}
-                    createOrder={(data, actions) =>
-                      onCreateOrder(data, actions)
-                    }
-                    onApprove={(data, actions) => onApproveOrder(data, actions)}
+                    createOrder={onCreateOrder}
+                    onApprove={onApproveOrder}
                   />
+                </Box>
+                <Box>
+                  {alert.show && (
+                    <DisplayAlert
+                      message={alert.message}
+                      alertStatus={alert.status}
+                      title={alert.title}
+                    />
+                  )}
                 </Box>
               </VStack>
             )}

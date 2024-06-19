@@ -4,6 +4,7 @@ const initialState = {
   message: "",
   status: "success",
   title: "",
+  show: false,
 };
 
 const alertSlice = createSlice({
@@ -14,9 +15,16 @@ const alertSlice = createSlice({
       state.message = action.payload.message;
       state.status = action.payload.status;
       state.title = action.payload.title;
+      state.show = action.payload.show;
+    },
+    clearAlert: (state) => {
+      state.show = false;
+      state.message = "";
+      state.status = "";
+      state.title = "";
     },
   },
 });
 
-export const { setAlert } = alertSlice.actions;
+export const { setAlert, clearAlert } = alertSlice.actions;
 export default alertSlice.reducer;

@@ -8,7 +8,7 @@ import {
   CloseButton,
 } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
-import { setAlert } from "../features/alertSlice";
+import { clearAlert } from "../features/alertSlice";
 import {
   setNewsletterStatus,
   setNewsletterShow,
@@ -34,14 +34,7 @@ const DisplayAlert = ({ message, alertStatus, title }) => {
           right={-1}
           top={-1}
           onClick={() => {
-            dispatch(
-              setAlert({
-                message: "",
-                status: "success",
-                title: "",
-                show: false,
-              })
-            );
+            dispatch(clearAlert());
             dispatch(setNewsletterStatus(""));
             dispatch(setNewsletterShow(false));
             dispatch(setContactUsStatus(""));
