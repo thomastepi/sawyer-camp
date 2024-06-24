@@ -13,6 +13,7 @@ import {
   HStack,
   Image,
   Button,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import {
   faArrowCircleUp,
@@ -20,10 +21,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useIsMobile from "../hooks/useIsMobile";
+import { Link } from "react-router-dom";
 
 const MotionBox = motion(Box);
 
 const OurWork = () => {
+  const isMobile = useBreakpointValue({ base: true, md: false, lg: false });
   const isMobileView = useIsMobile();
   const [showText, setShowText] = useState(false);
 
@@ -31,11 +34,11 @@ const OurWork = () => {
     <SharedLayout>
       <HeadingBox
         title="Our Work"
-        image="https://ik.imagekit.io/thormars/Sawyer-Camp/cultivate.jpg"
+        image="https://ik.imagekit.io/thormars/Sawyer-Camp/farm-girls.jpg"
       />
       <Box>
         <Box color="#87A922">
-          <Box m="0 auto" w="70%" py="65px">
+          <Box m="0 auto" w={isMobileView ? "95%" : "70%"} py="65px">
             <HStack
               spacing={isMobileView && "14"}
               flexDir={isMobileView && "column"}
@@ -74,7 +77,7 @@ const OurWork = () => {
               We focus our efforts in achieving three key goals
             </Heading>
           </Box>
-          <Box m="0 auto" w={isMobileView ? "90%" : "43%"} my="30px">
+          <Box m="0 auto" w={isMobileView ? "90%" : "70%"} my="30px">
             <Carousel
               infiniteLoop
               autoPlay="true"
@@ -99,7 +102,8 @@ const OurWork = () => {
                     >
                       <VStack spacing={5}>
                         <Heading size="md">{goal.title}</Heading>
-                        {!isMobileView && (
+                        <Text fontSize="lg">{goal.shortText}</Text>
+                        {!isMobile && (
                           <>
                             <Button
                               onClick={() => {
@@ -139,6 +143,51 @@ const OurWork = () => {
                 );
               })}
             </Carousel>
+          </Box>
+        </Box>
+        <Box bg="gray.100" py="50px">
+          <Heading color="green" fontSize="3xl" align="center" mb="20px">
+            Get Involved
+          </Heading>
+          <Text align="center" fontSize="xl" mb="10px">
+            Join us in our mission to empower farmers and build sustainable
+            communities.
+          </Text>
+          <Box
+            display="flex"
+            justifyContent="center"
+            flexDir={isMobile && "column"}
+          >
+            <Button
+              borderRadius={0}
+              colorScheme="green"
+              size="lg"
+              m="10px"
+              as={Link}
+              to="/donate"
+            >
+              Donate
+            </Button>
+            <Button
+              borderRadius={0}
+              colorScheme="green"
+              size="lg"
+              m="10px"
+              as={Link}
+              to="/volunteer"
+            >
+              Volunteer
+            </Button>
+            <Button
+              colorScheme="green"
+              borderRadius={0}
+              size="lg"
+              m="10px"
+              as={Link}
+              to="/contact-us"
+            >
+              Partner with Us
+            </Button>
           </Box>
         </Box>
       </Box>

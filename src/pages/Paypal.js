@@ -18,7 +18,7 @@ import {
 import useIsMobile from "../hooks/useIsMobile";
 import { setAlert } from "../features/alertSlice";
 
-const img = "https://ik.imagekit.io/thormars/Sawyer-Camp/farm-women.jpg";
+const img = "https://ik.imagekit.io/thormars/Sawyer-Camp/woman-carrying-child.jpg";
 
 const Paypal = () => {
   const [{ options, isPending }, dispatch] = usePayPalScriptReducer();

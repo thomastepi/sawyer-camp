@@ -81,9 +81,11 @@ const WhatWeDo = () => {
                     transition="opacity 0.5s ease-in-out"
                     boxSize="250px"
                     objectFit="cover"
-                    src={"https://ik.imagekit.io/thormars/Sawyer-Camp/palm-tree.jpg"}
+                    src={
+                      "https://ik.imagekit.io/thormars/Sawyer-Camp/palm-oil-bottle.jpg"
+                    }
                     w="100%"
-                    alt="photo of palm tree"
+                    alt="palm oil"
                   />
                 </Box>
               </HStack>

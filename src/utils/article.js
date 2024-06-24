@@ -97,7 +97,12 @@ export const article = [
               <span style={{ fontWeight: "bold" }}>Volunteering: </span>
               Lend a hand in the rebuilding efforts. Volunteer work includes
               helping clear debris, rebuilding structures, and supporting our
-              farmers in their daily tasks as they recover from the loss.
+              farmers in their daily tasks as they recover from the loss. Visit
+              our{" "}
+              <ChakraLink as={ReactRouterLink} color="blue" to="/volunteer">
+                Volunteer Page
+              </ChakraLink>{" "}
+              to lend a hand.
             </Text>
           </ListItem>
         </UnorderedList>

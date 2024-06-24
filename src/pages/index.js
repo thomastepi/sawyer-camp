@@ -10,6 +10,7 @@ import Paypal from "./Paypal";
 import Membership from "./Membership";
 import ErrorPage from "./ErrorPage";
 import Article from "./Article";
+import Volunteer from "./Volunteer";
 
 export {
   Home,
@@ -24,4 +25,5 @@ export {
   Membership,
   ErrorPage,
   Article,
+  Volunteer,
 };

@@ -16,6 +16,7 @@ import Membership from "../pages/Membership";
 import SharedLayout from "../pages/SharedLayout";
 import BlogBox from "./BlogBox";
 import HeadingBox from "./HeadingBox";
+import Card from "./Card";
 
 export {
   Header,
@@ -36,4 +37,5 @@ export {
   SharedLayout,
   BlogBox,
   HeadingBox,
+  Card,
 };

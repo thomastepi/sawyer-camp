@@ -30,7 +30,7 @@ import {
   Link as ChakraLink,
 } from "@chakra-ui/react";
 
-const img = "https://ik.imagekit.io/thormars/Sawyer-Camp/tomato-harvest.jpg";
+const img = "https://ik.imagekit.io/thormars/Sawyer-Camp/firewood-women.jpg";
 
 const ContactUs = () => {
   const isMobileView = useIsMobile();
@@ -71,7 +71,7 @@ const ContactUs = () => {
     <SharedLayout>
       <Box w="100%" color="#87A922">
         <HeadingBox image={img} title="Connect with Us" />
-        <Center h="20rem" mt='20px'>
+        <Center h="20rem" mt="20px">
           <VStack w="60%" spacing={4} pl={isMobileView && "20px"}>
             <Text fontSize="2xl" align="center">
               Help us make Sawyer Camp Farmers CIG even better! Share your

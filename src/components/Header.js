@@ -20,8 +20,7 @@ const Header = () => {
 
   return (
     <Box>
-      <Center bg="#EEEEEE" color="green"
-      >
+      <Center bg="#EEEEEE" color="green">
         <Flex width="90%" justify="space-between" h="inherit">
           <HStack spacing={6}>
             <ChakraLink
@@ -88,6 +87,9 @@ const Header = () => {
                 </ReactRouterLink>
                 <ReactRouterLink to="/blog">
                   <Text>Blog</Text>
+                </ReactRouterLink>
+                <ReactRouterLink to="/volunteer">
+                  <Text>Volunteer</Text>
                 </ReactRouterLink>
                 <ReactRouterLink to="/contact-us">
                   <Text>Contact Us</Text>
