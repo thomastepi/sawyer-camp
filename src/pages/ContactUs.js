@@ -30,7 +30,7 @@ import {
   Link as ChakraLink,
 } from "@chakra-ui/react";
 
-const img = "https://ik.imagekit.io/thormars/Sawyer-Camp/firewood-women.jpg";
+const img = "https://ik.imagekit.io/thormars/Sawyer-Camp/green-leaf.jpg";
 
 const ContactUs = () => {
   const isMobileView = useIsMobile();

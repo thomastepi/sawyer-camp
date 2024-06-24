@@ -7,17 +7,16 @@ const HeadingBox = ({ image, title }) => {
   return (
     <>
       <Box
-        bg="green"
         bgImg={image || img}
         bgSize="cover"
         bgRepeat="no-repeat"
         bgPos="center"
         color="white"
-        bgColor="white"
+        bgColor="green.200"
       >
-        <Center py="110px">
+        <Center py="200px">
           <Box w="90%">
-            <Heading align="center" size="3xl">
+            <Heading align="center" size="4xl">
               {title}
             </Heading>
           </Box>

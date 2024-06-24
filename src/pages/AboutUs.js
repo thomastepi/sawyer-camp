@@ -72,7 +72,11 @@ const AboutUs = () => {
           w="100%"
         >
           <Box align="left" w={isMobileView ? "90%" : "70%"}>
-            <Grid templateColumns={["1fr", "1fr 1fr"]} gap={6} w="100%">
+            <Grid
+              templateColumns={{ base: "1fr", md: "1fr 1fr" }}
+              gap={6}
+              w="100%"
+            >
               <GridItem w="100%" py="30px">
                 <Text fontSize="lg">
                   Sawyer Camp Farmers CIG rose to the challenge of safeguarding

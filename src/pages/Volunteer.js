@@ -12,6 +12,7 @@ import {
   Grid,
   GridItem,
   Center,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { PopupButton } from "@typeform/embed-react";
 import { SharedLayout, HeadingBox } from "../components";
@@ -46,7 +47,7 @@ const Volunteer = () => {
         </VStack>
       </Box>
       <Box bg="#789461" color="white" py="100px">
-        <VStack spacing={8} m="0 auto" w={isMobileView ? "90%" : "90%"}>
+        <VStack spacing={8} m="0 auto" w="90%">
           <Heading fontSize="3xl" align="center">
             How You Can Help
           </Heading>
@@ -57,7 +58,11 @@ const Volunteer = () => {
           </Text>
           <Center w="100%">
             <Grid
-              templateColumns={["auto", "auto auto auto"]}
+              templateColumns={{
+                base: "auto",
+                md: "auto auto",
+                lg: "auto auto auto",
+              }}
               gap={6}
               w="90%"
               justifyContent={"center"}

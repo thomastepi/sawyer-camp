@@ -36,6 +36,9 @@ const DrawerPanel = () => {
             <Box py={4}>
               <Box color="green">
                 <VStack spacing={7}>
+                  <ReactRouterLink to="/">
+                    <Text>Home</Text>
+                  </ReactRouterLink>
                   <ReactRouterLink to="/about-us">
                     <Text>About Us</Text>
                   </ReactRouterLink>
@@ -47,6 +50,9 @@ const DrawerPanel = () => {
                   </ReactRouterLink>
                   <ReactRouterLink to="/blog">
                     <Text>Blog</Text>
+                  </ReactRouterLink>
+                  <ReactRouterLink to="/volunteer">
+                    <Text>Volunteer</Text>
                   </ReactRouterLink>
                   <ReactRouterLink to="/contact-us">
                     <Text>Contact Us</Text>
