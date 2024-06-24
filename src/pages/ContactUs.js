@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import {
-  GoogleMaps,
+  //GoogleMaps,
   DisplayAlert,
   SharedLayout,
   HeadingBox,
@@ -236,10 +236,10 @@ const ContactUs = () => {
             )}
           </Grid>
         </Box>
-
-        <Box h="25rem">
+        {/*Renew Google Maps Subscription*/}
+        {/* <Box h="25rem">
           <GoogleMaps />
-        </Box>
+        </Box> */}
       </Box>
     </SharedLayout>
   );

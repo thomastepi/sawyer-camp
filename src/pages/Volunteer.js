@@ -12,7 +12,6 @@ import {
   Grid,
   GridItem,
   Center,
-  useBreakpointValue,
 } from "@chakra-ui/react";
 import { PopupButton } from "@typeform/embed-react";
 import { SharedLayout, HeadingBox } from "../components";

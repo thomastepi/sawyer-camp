@@ -4,7 +4,7 @@ import {
   Team,
   WhatWeDo,
   Subscribe,
-  GoogleMaps,
+  //GoogleMaps,
   SharedLayout,
   BlogBox,
 } from "../components";
@@ -26,7 +26,8 @@ const Home = () => {
         heading="Dont Miss Out!"
         headingText="Sign up for our newsletter"
       />
-      <GoogleMaps />
+      {/*Renew Google Maps subscription*/}
+      {/* <GoogleMaps /> */}
     </SharedLayout>
   );
 };

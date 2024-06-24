@@ -45,6 +45,9 @@ const Footer = () => {
               <ChakraLink as={ReactRouterLink} to="/blog">
                 <Text as="b">Blog</Text>
               </ChakraLink>
+              <ChakraLink as={ReactRouterLink} to="/volunteer">
+                <Text as="b">Volunteer</Text>
+              </ChakraLink>
               <ChakraLink as={ReactRouterLink} to="/contact-us">
                 <Text as="b">Get in Touch</Text>
               </ChakraLink>
@@ -53,7 +56,11 @@ const Footer = () => {
               </ChakraLink>
             </VStack>
           </Box>
-          <Box mb={isMobileView && "30px"}>
+          <Box
+            mb={isMobileView && "30px"}
+            display={!isMobileView && "flex"}
+            alignItems="center"
+          >
             <VStack>
               <Text align="center">To Support Sawyer Camp Farmers CIG</Text>
               <Button
