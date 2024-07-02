@@ -14,7 +14,7 @@ const HeadingBox = ({ image, title }) => {
         color="white"
         bgColor="green.200"
       >
-        <Center py="200px">
+        <Center py="150px">
           <Box w="90%">
             <Heading align="center" size="4xl">
               {title}

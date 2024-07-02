@@ -41,7 +41,12 @@ const BlogBox = ({ title, subtitle, bgColor }) => {
                 key={item.id}
                 maxW="sm"
                 bg="#D2E3C8"
-                _hover={{ cursor: "pointer", opacity: "0.8" }}
+                _hover={{
+                  cursor: "pointer",
+                  opacity: "0.8",
+                  padding: "0.2rem",
+                  transition: "0.5s",
+                }}
                 onClick={() => navigate(`/article/${item.id}`)}
               >
                 <CardBody>
