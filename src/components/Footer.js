@@ -2,6 +2,7 @@ import React from "react";
 import { Link as ReactRouterLink, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import navLinks from "../utils/navLinks";
 import {
   HStack,
   VStack,
@@ -33,27 +34,11 @@ const Footer = () => {
         >
           <Box mb={isMobileView && "40px"}>
             <VStack align={isMobileView ? "center" : "left"}>
-              <ChakraLink as={ReactRouterLink} to="/">
-                <Text as="b">Home</Text>
-              </ChakraLink>
-              <ChakraLink as={ReactRouterLink} to="/about-us">
-                <Text as="b">About Us</Text>
-              </ChakraLink>
-              <ChakraLink as={ReactRouterLink} to="/projects">
-                <Text as="b">Projects</Text>
-              </ChakraLink>
-              <ChakraLink as={ReactRouterLink} to="/blog">
-                <Text as="b">Blog</Text>
-              </ChakraLink>
-              <ChakraLink as={ReactRouterLink} to="/volunteer">
-                <Text as="b">Volunteer</Text>
-              </ChakraLink>
-              <ChakraLink as={ReactRouterLink} to="/contact-us">
-                <Text as="b">Get in Touch</Text>
-              </ChakraLink>
-              <ChakraLink as={ReactRouterLink} to="/membership">
-                <Text as="b">Become a Member</Text>
-              </ChakraLink>
+              {navLinks.map((link, index) => (
+                <ChakraLink key={index} as={ReactRouterLink} to={link.path}>
+                  <Text as="b">{link.name}</Text>
+                </ChakraLink>
+              ))}
             </VStack>
           </Box>
           <Box

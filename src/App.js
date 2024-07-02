@@ -15,6 +15,8 @@ import {
   ErrorPage,
   Article,
   Volunteer,
+  Login,
+  Register,
 } from "./pages";
 import { ScrollToTop } from "./components";
 import { PayPalProvider, ChakraUIProvider } from "./providers";
@@ -42,6 +44,8 @@ function App() {
             <Route path="/membership" element={<Membership />} />
             <Route path="/volunteer" element={<Volunteer />} />
             <Route path="/article/:articleId" element={<Article />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </Router>

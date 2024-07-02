@@ -12,7 +12,8 @@ import {
   Button,
   Text,
 } from "@chakra-ui/react";
-import { Link as ReactRouterLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+import navLinks from "../utils/navLinks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const DrawerPanel = () => {
@@ -36,30 +37,11 @@ const DrawerPanel = () => {
             <Box py={4}>
               <Box color="green">
                 <VStack spacing={7}>
-                  <ReactRouterLink to="/">
-                    <Text>Home</Text>
-                  </ReactRouterLink>
-                  <ReactRouterLink to="/about-us">
-                    <Text>About Us</Text>
-                  </ReactRouterLink>
-                  <ReactRouterLink to="/our-work">
-                    <Text>Our Work</Text>
-                  </ReactRouterLink>
-                  <ReactRouterLink to="/projects">
-                    <Text>Projects</Text>
-                  </ReactRouterLink>
-                  <ReactRouterLink to="/blog">
-                    <Text>Blog</Text>
-                  </ReactRouterLink>
-                  <ReactRouterLink to="/volunteer">
-                    <Text>Volunteer</Text>
-                  </ReactRouterLink>
-                  <ReactRouterLink to="/contact-us">
-                    <Text>Contact Us</Text>
-                  </ReactRouterLink>
-                  <ReactRouterLink to="/membership">
-                    <Text>Become a Member</Text>
-                  </ReactRouterLink>
+                  {navLinks.map((link, index) => (
+                    <Link key={index} to={link.path}>
+                      <Text>{link.name}</Text>
+                    </Link>
+                  ))}
                 </VStack>
               </Box>
             </Box>

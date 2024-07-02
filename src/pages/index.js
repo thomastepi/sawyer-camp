@@ -11,6 +11,8 @@ import Membership from "./Membership";
 import ErrorPage from "./ErrorPage";
 import Article from "./Article";
 import Volunteer from "./Volunteer";
+import Login from "./Login";
+import Register from "./Register";  
 
 export {
   Home,
@@ -26,4 +28,6 @@ export {
   ErrorPage,
   Article,
   Volunteer,
+  Login,
+  Register,
 };

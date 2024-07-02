@@ -4,14 +4,12 @@ import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import {
   Box,
   HStack,
-  Text,
   Center,
   Flex,
-  Image,
+  Divider,
   Link as ChakraLink,
 } from "@chakra-ui/react";
-import logo from "../assets/images/logo.png";
-import DrawerPanel from "./DrawerPanel";
+import Navbar from "./Navbar";
 import useIsMobile from "../hooks/useIsMobile";
 import { Link as ReactRouterLink } from "react-router-dom";
 
@@ -41,9 +39,23 @@ const Header = () => {
           <HStack spacing={6}>
             {!isMobileView && (
               <Center>
-                <ChakraLink as={ReactRouterLink} to="/membership" height="100%">
-                  Become a Member
-                </ChakraLink>
+                <HStack spacing={4}>
+                  <ChakraLink as={ReactRouterLink} to="/login" height="100%">
+                    Member Login
+                  </ChakraLink>
+                  <Divider
+                    borderColor="green"
+                    height="40px"
+                    orientation="vertical"
+                  />
+                  <ChakraLink
+                    as={ReactRouterLink}
+                    to="/membership"
+                    height="100%"
+                  >
+                    Become a Member
+                  </ChakraLink>
+                </HStack>
               </Center>
             )}
             <ChakraLink
@@ -64,41 +76,7 @@ const Header = () => {
           </HStack>
         </Flex>
       </Center>
-      <Box bg="#D2E3C8" p="7px" align="center" w="100%">
-        <Center width="85%" justifyContent="space-between">
-          <Box w={isMobileView ? "15%" : "5%"} paddingTop="6px">
-            <ReactRouterLink to="/">
-              <Image src={logo} alt="logo" />
-            </ReactRouterLink>
-          </Box>
-          {isMobileView ? (
-            <DrawerPanel />
-          ) : (
-            <Box color="green">
-              <HStack spacing={"14"}>
-                <ReactRouterLink to="/about-us">
-                  <Text>About Us</Text>
-                </ReactRouterLink>
-                <ReactRouterLink to="/our-work">
-                  <Text>Our Work</Text>
-                </ReactRouterLink>
-                <ReactRouterLink to="/projects">
-                  <Text>Projects</Text>
-                </ReactRouterLink>
-                <ReactRouterLink to="/blog">
-                  <Text>Blog</Text>
-                </ReactRouterLink>
-                <ReactRouterLink to="/volunteer">
-                  <Text>Volunteer</Text>
-                </ReactRouterLink>
-                <ReactRouterLink to="/contact-us">
-                  <Text>Contact Us</Text>
-                </ReactRouterLink>
-              </HStack>
-            </Box>
-          )}
-        </Center>
-      </Box>
+      <Navbar />
     </Box>
   );
 };
