@@ -41,7 +41,7 @@ const Header = () => {
               <Center>
                 <HStack spacing={4}>
                   <ChakraLink as={ReactRouterLink} to="/login" height="100%">
-                    Member Login
+                    Sign In
                   </ChakraLink>
                   <Divider
                     borderColor="green"
