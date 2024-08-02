@@ -79,7 +79,13 @@ export const article = [
               crops and machinery. Every contribution brings the SCFCIG one step
               closer to restoration and helps maintain the livelihoods of our
               farmers. Visit our{" "}
-              <ChakraLink as={ReactRouterLink} color="blue" to="/donate">
+              <ChakraLink
+                as={ReactRouterLink}
+                color="green"
+                fontStyle="italic"
+                textDecoration="underline"
+                to="/donate"
+              >
                 Donation Page
               </ChakraLink>{" "}
               to make a difference.
@@ -99,7 +105,13 @@ export const article = [
               helping clear debris, rebuilding structures, and supporting our
               farmers in their daily tasks as they recover from the loss. Visit
               our{" "}
-              <ChakraLink as={ReactRouterLink} color="blue" to="/volunteer">
+              <ChakraLink
+                as={ReactRouterLink}
+                color="green"
+                fontStyle="italic"
+                textDecoration="underline"
+                to="/volunteer"
+              >
                 Volunteer Page
               </ChakraLink>{" "}
               to lend a hand.
@@ -137,7 +149,13 @@ export const article = [
           crucial to our recovery and continued success. For any additional
           questions or direct support, please don’t hesitate to reach out
           through our{" "}
-          <ChakraLink as={ReactRouterLink} color="blue" to="/contact-us">
+          <ChakraLink
+            as={ReactRouterLink}
+            color="green"
+            fontStyle="italic"
+            textDecoration="underline"
+            to="/contact-us"
+          >
             Contact Us
           </ChakraLink>{" "}
           page. Your involvement makes a vital difference to us and the entire
@@ -261,7 +279,7 @@ export const article = [
         <br />
         <Text fontSize="lg" lineHeight={2}>
           We encourage all interested students (primary and secondary) to submit
-          an application by contacting info@sawyer-camp.com. <br />
+          an application by contacting info@sawyercamp.com. <br />
           Don't miss this opportunity to gain valuable experience, earn some
           income, and be part of something special this summer!
         </Text>

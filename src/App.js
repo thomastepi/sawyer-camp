@@ -1,24 +1,22 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import {
-  Home,
-  AboutUs,
-  Blog,
-  Projects,
-  OurWork,
-  ContactUs,
-  ProjectDescription,
-  Donate,
-  Paypal,
-  Membership,
-  ErrorPage,
-  Article,
-  Volunteer,
-  Login,
-  Register,
-} from "./pages";
-import { ScrollToTop } from "./components";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import Home from "./pages/Home/Home";
+import AboutUs from "./pages/AboutUs/AboutUs";
+import Blog from "./pages/Blog/Blog";
+import Projects from "./pages/ProjectsOverview/Projects";
+import OurWork from "./pages/OurWork/OurWork";
+import ContactUs from "./pages/ContactUs/ContactUs";
+import ProjectDetail from "./pages/ProjectDetail/ProjectDetail";
+import Donate from "./pages/Donate/Donate";
+import Paypal from "./pages/Paypal/Paypal";
+import Membership from "./pages/Membership/Membership";
+import ErrorPage from "./pages/ErrorPage/ErrorPage";
+import Article from "./pages/BlogArticlePage/Article";
+import Volunteer from "./pages/Volunteer/Volunteer";
+import Login from "./pages/Auth/Login";
+import Register from "./pages/Auth/Register";
 import { PayPalProvider, ChakraUIProvider } from "./providers";
 
 function App() {
@@ -36,7 +34,7 @@ function App() {
             <Route path="/contact-us" element={<ContactUs />} />
             <Route
               path="/project/:projectId"
-              element={<ProjectDescription />}
+              element={<ProjectDetail />}
               errorElement={<ErrorPage />}
             />
             <Route path="/donate" element={<Donate />} />
