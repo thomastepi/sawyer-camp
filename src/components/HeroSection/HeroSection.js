@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Heading, Box, Button, VStack, Center } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import useIsMobile from "../../hooks/useIsMobile";
 import { motion } from "framer-motion";
+import useIsMobile from "../../hooks/useIsMobile";
+import "./heroSection.css";
 
 const MotionBox = motion(Box);
-const url1 = "https://ik.imagekit.io/thormars/Sawyer-Camp/rubber_trees.jpg";
-const url2 = "https://ik.imagekit.io/thormars/Sawyer-Camp/cow.jpg";
-const url3 = "https://ik.imagekit.io/thormars/Sawyer-Camp/pines.jpg";
-const url4 = "https://ik.imagekit.io/thormars/Sawyer-Camp/fowl.jpg";
-const imgURLs = [url1, url2, url3, url4];
+
+const imgURLs = [
+  "https://ik.imagekit.io/thormars/Sawyer-Camp/rubber_trees.jpg",
+  "https://ik.imagekit.io/thormars/Sawyer-Camp/cow.jpg",
+  "https://ik.imagekit.io/thormars/Sawyer-Camp/pines.jpg",
+  "https://ik.imagekit.io/thormars/Sawyer-Camp/fowl.jpg",
+];
 
 export const HeroSection = () => {
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
@@ -17,24 +20,15 @@ export const HeroSection = () => {
   const isMobile = useIsMobile();
 
   useEffect(() => {
-    setTimeout(() => {
-      setShowItems(true);
-    }, 2000);
-    const preloadLinks = imgURLs.map((imageUrl) => {
-      const preloadLink = document.createElement("link");
-      preloadLink.rel = "preload";
-      preloadLink.as = "image";
-      preloadLink.href = imageUrl;
-      preloadLink.fetchpriority = "high";
-      return preloadLink;
+    setTimeout(() => setShowItems(true), 2000);
+
+    imgURLs.forEach((src) => {
+      const img = new Image();
+      img.src = src;
     });
 
-    preloadLinks.forEach((link) => document.head.appendChild(link));
-
     const intervalId = setInterval(() => {
-      setCurrentImgIndex((prevIndex) =>
-        prevIndex === imgURLs.length - 1 ? 0 : prevIndex + 1
-      );
+      setCurrentImgIndex((prevIndex) => (prevIndex + 1) % imgURLs.length);
     }, 9000);
 
     return () => clearInterval(intervalId);
@@ -50,23 +44,26 @@ export const HeroSection = () => {
         position="relative"
         overflow="hidden"
       >
-        {imgURLs.map((url, index) => (
-          <Box
-            key={index}
-            position="absolute"
-            top="0"
-            left="0"
-            right="0"
-            bottom="0"
-            backgroundImage={`url(${url})`}
-            backgroundSize="cover"
-            backgroundRepeat="no-repeat"
-            backgroundPosition="center"
-            transition="opacity 3s ease-in-out"
-            opacity={currentImgIndex === index ? 1 : 0}
-            bgColor="white"
-          />
-        ))}
+        <Box
+          position="absolute"
+          top="0"
+          left="0"
+          right="0"
+          bottom="0"
+          overflow="hidden"
+        >
+          {imgURLs.map((url, index) => (
+            <Box
+              key={index}
+              className="background-fade"
+              style={{
+                backgroundImage: `url(${url})`,
+                opacity: currentImgIndex === index ? 1 : 0,
+              }}
+            />
+          ))}
+        </Box>
+
         <Center>
           <Box
             align="center"
@@ -94,6 +91,7 @@ export const HeroSection = () => {
                 </>
               )}
             </MotionBox>
+
             <MotionBox
               initial={{ opacity: 0, y: 40 }}
               animate={{

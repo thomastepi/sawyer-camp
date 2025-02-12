@@ -17,6 +17,7 @@ import Article from "./pages/BlogArticlePage/Article";
 import Volunteer from "./pages/Volunteer/Volunteer";
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
+import MainLayout from "./layouts/MainLayout";
 import { PayPalProvider, ChakraUIProvider } from "./providers";
 
 function App() {
@@ -25,27 +26,29 @@ function App() {
       <PayPalProvider>
         <Router>
           <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about-us" element={<AboutUs />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/our-work" element={<OurWork />} />
-            <Route path="/contact-us" element={<ContactUs />} />
-            <Route
-              path="/project/:projectId"
-              element={<ProjectDetail />}
-              errorElement={<ErrorPage />}
-            />
-            <Route path="/donate" element={<Donate />} />
-            <Route path="/paypal" element={<Paypal />} />
-            <Route path="/membership" element={<Membership />} />
-            <Route path="/volunteer" element={<Volunteer />} />
-            <Route path="/article/:articleId" element={<Article />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="*" element={<ErrorPage />} />
-          </Routes>
+          <MainLayout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about-us" element={<AboutUs />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/our-work" element={<OurWork />} />
+              <Route path="/contact-us" element={<ContactUs />} />
+              <Route
+                path="/project/:projectId"
+                element={<ProjectDetail />}
+                errorElement={<ErrorPage />}
+              />
+              <Route path="/donate" element={<Donate />} />
+              <Route path="/paypal" element={<Paypal />} />
+              <Route path="/membership" element={<Membership />} />
+              <Route path="/volunteer" element={<Volunteer />} />
+              <Route path="/article/:articleId" element={<Article />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="*" element={<ErrorPage />} />
+            </Routes>
+          </MainLayout>
         </Router>
       </PayPalProvider>
     </ChakraUIProvider>

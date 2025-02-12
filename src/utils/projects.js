@@ -1,4 +1,5 @@
 import { VStack, Text, Heading } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const projects = [
   {
@@ -51,6 +52,84 @@ const projects = [
   },
   {
     id: 2,
+    name: "The Community Farming Initiative (CFI)",
+    location: "Banga-Bakundu, Cameroon",
+    image: "https://ik.imagekit.io/thormars/Sawyer-Camp/woman-planting.jpg",
+    article: (
+      <VStack spacing={6} align="left">
+        <Text>
+          The Community Farming Initiative (CFI) is a transformative effort by
+          Sawyer Camp Farmers CIG to combat food insecurity and empower
+          impoverished families. Recognizing that many local families struggle
+          to afford three square meals a day, SCFCIG has committed to utilizing
+          its reserved lands to support subsistence farming.
+        </Text>
+        <Heading w="100%" align="left" color="green" size="md">
+          How It Works
+        </Heading>
+        <Text>
+          Sawyer Camp Farmers CIG designates portions of its undeveloped land to
+          be cultivated by local families in need. These families are granted
+          access to small plots of land where they can grow food crops to
+          sustain themselves. This initiative not only provides immediate relief
+          from hunger but also fosters self-sufficiency within the community.
+        </Text>
+        <Heading w="100%" align="left" color="green" size="md">
+          Beyond Land Allocation
+        </Heading>
+        <Text w="100%" mb="0">
+          The CFI is not just about land distribution; it is about empowerment.
+          Beneficiary families receive guidance from SCFCIG farmers on best
+          agricultural practices, including:
+        </Text>
+        <ul>
+          <li>Crop selection and rotation to maximize yield.</li>
+          <li>
+            Organic farming techniques to enhance soil fertility and
+            sustainability.
+          </li>
+          <li>Water conservation methods for efficient farming.</li>
+        </ul>
+        <Text>
+          By equipping families with farming knowledge and resources, the CFI
+          ensures that these small-scale farmers can optimize their yield and
+          provide for their households throughout the year.
+        </Text>
+        <Heading w="100%" align="left" color="green" size="md">
+          Impact and Sustainability
+        </Heading>
+        <Text>
+          The impact of the Community Farming Initiative extends beyond food
+          security. It contributes to:
+        </Text>
+        <ul>
+          <li>
+            Poverty alleviation by reducing dependence on costly food supplies.
+          </li>
+          <li>Community resilience as families become more self-sufficient.</li>
+          <li>
+            Environmental stewardship through sustainable farming practices that
+            preserve the land for future generations.
+          </li>
+        </ul>
+        <Text w="100%">
+          By addressing hunger at its root cause — lack of access to arable land
+          — SCFCIG is strengthening the foundation of the community, ensuring
+          that no family is left behind. The Community Farming Initiative stands
+          as a testament to the power of shared resources, sustainable
+          agriculture, and collective progress.
+        </Text>
+        <Text w="100%">
+          Through this initiative, Sawyer Camp Farmers CIG continues to uphold
+          its mission of economic empowerment and environmental responsibility,
+          paving the way for a future where every family has the opportunity to
+          thrive.
+        </Text>
+      </VStack>
+    ),
+  },
+  {
+    id: 3,
     name: "Sustainable Palm Oil Production Expansion",
     location: "Sawyer Camp, Banga-Bakundu, Cameroon",
     image: "https://ik.imagekit.io/thormars/Sawyer-Camp/palm-oil-bottle.jpg",
@@ -139,6 +218,172 @@ const projects = [
           Together, let's celebrate a brighter, more sustainable future for palm
           oil!
         </Text>
+      </VStack>
+    ),
+  },
+  {
+    id: 4,
+    name: "The Back-to-School Support Initiative",
+    location: "Banga-Bakundu/Muyuka, Cameroon",
+    image: "https://ik.imagekit.io/thormars/Sawyer-Camp/back-to-school.jpg",
+    article: (
+      <VStack spacing={6} align="left">
+        {" "}
+        <Text>
+          {" "}
+          At Sawyer Camp Farmers CIG, we believe that education is the
+          foundation for a thriving future. Every year, as the school bells ring
+          for a new academic session, we launch our Back-to-School Support
+          Initiative—a campaign dedicated to ensuring that students in rural
+          communities return to school equipped with the supplies and support
+          they need.{" "}
+        </Text>{" "}
+        <Heading w="100%" align="left" color="green" size="md">
+          {" "}
+          Addressing Educational Barriers{" "}
+        </Heading>{" "}
+        <Text>
+          {" "}
+          Many families in Banga-Bakundu and surrounding communities face
+          significant financial challenges when it comes to providing school
+          materials and paying tuition fees. Without proper school supplies,
+          students often struggle to keep up with their peers, and some even
+          risk dropping out entirely due to financial constraints.{" "}
+        </Text>{" "}
+        <Text>
+          {" "}
+          Recognizing this, Sawyer Camp Farmers CIG steps in to support
+          disadvantaged students, helping to bridge the educational gap and
+          ensuring that every child has a fair chance at success.{" "}
+        </Text>{" "}
+        <Heading w="100%" align="left" color="green" size="md">
+          {" "}
+          How It Works{" "}
+        </Heading>{" "}
+        <Text>
+          {" "}
+          Each year, before the academic term begins, Sawyer Camp Farmers CIG
+          mobilizes resources to provide students with:{" "}
+        </Text>{" "}
+        <ul>
+          {" "}
+          <li>
+            Essential school supplies such as notebooks, pens, pencils, and
+            backpacks.
+          </li>{" "}
+          <li>Tuition assistance for families facing financial hardship.</li>{" "}
+          <li>School uniforms for students in need.</li>{" "}
+        </ul>{" "}
+        <Text>
+          {" "}
+          We work closely with local educators, parents, and community leaders
+          to identify students most in need of support. Our goal is to relieve
+          financial pressure on families so they can focus on their children's
+          education.{" "}
+        </Text>{" "}
+        <Heading w="100%" align="left" color="green" size="md">
+          {" "}
+          Beyond Financial Assistance{" "}
+        </Heading>{" "}
+        <Text>
+          {" "}
+          Our Back-to-School Support Initiative goes beyond just providing
+          materials. We also:{" "}
+        </Text>{" "}
+        <ul>
+          {" "}
+          <li>
+            Encourage academic excellence by organizing community study sessions
+            and mentorship programs.
+          </li>{" "}
+          <li>
+            Raise awareness on the importance of education through community
+            outreach events.
+          </li>{" "}
+          <li>
+            Support female students by promoting equal access to education
+            opportunities.
+          </li>{" "}
+        </ul>{" "}
+        <Text>
+          {" "}
+          By investing in the next generation, we are not only helping
+          individual students but also strengthening entire communities for a
+          more sustainable future.{" "}
+        </Text>{" "}
+        <Heading w="100%" align="left" color="green" size="md">
+          {" "}
+          The Impact of Your Support{" "}
+        </Heading>{" "}
+        <Text>
+          {" "}
+          Our initiative has helped dozens of students return to school with
+          confidence each year. The impact of education empowerment extends far
+          beyond the classroom:{" "}
+        </Text>{" "}
+        <ul>
+          {" "}
+          <li>
+            Increased literacy rates and academic performance among rural youth.
+          </li>{" "}
+          <li>Higher chances of future employment and economic stability.</li>{" "}
+          <li>
+            Stronger, more self-reliant communities where education is valued
+            and prioritized.
+          </li>{" "}
+        </ul>{" "}
+        <Text>
+          {" "}
+          Our commitment to sustainable development includes ensuring that every
+          child has access to quality education, which in turn contributes to a
+          more skilled workforce and a stronger local economy.{" "}
+        </Text>{" "}
+        <Text w="100%">
+          {" "}
+          Through the Back-to-School Support Initiative, Sawyer Camp Farmers CIG
+          continues its mission of community empowerment—because every child
+          deserves the opportunity to learn, grow, and build a better future.{" "}
+        </Text>{" "}
+        <Text w="100%">
+          You can be part of this transformation! Whether through{" "}
+          <Link
+            to="/donate"
+            style={{
+              color: "green",
+              fontWeight: "bold",
+              textDecoration: "underline",
+              fontStyle: "italic",
+            }}
+          >
+            donations
+          </Link>
+          ,{" "}
+          <Link
+            to="/contact-us"
+            style={{
+              color: "green",
+              fontWeight: "bold",
+              textDecoration: "underline",
+              fontStyle: "italic",
+            }}
+          >
+            partnerships
+          </Link>
+          , or{" "}
+          <Link
+            to="/volunteer"
+            style={{
+              color: "green",
+              fontWeight: "bold",
+              textDecoration: "underline",
+              fontStyle: "italic",
+            }}
+          >
+            volunteer efforts
+          </Link>
+          , your support helps us provide more students with the education they
+          deserve.
+        </Text>{" "}
       </VStack>
     ),
   },

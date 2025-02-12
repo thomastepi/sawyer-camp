@@ -1,7 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import projects from "../../utils/projects";
-import MainLayout from "../../layouts/MainLayout";
 import {
   Box,
   Text,
@@ -41,7 +40,7 @@ const ProjectDetail = () => {
   const { name, location, image, article } = project;
 
   return (
-    <MainLayout>
+    <>
       <Box key={project.id}>
         <Center color="#87A922">
           <Box w={isMobileView ? "80%" : "50%"} py="50px">
@@ -78,7 +77,7 @@ const ProjectDetail = () => {
           </Box>
         </Center>
       </Box>
-    </MainLayout>
+    </>
   );
 };
 

@@ -1,5 +1,4 @@
 import React from "react";
-import MainLayout from "../../layouts/MainLayout";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import {
   DonateHero,
@@ -12,7 +11,7 @@ const img = "https://ik.imagekit.io/thormars/Sawyer-Camp/harvest.jpg";
 
 const Donate = () => {
   return (
-    <MainLayout>
+    <>
       <PageHeader title="Donate" image={img} />
       <Box>
         <Box bg="white">
@@ -25,7 +24,7 @@ const Donate = () => {
           <DonateCallToAction />
         </Box>
       </Box>
-    </MainLayout>
+    </>
   );
 };
 

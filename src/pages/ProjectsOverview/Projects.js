@@ -1,7 +1,6 @@
 import React from "react";
 import projects from "../../utils/projects";
 import { Link } from "react-router-dom";
-import MainLayout from "../../layouts/MainLayout";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import {
   Box,
@@ -18,7 +17,7 @@ const img = "https://ik.imagekit.io/thormars/Sawyer-Camp/ridges.jpg";
 
 const Projects = () => {
   return (
-    <MainLayout>
+    <>
       <Box w="100%" color="#87A922">
         <PageHeader image={img} title="Our Projects" />
         <Center bg="#789461" h="20rem">
@@ -80,7 +79,7 @@ const Projects = () => {
           </Box>
         </Flex>
       </Box>
-    </MainLayout>
+    </>
   );
 };
 

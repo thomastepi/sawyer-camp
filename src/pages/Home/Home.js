@@ -1,5 +1,4 @@
 import React from "react";
-import MainLayout from "../../layouts/MainLayout";
 import HeroSection from "../../components/HeroSection/HeroSection";
 import WhatWeDo from "../../components/WhatWeDoSection/WhatWeDo";
 import Team from "../../components/TeamSection/Team";
@@ -10,7 +9,7 @@ import { Box, Center } from "@chakra-ui/react";
 
 const Home = () => {
   return (
-    <MainLayout>
+    <>
       <HeroSection />
       <WhatWeDo />
       <Team />
@@ -26,7 +25,7 @@ const Home = () => {
       />
       {/*Renew Google Maps subscription*/}
       {/* <GoogleMaps /> */}
-    </MainLayout>
+    </>
   );
 };
 

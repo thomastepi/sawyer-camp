@@ -1,6 +1,5 @@
 import React from "react";
 import Subscribe from "../../components/SubscribeForm/Subscribe";
-import MainLayout from "../../layouts/MainLayout";
 import BlogArticleBox from "../../components/BlogArticles/BlogArticleBox";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import { Box, Center } from "@chakra-ui/react";
@@ -9,7 +8,7 @@ const Blog = () => {
   const heading = "Grow With Us";
   const headingText = "Subscribe to Blog Posts";
   return (
-    <MainLayout>
+    <>
       <Box>
         <PageHeader
           title="Blog"
@@ -29,7 +28,7 @@ const Blog = () => {
           headingText={headingText}
         />
       </Box>
-    </MainLayout>
+    </>
   );
 };
 

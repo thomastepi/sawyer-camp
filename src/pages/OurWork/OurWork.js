@@ -3,7 +3,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../../assets/css/ourWork.css";
 import { Carousel } from "react-responsive-carousel";
 import goals from "../../utils/goals";
-import MainLayout from "../../layouts/MainLayout";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import { motion } from "framer-motion";
 import {
@@ -32,7 +31,7 @@ const OurWork = () => {
   const [showText, setShowText] = useState(false);
 
   return (
-    <MainLayout>
+    <>
       <PageHeader
         title="Our Work"
         image="https://ik.imagekit.io/thormars/Sawyer-Camp/farm-girls.jpg"
@@ -50,9 +49,11 @@ const OurWork = () => {
                     Building a Network of Sustainable Farmers
                   </Heading>
                   <Text fontSize="2xl" align="center">
-                    Our strategy centers on fostering a thriving community of
-                    smallholder farmers through resource provision, education,
-                    and collaboration.
+                    At Sawyer Camp Farmers CIG, we believe that sustainability
+                    starts with people. By equipping smallholder farmers with
+                    education, resources, and collaborative support, we are
+                    building a thriving agricultural network that fosters food
+                    security, economic growth, and environmental responsibility.
                   </Text>
                 </VStack>
               </Box>
@@ -75,7 +76,7 @@ const OurWork = () => {
             px={isMobileView && "15px"}
           >
             <Heading color="white" fontSize="3xl" align="center">
-              We focus our efforts in achieving three key goals
+              We focus our efforts in achieving four key goals
             </Heading>
           </Box>
           <Box m="0 auto" w={isMobileView ? "90%" : "70%"} my="30px">
@@ -192,7 +193,7 @@ const OurWork = () => {
           </Box>
         </Box>
       </Box>
-    </MainLayout>
+    </>
   );
 };
 

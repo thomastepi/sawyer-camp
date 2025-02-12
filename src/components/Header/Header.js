@@ -17,8 +17,14 @@ const Header = () => {
   const isMobileView = useIsMobile();
 
   return (
-    <Box>
-      <Center bg="#EEEEEE" color="green">
+    <>
+      <Center
+        bg="#EEEEEE"
+        color="green"
+        position="sticky"
+        top="0"
+        zIndex="sticky"
+      >
         <Flex width="90%" justify="space-between" h="inherit">
           <HStack spacing={6}>
             <ChakraLink
@@ -77,7 +83,7 @@ const Header = () => {
         </Flex>
       </Center>
       <Navbar />
-    </Box>
+    </>
   );
 };
 

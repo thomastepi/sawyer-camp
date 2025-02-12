@@ -14,7 +14,6 @@ import {
   Center,
 } from "@chakra-ui/react";
 import { PopupButton } from "@typeform/embed-react";
-import MainLayout from "../../layouts/MainLayout";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import useIsMobile from "../../hooks/useIsMobile";
 import { roles } from "../../utils/roles";
@@ -24,10 +23,10 @@ const Volunteer = () => {
   const id = process.env.REACT_APP_TYPEFORM_ID_VOLUNTEER;
 
   return (
-    <MainLayout>
+    <>
       <PageHeader
         title="Volunteer with Us"
-        image="https://ik.imagekit.io/thormars/Sawyer-Camp/plantation-plantain.jpg"
+        image="https://ik.imagekit.io/thormars/Sawyer-Camp/farm-women.jpg"
       />
       <Box color="#87A922" p="20px">
         <VStack
@@ -110,7 +109,7 @@ const Volunteer = () => {
           </Button>
         </VStack>
       </Box>
-    </MainLayout>
+    </>
   );
 };
 

@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 // import GoogleMaps from "../../components/GoogleMaps/GoogleMaps";
 import DisplayAlert from "../../components/Alert/DisplayAlert";
-import MainLayout from "../../layouts/MainLayout";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons";
@@ -66,7 +65,7 @@ const ContactUs = () => {
   }, [status, dispatch, formik]);
 
   return (
-    <MainLayout>
+    <>
       <Box w="100%" color="#87A922">
         <PageHeader image={img} title="Connect with Us" />
         <Center h="20rem" mt="20px">
@@ -239,7 +238,7 @@ const ContactUs = () => {
           <GoogleMaps />
         </Box> */}
       </Box>
-    </MainLayout>
+    </>
   );
 };
 

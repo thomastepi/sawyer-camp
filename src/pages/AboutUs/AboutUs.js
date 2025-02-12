@@ -1,5 +1,4 @@
 import React from "react";
-import MainLayout from "../../layouts/MainLayout";
 import FixedBg from "../../components/FixedBackground/FixedBg";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import {
@@ -14,12 +13,12 @@ import {
 } from "@chakra-ui/react";
 import useIsMobile from "../../hooks/useIsMobile";
 
-const img = "https://ik.imagekit.io/thormars/Sawyer-Camp/about.jpg";
+const img = "https://ik.imagekit.io/thormars/Sawyer-Camp/about-us.jpg";
 
 const AboutUs = () => {
   const isMobileView = useIsMobile();
   return (
-    <MainLayout>
+    <>
       <PageHeader image={img} title="About Us" />
       <FixedBg
         image={"https://ik.imagekit.io/thormars/Sawyer-Camp/nature.jpg"}
@@ -29,10 +28,12 @@ const AboutUs = () => {
           <Center py="60px" w={isMobileView ? "90%" : "50%"} color="green">
             <VStack>
               <Text color="#87A922" fontSize="2xl" py={5}>
-                Our story began in 1989, rooted in the vision of Mr. Emmanuel
-                Atud. Armed with a Master's degree in Agricultural Economics
-                from the University of Illinois, he embarked on a mission to
-                empower our community.
+                Founded in 1989 by Mr. Emmanuel Atud, Sawyer Camp Farmers CIG
+                was born out of a vision to empower rural communities through
+                sustainable agriculture. With a Master's degree in Agricultural
+                Economics from the University of Illinois, Mr. Atud recognized
+                the transformative power of education, collaboration, and
+                resource access in uplifting local farmers.
               </Text>
               <a href="#our-story">
                 <Button colorScheme="green" variant="solid">
@@ -54,11 +55,11 @@ const AboutUs = () => {
           mt="70px"
         >
           <Text fontSize="2xl" p={5}>
-            At Sawyer Camp, we empower local farmers with sustainable practices,
-            nurturing a future of economic growth and environmental stewardship.
-            Collaboration, education, and resource access are the cornerstones
-            of our mission: thriving communities delivering high-quality
-            produce.
+            At Sawyer Camp Farmers CIG, we are committed to empowering local
+            farmers with sustainable agricultural practices that drive economic
+            growth and environmental responsibility. Through education,
+            collaboration, and resource access, we cultivate thriving
+            communities that produce high-quality, market-ready crops.
           </Text>
         </Box>
 
@@ -81,19 +82,25 @@ const AboutUs = () => {
             >
               <GridItem w="100%" py="30px">
                 <Text fontSize="lg">
-                  Sawyer Camp Farmers CIG rose to the challenge of safeguarding
-                  our rural communities. Climate change, biodiversity loss, and
-                  rural poverty threatened the livelihoods of our farmers and
-                  the future of our land. Determined to find a solution, we
-                  united as a community-based organization.
+                  For years, our rural communities faced mounting
+                  challenges—climate change, biodiversity loss, and rural
+                  poverty. Farmers struggled to sustain their livelihoods, and
+                  the future of our land was at risk. Instead of standing by, we
+                  took action. As a united community-based organization, Sawyer
+                  Camp Farmers CIG turned these challenges into opportunities,
+                  equipping farmers with the tools and knowledge to adapt, grow,
+                  and prosper.
                   <br />
                   <br />
-                  Today, Sawyer Camp Farmers CIG is a flourishing union of
-                  farmers. We've not only mitigated those initial challenges,
-                  but we're also fostering economic prosperity and environmental
-                  responsibility. Our unwavering dedication to sustainable
-                  practices cultivates a thriving ecosystem and high-quality
-                  cash crops that have become a staple in the national market.
+                  Today, Sawyer Camp Farmers CIG is a thriving collective of
+                  dedicated farmers. Not only have we overcome the obstacles of
+                  the past, but we are now leaders in sustainable agriculture,
+                  driving economic prosperity while preserving our environment.
+                  Our commitment to responsible farming ensures high-quality
+                  cash crops that contribute to national food security and
+                  economic stability. As we continue to grow, we invite farmers,
+                  partners, and supporters to join us in shaping a more
+                  sustainable and empowered future.
                 </Text>
               </GridItem>
               <GridItem
@@ -108,7 +115,7 @@ const AboutUs = () => {
           </Box>
         </Box>
       </Box>
-    </MainLayout>
+    </>
   );
 };
 

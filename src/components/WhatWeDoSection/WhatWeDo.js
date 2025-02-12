@@ -39,13 +39,16 @@ const WhatWeDo = () => {
       <VStack justifyContent="center" alignItems="center">
         <Box align="center">
           <VStack w="80%" color="#87A922" spacing={9}>
-            <Heading color="green">What We Do</Heading>
+            <Heading color="green">
+              Sustainable Farming. Thriving Communities.
+            </Heading>
             <Box padding={8}>
-              <Text fontSize={isMobileView ? "2xl" : "4xl"}>
-                Empowering local farmers in Banga Bakundu, Cameroon, our
-                community-driven union cultivates sustainable practices and
-                supplies the region with high-quality cash crops. We achieve
-                this through education and resource access.
+              <Text fontSize={isMobileView ? "2xl" : "3xl"}>
+                In Banga Bakundu, Cameroon, we empower local farmers with
+                sustainable agriculture and modern techniques. Through education
+                and access to resources, we cultivate a thriving farming
+                community that produces high-quality cash crops, driving both
+                economic growth and food security.
               </Text>
             </Box>
             <Box py="55px" bg="#436850" px="30px" color="white">
@@ -56,9 +59,9 @@ const WhatWeDo = () => {
                     opacity={isVisible ? 1 : 0}
                     transition="opacity 0.5s ease-in-out"
                   >
-                    Harnessing modern methods, we transform ripe palm fruits
-                    into exceptional palm oil, nourishing both our communities
-                    and the nation.
+                    Using innovative and eco-friendly methods, we produce
+                    high-quality, sustainable palm oil that nourishes our
+                    communities and strengthens local economies.
                   </Text>
                   <Button
                     colorScheme="green"
@@ -68,7 +71,7 @@ const WhatWeDo = () => {
                     opacity={isVisible ? 1 : 0}
                     transition="opacity 2s ease-in-out"
                   >
-                    <Link to="/project/2">Learn More</Link>
+                    <Link to="/project/3">Learn More</Link>
                   </Button>
                 </Box>
                 <Box

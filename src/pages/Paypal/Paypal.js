@@ -1,6 +1,5 @@
 import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
 import React, { useState, useEffect } from "react";
-import MainLayout from "../../layouts/MainLayout";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import DisplayAlert from "../../components/Alert/DisplayAlert";
 import { Link } from "react-router-dom";
@@ -110,7 +109,7 @@ const Paypal = () => {
   };
 
   return (
-    <MainLayout>
+    <>
       <Box bg="#789461">
         <PageHeader image={img} title="Empower Our Cause" />
 
@@ -199,7 +198,7 @@ const Paypal = () => {
           </VStack>
         </Center>
       </Box>
-    </MainLayout>
+    </>
   );
 };
 
