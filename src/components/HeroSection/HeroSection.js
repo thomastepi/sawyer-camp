@@ -8,10 +8,10 @@ import "./heroSection.css";
 const MotionBox = motion(Box);
 
 const imgURLs = [
+  "https://ik.imagekit.io/thormars/Sawyer-Camp/empower.jpg",
   "https://ik.imagekit.io/thormars/Sawyer-Camp/rubber_trees.jpg",
   "https://ik.imagekit.io/thormars/Sawyer-Camp/cow.jpg",
   "https://ik.imagekit.io/thormars/Sawyer-Camp/pines.jpg",
-  "https://ik.imagekit.io/thormars/Sawyer-Camp/fowl.jpg",
 ];
 
 export const HeroSection = () => {
@@ -35,7 +35,6 @@ export const HeroSection = () => {
   }, []);
 
   return (
-    <>
       <VStack
         h="80vh"
         alignItems="center"
@@ -113,7 +112,6 @@ export const HeroSection = () => {
           </Box>
         </Center>
       </VStack>
-    </>
   );
 };
 

@@ -5,7 +5,7 @@ const img = "https://ik.imagekit.io/thormars/Sawyer-Camp/nature.jpg";
 
 const FixedBg = ({ image }) => {
   const bgImgStyle = {
-    position: "fixed",
+    position: "absolute",
     top: "0",
     left: "0",
     width: "100%",
@@ -15,14 +15,11 @@ const FixedBg = ({ image }) => {
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
+    backgroundAttachment: "fixed",
     opacity: "1",
     zIndex: "-1",
   };
-  return (
-    <Box position="relative" overflow="hidden">
-      <Box {...bgImgStyle}></Box>
-    </Box>
-  );
+  return <Box {...bgImgStyle}></Box>;
 };
 
 export default FixedBg;

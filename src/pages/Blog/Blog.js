@@ -23,7 +23,7 @@ const Blog = () => {
           </Box>
         </Center>
         <Subscribe
-          image={"https://ik.imagekit.io/thormars/Sawyer-Camp/about.jpg"}
+          image={"https://ik.imagekit.io/thormars/Sawyer-Camp/root-veggies.jpg"}
           heading={heading}
           headingText={headingText}
         />

@@ -67,7 +67,7 @@ const Subscribe = ({ image, heading, headingText }) => {
   }, [status, dispatch, formik]);
 
   return (
-    <Center w="100%">
+    <Center w="100%" pos="relative">
       <FixedBg image={image} />
       <Center py="50px" w={isMobileView ? "80%" : "30%"}>
         <Box

@@ -39,7 +39,7 @@ const DrawerPanel = () => {
                 <VStack spacing={7}>
                   {navLinks.map((link, index) => (
                     <Link key={index} to={link.path}>
-                      <Text>{link.name}</Text>
+                      <Text onClick={onClose}>{link.name}</Text>
                     </Link>
                   ))}
                 </VStack>

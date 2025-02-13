@@ -13,13 +13,13 @@ const Home = () => {
       <HeroSection />
       <WhatWeDo />
       <Team />
-      <Center w="100%" mt="40px">
+      <Center w="100%" my="40px">
         <Box w="80%">
-          <BlogArticleBox title="Latest News" />
+          <BlogArticleBox title="Latest News" bgColor="#F8F4E1" />
         </Box>
       </Center>
       <Subscribe
-        image={"https://ik.imagekit.io/thormars/Sawyer-Camp/empower.jpg"}
+        image={"https://ik.imagekit.io/thormars/Sawyer-Camp/fowl.jpg"}
         heading="Dont Miss Out!"
         headingText="Sign up for our newsletter"
       />
