@@ -4,7 +4,12 @@
 
 The Sawyer Camp Farmers Common Initiative Group (SCFCIG) is a community-driven initiative that supports sustainable farming and empowers local farmers in Banga Bakundu, Cameroon. This website serves as a digital hub for the organization, enhancing user engagement, membership sign-ups, and secure donations.
 
-## [![sawyer-camp](https://img.shields.io/badge/LIVE%20DEMO-<COLOR>.svg)](https://sawyercamp.thomastepi.com)
+---
+
+##  Live Demo
+🔗 **[Website](https://sawyercamp.thomastepi.com)**  
+
+---
 
 ## About the Project
 
@@ -15,6 +20,8 @@ This project aims to:
 - Enable secure donations to fund farming programs, school tuition aid, and rural development.
 - Provide real-time location visualization for Sawyer Camp’s farming network.
 
+---
+
 ## Key Features:
 
 - **Dynamic Membership Registration:** Farmers and supporters can join SCFCIG through an interactive form.
@@ -22,6 +29,8 @@ This project aims to:
 - **Google Maps Integration:** Showcases Sawyer Camp’s farms and community outreach locations.
 - **News & Blog Section:** Shares updates about farming projects, community work, and sustainability initiatives.
 - **Eco-Friendly Farming Information:** Educates users about organic farming, sustainability, and agroforestry.
+
+---
 
 ## Tech Stack:
 
