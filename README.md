@@ -2,53 +2,32 @@
 
 ![Sawyer Camp Screenshot](https://ik.imagekit.io/thormars/portfolio/sawyer.png)
 
-Welcome to the repository for the Sawyer Camp Farmers Common Initiative Group website project. This project aims to provide a responsive website for a not-for-profit farmers union, enhancing user engagement and facilitating various functionalities.
-
-## About the Project
-
-The Sawyer Camp Farmers Common Initiative Group website is built using React.js, Formik, and Redux Toolkit for state management. It leverages several external APIs and services to provide interactive features such as location visualization, dynamic forms, and secure online donations.
+The Sawyer Camp Farmers Common Initiative Group (SCFCIG) is a community-driven initiative that supports sustainable farming and empowers local farmers in Banga Bakundu, Cameroon. This website serves as a digital hub for the organization, enhancing user engagement, membership sign-ups, and secure donations.
 
 ## [![sawyer-camp](https://img.shields.io/badge/LIVE%20DEMO-<COLOR>.svg)](https://sawyercamp.thomastepi.com)
 
-## Getting Started
+## About the Project
 
-To run the project locally on your machine, follow these steps:
+This project aims to:
 
-1. Clone the repository to your local machine:
-   ```bash
-   git clone https://github.com/thomastepi/sawyer-camp.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd sawyer-camp
-   ```
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-4. Create a `.env` file in the project root and add the following environment variables:
+- Increase visibility for SCFCIG’s work in sustainable agriculture.
+- Facilitate membership and volunteer registrations for farmers and supporters.
+- Enable secure donations to fund farming programs, school tuition aid, and rural development.
+- Provide real-time location visualization for Sawyer Camp’s farming network.
 
-   REACT_APP_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
-   REACT_APP_PAYPAL_CLIENT_ID=your_paypal_client_id
-   REACT_APP_BASE_URL=your_base_url
-   REACT_APP_TYPEFORM_ID=your_typeform_id
+## Key Features:
 
-> Note: You need to generate your own values for these environment variables.
+- Dynamic Membership Registration: Farmers and supporters can join SCFCIG through an interactive form.
+- Secure Online Donations: Supports payments via PayPal.
+- Google Maps Integration: Showcases Sawyer Camp’s farms and community outreach locations.
+- News & Blog Section: Shares updates about farming projects, community work, and sustainability initiatives.
+- Eco-Friendly Farming Information: Educates users about organic farming, sustainability, and agroforestry.
 
-5. Start the development server:
-   ```bash
-   npm start
-   ```
-6. Open your browser and navigate to [http://localhost:3000](http://localhost:3000) to view the website.
+## Tech Stack:
 
-## Contributing
-
-Contributions are welcome! If you find any issues or have suggestions for improvement, please feel free to open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-Thank you for your interest in the Sawyer Camp Farmers Common Initiative Group website project! If you have any questions or feedback, please don't hesitate to reach out.
+- Frontend: React.js, Redux Toolkit (state management), Formik (forms)
+- UI Framework: Chakra UI
+- Backend: Node.js, Express.js
+- Database: MongoDB
+- Payment Processing: PayPal API
+- Hosting: Render (Frontend), Heroku (Backend)
