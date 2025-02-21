@@ -8,7 +8,7 @@ Welcome to the repository for the Sawyer Camp Farmers Common Initiative Group we
 
 The Sawyer Camp Farmers Common Initiative Group website is built using React.js, Formik, and Redux Toolkit for state management. It leverages several external APIs and services to provide interactive features such as location visualization, dynamic forms, and secure online donations.
 
-## [![sawyer-camp](https://img.shields.io/badge/LIVE%20DEMO-<COLOR>.svg)](https://sawyer-camp-farmers.onrender.com)
+## [![sawyer-camp](https://img.shields.io/badge/LIVE%20DEMO-<COLOR>.svg)](https://sawyercamp.thomastepi.com)
 
 ## Getting Started
 
