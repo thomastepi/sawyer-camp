@@ -1,5 +1,7 @@
 # Sawyer Camp Farmers Common Initiative Group Website
 
+![Sawyer Camp Screenshot](https://ik.imagekit.io/thormars/portfolio/sawyer.png)
+
 Welcome to the repository for the Sawyer Camp Farmers Common Initiative Group website project. This project aims to provide a responsive website for a not-for-profit farmers union, enhancing user engagement and facilitating various functionalities.
 
 ## About the Project
