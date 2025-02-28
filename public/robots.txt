@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sawyercamp.thomastepi.com/sitemap.xml
