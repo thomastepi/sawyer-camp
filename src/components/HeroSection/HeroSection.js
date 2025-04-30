@@ -89,8 +89,8 @@ export const HeroSection = () => {
                 animate="visible"
               >
                 <MotionBox variants={itemVariants}>
-                  <Box fontSize={{ base: "2xl", md: "3xl" }} py={10}>
-                    <Heading fontSize={{ base: "4xl", md: "7xl" }}>
+                  <Box py={10}>
+                    <Heading fontSize={{ base: "5xl", md: "7xl", lg: "8xl" }}>
                       Sawyer Camp Farmers
                     </Heading>
                     <Heading>Common Initiative Group</Heading>
