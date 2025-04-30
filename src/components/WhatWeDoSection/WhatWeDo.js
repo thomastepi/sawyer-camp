@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import {
   Box,
@@ -9,31 +9,18 @@ import {
   Button,
   Heading,
 } from "@chakra-ui/react";
+import { motion, useInView } from "framer-motion";
 import useIsMobile from "../../hooks/useIsMobile";
+
+const MotionText = motion(Text);
+const MotionButton = motion(Button);
+const MotionImage = motion(Image);
 
 const WhatWeDo = () => {
   const ref = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-  const [hasBeenVisible, setHasBeenVisible] = useState(false);
   const isMobileView = useIsMobile();
+  const isInView = useInView(ref, { once: true, margin: "0px 0px -100px 0px" });
 
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      const [entry] = entries;
-      if (entry.isIntersecting && !hasBeenVisible) {
-        setHasBeenVisible(true);
-        setTimeout(() => {
-          setIsVisible(entry.isIntersecting);
-        }, 1000);
-      }
-    });
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-    return () => {
-      observer.disconnect();
-    };
-  }, [ref, hasBeenVisible]);
   return (
     <Box minHeight="100vh" bg="white" pt="70px">
       <VStack justifyContent="center" alignItems="center">
@@ -51,44 +38,48 @@ const WhatWeDo = () => {
                 economic growth and food security.
               </Text>
             </Box>
-            <Box py="55px" bg="#436850" px="30px" color="white">
-              <HStack flexDir={isMobileView && "column"} spacing={5} ref={ref}>
+
+            <Box py="55px" bg="#436850" px="30px" color="white" ref={ref}>
+              <HStack flexDir={isMobileView && "column"} spacing={5}>
                 <Box align={isMobileView ? "center" : "left"} w="90%">
-                  <Text
+                  <MotionText
                     fontSize="2xl"
-                    opacity={isVisible ? 1 : 0}
-                    transition="opacity 0.5s ease-in-out"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6 }}
                   >
                     Using innovative and eco-friendly methods, we produce
                     high-quality, sustainable palm oil that nourishes our
                     communities and strengthens local economies.
-                  </Text>
-                  <Button
+                  </MotionText>
+
+                  <MotionButton
                     colorScheme="green"
                     variant="solid"
                     marginTop={5}
                     p={5}
-                    opacity={isVisible ? 1 : 0}
-                    transition="opacity 2s ease-in-out"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ delay: 0.3, duration: 0.6 }}
                   >
                     <Link to="/project/3">Learn More</Link>
-                  </Button>
+                  </MotionButton>
                 </Box>
+
                 <Box
                   w={isMobileView ? "100%" : "70%"}
                   display="flex"
                   alignItems="center"
                 >
-                  <Image
-                    opacity={isVisible ? 1 : 0}
-                    transition="opacity 0.5s ease-in-out"
+                  <MotionImage
+                    src="https://ik.imagekit.io/thormars/Sawyer-Camp/palm-oil-bottle.jpg"
+                    alt="palm oil"
                     boxSize="250px"
                     objectFit="cover"
-                    src={
-                      "https://ik.imagekit.io/thormars/Sawyer-Camp/palm-oil-bottle.jpg"
-                    }
                     w="100%"
-                    alt="palm oil"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ delay: 0.6, duration: 0.5 }}
                   />
                 </Box>
               </HStack>

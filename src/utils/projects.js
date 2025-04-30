@@ -4,57 +4,9 @@ import { Link } from "react-router-dom";
 const projects = [
   {
     id: 1,
-    name: "The Cocoa Coffee Seedling Project (CCSP)",
-    location: "Banga-Bakundu, Cameroon",
-    image: "https://ik.imagekit.io/thormars/Sawyer-Camp/seedling.webp",
-    article: (
-      <VStack spacing={6}>
-        <Text>
-          The CCSP tackles two crucial challenges faced by rural communities:
-          low crop yields and environmental degradation. Here's how it works:
-          SCFCIG farmers, utilizing their expertise and modern farming
-          techniques, nurture coffee seedlings in dedicated nurseries. These
-          healthy, robust seedlings are then distributed to local small-scale
-          farmers, significantly boosting their potential crop output.
-        </Text>
-        <Text>
-          But the CCSP goes beyond mere seedling distribution. The project also
-          prioritizes knowledge-sharing and sustainable practices. SCFCIG
-          farmers act as mentors, educating their smaller-scale counterparts on
-          best practices for coffee cultivation. This includes the utilization
-          of organic materials and manure, promoting environmentally friendly
-          methods that nurture the soil and protect biodiversity.
-        </Text>
-        <Text>
-          The impact of the CCSP is multi-faceted. By equipping small-scale
-          farmers with high-quality seedlings and valuable knowledge, the
-          project empowers them to increase their income and improve their
-          livelihoods. This, in turn, contributes to alleviating rural poverty
-          and fostering a more economically vibrant community.
-        </Text>
-        <Text>
-          Furthermore, the emphasis on organic practices ensures long-term
-          environmental sustainability. By reducing reliance on chemical
-          fertilizers, the CCSP promotes soil health and biodiversity, creating
-          a thriving ecosystem that benefits both coffee production and the
-          surrounding environment.
-        </Text>
-        <Text>
-          The Cocoa Coffee Seedling Project serves as a remarkable example of
-          collaboration, knowledge transfer, and environmental responsibility
-          within the agricultural sector. By bridging the gap between
-          experienced and emerging farmers, the CCSP empowers rural communities,
-          fosters sustainable practices, and paves the way for a brighter future
-          for generations to come.
-        </Text>
-      </VStack>
-    ),
-  },
-  {
-    id: 2,
     name: "The Community Farming Initiative (CFI)",
     location: "Banga-Bakundu, Cameroon",
-    image: "https://ik.imagekit.io/thormars/Sawyer-Camp/woman-planting.jpg",
+    image: "https://ik.imagekit.io/thormars/Sawyer-Camp/community-farming.jpg",
     article: (
       <VStack spacing={6} align="left">
         <Text>
@@ -113,17 +65,104 @@ const projects = [
           </li>
         </ul>
         <Text w="100%">
-          By addressing hunger at its root cause — lack of access to arable land
-          — SCFCIG is strengthening the foundation of the community, ensuring
-          that no family is left behind. The Community Farming Initiative stands
-          as a testament to the power of shared resources, sustainable
-          agriculture, and collective progress.
+          By addressing hunger at its root cause (lack of access to arable land)
+          SCFCIG is strengthening the foundation of the community, ensuring that
+          no family is left behind. The Community Farming Initiative stands as a
+          testament to the power of shared resources, sustainable agriculture,
+          and collective progress.
         </Text>
         <Text w="100%">
           Through this initiative, Sawyer Camp Farmers CIG continues to uphold
           its mission of economic empowerment and environmental responsibility,
           paving the way for a future where every family has the opportunity to
           thrive.
+        </Text>
+      </VStack>
+    ),
+  },
+  {
+    id: 2,
+    name: "The Cocoa Coffee Seedling Project (CCSP)",
+    location: "Banga-Bakundu, Cameroon",
+    image: "https://ik.imagekit.io/thormars/Sawyer-Camp/seedling.webp",
+    article: (
+      <VStack spacing={6} align="left">
+        <Text>
+          The Cocoa Coffee Seedling Project (CCSP) is a strategic initiative led
+          by Sawyer Camp Farmers CIG (SCFCIG) to address low crop yields and
+          environmental degradation in rural communities. Through this program,
+          SCFCIG is transforming how small-scale farmers cultivate cocoa and
+          coffee, fostering long-term economic and ecological sustainability.
+        </Text>
+
+        <Heading w="100%" align="left" color="green" size="md">
+          How It Works
+        </Heading>
+        <Text>
+          SCFCIG farmers cultivate high-quality cocoa and coffee seedlings in
+          specialized nurseries using modern techniques. Once the seedlings are
+          mature and healthy, they are distributed to local small-scale farmers
+          at no cost. These robust seedlings significantly enhance crop success
+          rates, enabling farmers to improve productivity and income.
+        </Text>
+
+        <Heading w="100%" align="left" color="green" size="md">
+          Beyond Seedling Distribution
+        </Heading>
+        <Text w="100%" mb="0">
+          The CCSP is more than just a seedling supply initiative; it’s a
+          comprehensive capacity-building program. SCFCIG farmers provide
+          ongoing support and mentorship to beneficiary farmers, covering topics
+          such as:
+        </Text>
+        <ul>
+          <li>Best practices for cocoa and coffee cultivation.</li>
+          <li>
+            Use of organic materials and natural fertilizers to promote soil
+            health.
+          </li>
+          <li>
+            Sustainable farming techniques that preserve biodiversity and reduce
+            environmental impact.
+          </li>
+        </ul>
+        <Text>
+          This knowledge-sharing approach ensures that farmers are not only
+          equipped with better seedlings but are also empowered with the skills
+          to grow and manage their crops sustainably.
+        </Text>
+
+        <Heading w="100%" align="left" color="green" size="md">
+          Impact and Sustainability
+        </Heading>
+        <Text>
+          The CCSP delivers widespread benefits that ripple through the
+          community:
+        </Text>
+        <ul>
+          <li>
+            Income generation for small-scale farmers through increased crop
+            yields.
+          </li>
+          <li>
+            Reduction in rural poverty by enhancing agricultural productivity.
+          </li>
+          <li>
+            Environmental preservation through reduced reliance on chemical
+            fertilizers and improved soil fertility.
+          </li>
+        </ul>
+        <Text w="100%">
+          By linking experienced SCFCIG farmers with emerging growers, the CCSP
+          creates a network of knowledge transfer and mutual support. The result
+          is a resilient farming community equipped to thrive both economically
+          and ecologically.
+        </Text>
+        <Text w="100%">
+          Through the Cocoa Coffee Seedling Project, Sawyer Camp Farmers CIG
+          continues to uphold its commitment to innovation, sustainability, and
+          community empowerment, cultivating not only crops, but also brighter
+          futures.
         </Text>
       </VStack>
     ),

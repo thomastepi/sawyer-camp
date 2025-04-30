@@ -1,5 +1,8 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Grid, GridItem } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import { useParams, useNavigate } from "react-router-dom";
+import ErrorPage from "../ErrorPage/ErrorPage";
 import projects from "../../utils/projects";
 import {
   Box,
@@ -21,6 +24,9 @@ import useIsMobile from "../../hooks/useIsMobile";
 
 const ProjectDetail = () => {
   const isMobileView = useIsMobile();
+
+  const navigate = useNavigate();
+
   const { projectId } = useParams();
   const parsedProjectId = parseInt(projectId);
 
@@ -28,8 +34,20 @@ const ProjectDetail = () => {
     (project) => project.id === parsedProjectId
   );
 
-  if (projectIndex === -1) {
-    return <Text>Project not found</Text>;
+  const otherProjects = projects
+    .filter((p) => p.id !== parsedProjectId)
+    .sort(() => 0.5 - Math.random())
+    .slice(0, 3);
+
+  if (projectIndex === -1 || typeof parsedProjectId !== "number") {
+    return (
+      <ErrorPage
+        heading="Project Not Found"
+        text="Sorry, the project you are looking for does not exist"
+        btnText="Back to Projects"
+        btnLink="/projects"
+      />
+    );
   }
 
   const projectCount = projects.length;
@@ -43,7 +61,7 @@ const ProjectDetail = () => {
     <>
       <Box key={project.id}>
         <Center color="#87A922">
-          <Box w={isMobileView ? "80%" : "50%"} py="50px">
+          <Box w={isMobileView ? "80%" : "70%"} py="50px">
             <VStack spacing={7} align="left">
               <Link to="/projects">
                 <Button leftIcon={<FontAwesomeIcon icon={faArrowCircleLeft} />}>
@@ -74,6 +92,58 @@ const ProjectDetail = () => {
                 </Link>
               </Flex>
             </VStack>
+
+            <Box mt="70px">
+              <Heading size="lg" mb={6} color="green">
+                Other Projects
+              </Heading>
+              <Grid
+                templateColumns={{
+                  base: "1fr",
+                  md: "1fr 1fr",
+                  lg: "repeat(3, 1fr)",
+                }}
+                gap={6}
+              >
+                {otherProjects.map((proj, index) => (
+                  <motion.div
+                    key={proj.id}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.2, duration: 0.5 }}
+                    style={{ width: "100%" }}
+                  >
+                    <GridItem
+                      role="button"
+                      tabIndex={0}
+                      onClick={() => navigate(`/project/${proj.id}`)}
+                      bg="gray.100"
+                      p={4}
+                      borderRadius="md"
+                      boxShadow="md"
+                      cursor="pointer"
+                      _hover={{ boxShadow: "lg", transform: "scale(1.02)" }}
+                    >
+                      <Image
+                        src={proj.image}
+                        alt={proj.name}
+                        h="180px"
+                        w="100%"
+                        objectFit="cover"
+                        borderRadius="md"
+                        mb={3}
+                      />
+                      <Text fontSize="sm" color="gray.600">
+                        {proj.location}
+                      </Text>
+                      <Heading noOfLines={2} size="md" mt={2} mb={1}>
+                        {proj.name}
+                      </Heading>
+                    </GridItem>
+                  </motion.div>
+                ))}
+              </Grid>
+            </Box>
           </Box>
         </Center>
       </Box>

@@ -1,26 +1,34 @@
 import React, { useState, useEffect } from "react";
 import { Heading, Box, Button, VStack, Center } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import useIsMobile from "../../hooks/useIsMobile";
+import { motion, AnimatePresence } from "framer-motion";
+import imgURLs from "../../utils/crossfadeImgUrl";
 import "./heroSection.css";
 
 const MotionBox = motion(Box);
 
-const imgURLs = [
-  "https://ik.imagekit.io/thormars/Sawyer-Camp/empower.jpg",
-  "https://ik.imagekit.io/thormars/Sawyer-Camp/rubber_trees.jpg",
-  "https://ik.imagekit.io/thormars/Sawyer-Camp/cow.jpg",
-  "https://ik.imagekit.io/thormars/Sawyer-Camp/pines.jpg",
-];
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+      delayChildren: 0.5,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { ease: "easeOut", duration: 0.8 } },
+};
 
 export const HeroSection = () => {
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
   const [showItems, setShowItems] = useState(false);
-  const isMobile = useIsMobile();
 
   useEffect(() => {
-    setTimeout(() => setShowItems(true), 2000);
+    setTimeout(() => setShowItems(true), 1000);
 
     imgURLs.forEach((src) => {
       const img = new Image();
@@ -35,83 +43,73 @@ export const HeroSection = () => {
   }, []);
 
   return (
-      <VStack
-        h="80vh"
-        alignItems="center"
-        backgroundColor="grey.900"
-        color="white"
-        position="relative"
-        overflow="hidden"
-      >
-        <Box
-          position="absolute"
-          top="0"
-          left="0"
-          right="0"
-          bottom="0"
-          overflow="hidden"
-        >
-          {imgURLs.map((url, index) => (
-            <Box
-              key={index}
-              className="background-fade"
-              style={{
-                backgroundImage: `url(${url})`,
-                opacity: currentImgIndex === index ? 1 : 0,
-              }}
-            />
-          ))}
-        </Box>
+    <VStack
+      h="80vh"
+      alignItems="center"
+      backgroundColor="gray.900"
+      color="white"
+      position="relative"
+      overflow="hidden"
+    >
+      <Box position="absolute" top="0" left="0" right="0" bottom="0" zIndex={0}>
+        {imgURLs.map((url, index) => (
+          <motion.div
+            key={index}
+            className="background-fade"
+            style={{
+              backgroundImage: `url(${url})`,
+              opacity: currentImgIndex === index ? 1 : 0,
+              transition: "opacity 1.2s ease-in-out",
+              transform: currentImgIndex === index ? "scale(1.05)" : "scale(1)",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              bottom: 0,
+              right: 0,
+            }}
+          />
+        ))}
+      </Box>
 
-        <Center>
-          <Box
-            align="center"
-            justifyContent="center"
-            w="70%"
-            position="absolute"
-            bottom="9"
-          >
-            <MotionBox
-              initial={{ opacity: 0, y: -90 }}
-              animate={{
-                opacity: showItems ? 1 : 0,
-                y: showItems ? 0 : -90,
-              }}
-              transition={{ duration: 0.9 }}
-            >
-              {showItems && (
-                <>
-                  <Box fontSize="3xl" py={10}>
-                    <Heading fontSize={!isMobile && "7xl"}>
+      <Center zIndex={1} w="100%">
+        <Box
+          align="center"
+          justifyContent="center"
+          w="70%"
+          position="absolute"
+          bottom="9"
+        >
+          <AnimatePresence>
+            {showItems && (
+              <MotionBox
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                <MotionBox variants={itemVariants}>
+                  <Box fontSize={{ base: "2xl", md: "3xl" }} py={10}>
+                    <Heading fontSize={{ base: "4xl", md: "7xl" }}>
                       Sawyer Camp Farmers
                     </Heading>
                     <Heading>Common Initiative Group</Heading>
                   </Box>
-                </>
-              )}
-            </MotionBox>
+                </MotionBox>
 
-            <MotionBox
-              initial={{ opacity: 0, y: 40 }}
-              animate={{
-                opacity: showItems ? 1 : 0,
-                y: showItems ? 0 : 40,
-              }}
-              transition={{ duration: 0.9 }}
-            >
-              {showItems && (
-                <>
+                <MotionBox variants={itemVariants}>
                   <Box py={6}>
                     <Button p={7} colorScheme="green" variant="solid">
                       <Link to="/membership">Become a Member</Link>
                     </Button>
                   </Box>
-                </>
-              )}
-            </MotionBox>
-          </Box>
-        </Center>
-      </VStack>
+                </MotionBox>
+              </MotionBox>
+            )}
+          </AnimatePresence>
+        </Box>
+      </Center>
+    </VStack>
   );
 };
 

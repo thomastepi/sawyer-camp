@@ -8,7 +8,6 @@ import {
   Button,
   Card,
   CardBody,
-  Stack,
   Grid,
   GridItem,
   Center,
@@ -69,21 +68,34 @@ const Volunteer = () => {
               {roles.map((role) => {
                 return (
                   <GridItem key={role.id}>
-                    <Card maxW="sm" bg="gray.800" color="white" h="450px">
+                    <Card
+                      maxW="sm"
+                      bg="gray.800"
+                      color="white"
+                      h="400px"
+                      display="flex"
+                      flexDirection="column"
+                      justifyContent="space-between"
+                    >
                       <CardBody>
-                        <Stack mt="3" spacing="1">
-                          <Image
-                            src={role.img}
-                            alt={role.alt}
-                            borderRadius="lg"
-                            w="100%"
-                            h="100%"
-                          />
-                          <Heading size="md" mt="20px" mb="10px">
+                        <VStack spacing={3} h="100%">
+                          <Box h="180px" w="100%">
+                            <Image
+                              src={role.img}
+                              alt={role.alt}
+                              objectFit="cover"
+                              borderRadius="lg"
+                              w="100%"
+                              h="100%"
+                            />
+                          </Box>
+                          <Heading size="md" textAlign="center">
                             {role.title}
                           </Heading>
-                          <Text fontSize="lg">{role.description}</Text>
-                        </Stack>
+                          <Text fontSize="lg" textAlign="center" noOfLines={4}>
+                            {role.description}
+                          </Text>
+                        </VStack>
                       </CardBody>
                     </Card>
                   </GridItem>
