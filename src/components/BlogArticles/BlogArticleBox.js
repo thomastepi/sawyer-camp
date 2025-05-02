@@ -53,7 +53,14 @@ const BlogArticleBox = ({ title, subtitle, bgColor }) => {
             cursor="pointer"
           >
             <Stack p={4}>
-              <Image src={item.image} alt={item.title} borderRadius="lg" />
+              <Image
+                src={item.image}
+                alt={item.title}
+                borderRadius="lg"
+                w="100%"
+                h="200px"
+                objectFit="cover"
+              />
               <Text>{item.date}</Text>
               <Text
                 as={Link}
@@ -61,6 +68,7 @@ const BlogArticleBox = ({ title, subtitle, bgColor }) => {
                 fontWeight="bold"
                 _hover={{ textDecoration: "underline" }}
                 color="blue"
+                noOfLines={2}
               >
                 {item.title}
               </Text>
