@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import useIsMobile from "../../hooks/useIsMobile";
-const img = "https://ik.imagekit.io/thormars/Sawyer-Camp/join-us.jpg";
+const img = "https://ik.imagekit.io/thormars/Sawyer-Camp/corn-farm.jpg";
 
 function Membership() {
   const isMobileView = useIsMobile();

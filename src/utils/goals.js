@@ -1,7 +1,7 @@
 const goals = [
   {
     id: 1,
-    image: "https://ik.imagekit.io/thormars/Sawyer-Camp/farm-girls.jpg",
+    image: "https://ik.imagekit.io/thormars/Sawyer-Camp/home-business.jpg",
     alt: "photo of farm women",
     title: "Empower Farmers, Strengthen Communities",
     text: `In Banga Bakundu, Cameroon, we provide farmers with training, tools, and resources to cultivate high-quality cash crops, improve farming techniques using sustainable practices, and boost community resilience through shared knowledge. Our farmer-first approach ensures economic growth and stability, benefiting not just individual farmers but the entire community.`,

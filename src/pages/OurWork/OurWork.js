@@ -34,7 +34,7 @@ const OurWork = () => {
     <>
       <PageHeader
         title="Our Work"
-        image="https://ik.imagekit.io/thormars/Sawyer-Camp/farm-girls.jpg"
+        image="https://ik.imagekit.io/thormars/Sawyer-Camp/yam-market.jpg"
       />
       <Box>
         <Box color="#87A922">

@@ -1,8 +1,8 @@
 const imgURLs = [
-  "https://ik.imagekit.io/thormars/Sawyer-Camp/empower.jpg",
+  "https://ik.imagekit.io/thormars/Sawyer-Camp/palmtrees-crop.jpg",
+  "https://ik.imagekit.io/thormars/Sawyer-Camp/new-corn-farm.jpg",
   "https://ik.imagekit.io/thormars/Sawyer-Camp/rubber_trees.jpg",
-  "https://ik.imagekit.io/thormars/Sawyer-Camp/cow.jpg",
-  "https://ik.imagekit.io/thormars/Sawyer-Camp/firewood-women.jpg",
+  "https://ik.imagekit.io/thormars/Sawyer-Camp/cones-crop.jpg",
 ];
 
 export default imgURLs;
