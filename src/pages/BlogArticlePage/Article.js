@@ -13,6 +13,7 @@ import {
 import useIsMobile from "../../hooks/useIsMobile";
 import { useParams, useNavigate } from "react-router-dom";
 import ErrorPage from "../ErrorPage/ErrorPage";
+import RecommendedTools from "../../components/RecommendedTools/RecommendedTools";
 
 const Article = () => {
   const isMobileView = useIsMobile();
@@ -56,6 +57,7 @@ const Article = () => {
             </Box>
             <Text color="#87A922">{currentArticle.date}</Text>
             <Box>{currentArticle.content}</Box>
+            {currentArticle.showTools && <RecommendedTools category="gardening" />}
           </VStack>
 
           <Box m="70px 0">

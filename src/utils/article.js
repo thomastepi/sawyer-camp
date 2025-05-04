@@ -15,6 +15,7 @@ export const article = [
       "Grow Your Skills and Support Your Community: Summer Work Opportunities at Sawyer Camp Farms!",
     date: "21 Febraury, 2024",
     image: "https://ik.imagekit.io/thormars/Sawyer-Camp/holiday-hire.jpg",
+    showTools: true,
     content: (
       <Box color="#87A922" fontSize="md">
         <Text fontSize="lg" lineHeight={2}>
@@ -174,6 +175,7 @@ export const article = [
       "A Call to Action: Supporting Recovery and Resilience at Sawyer Camp Farmers CIG",
     date: "07 May, 2024",
     image: "https://ik.imagekit.io/thormars/Sawyer-Camp/fire-incident.jpg",
+    showTools: false,
     content: (
       <Box color="#87A922" fontSize="md">
         <Text fontSize="lg" lineHeight={2}>
@@ -330,6 +332,7 @@ export const article = [
       "Resilience in Uncertain Times: Navigating Operational Challenges at Sawyer Camp",
     date: "28 January, 2023",
     image: "https://ik.imagekit.io/thormars/Sawyer-Camp/banga-bakundu.jpg",
+    showTools: false,
     content: (
       <Box color="#87A922" fontSize="md">
         <Text fontSize="lg" lineHeight={2}>

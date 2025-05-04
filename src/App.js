@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import ScrollToTop from "./components/utils/ScrollToTop";
 import Home from "./pages/Home/Home";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Blog from "./pages/Blog/Blog";
@@ -17,6 +17,8 @@ import Article from "./pages/BlogArticlePage/Article";
 import Volunteer from "./pages/Volunteer/Volunteer";
 import Login from "./pages/Auth/Login";
 import Register from "./pages/Auth/Register";
+import Products from "./pages/Products/Products";
+import CategoryPage from "./pages/CategoryPage/CategoryPage";
 import MainLayout from "./layouts/MainLayout";
 import { PayPalProvider, ChakraUIProvider } from "./providers";
 
@@ -43,6 +45,8 @@ function App() {
               <Route path="/paypal" element={<Paypal />} />
               <Route path="/membership" element={<Membership />} />
               <Route path="/volunteer" element={<Volunteer />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/products/:categoryName" element={<CategoryPage />} />
               <Route path="/article/:articleId" element={<Article />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />

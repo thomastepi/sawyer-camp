@@ -7,6 +7,7 @@ const navLinks = [
   { name: "Volunteer", path: "/volunteer" },
   { name: "Become a Member", path: "/membership", flag: true },
   { name: "Login/Register", path: "/login", flag: true },
+  { name: "Shop Tools", path: "/products" },
   { name: "Contact Us", path: "/contact-us" },
 ];
 
