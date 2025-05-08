@@ -123,8 +123,8 @@ export const article = [
         </Heading>
         <br />
         <Text fontSize="lg" lineHeight={2}>
-          We encourage all interested students to submit
-          an application by contacting info@sawyercamp.com. <br />
+          We encourage all interested students to submit an application by
+          contacting info@sawyercamp.com. <br />
           Don't miss this opportunity to gain valuable experience, earn some
           income, and be part of something special this summer!
         </Text>
@@ -181,7 +181,7 @@ export const article = [
         <Text fontSize="lg" lineHeight={2}>
           In the quiet of the night on Sunday, April 28, 2024, a devastating
           fire swept through one of the foundational farms of the Sawyer Camp
-          Farmers Common Initiative Group (SCFCIG) in Banga Bakundu, Cameroon.
+          Farmers Common Initiative Group (SCF-CIG) in Banga Bakundu, Cameroon.
           The incident resulted in the tragic loss of approximately 8,000 cones
           of oil palm and critically important machinery used for processing
           palm fruits into palm oil. The financial damage is estimated at around
@@ -214,7 +214,7 @@ export const article = [
         </Text>
         <br />
         <Text fontSize="lg" lineHeight={2}>
-          In response to the recent catastrophe, the SCFCIG is initiating a
+          In response to the recent catastrophe, the SCF-CIG is initiating a
           comprehensive review of safety protocols and emergency response
           strategies to enhance resilience against unforeseen disasters. The
           goal is to rebuild better, with improved safeguards that ensure the
@@ -237,9 +237,9 @@ export const article = [
             <Text fontSize="lg" lineHeight={2}>
               <span style={{ fontWeight: "bold" }}>Donations: </span>
               Monetary donations are urgently needed to help replace the lost
-              crops and machinery. Every contribution brings the SCFCIG one step
-              closer to restoration and helps maintain the livelihoods of our
-              farmers. Visit our{" "}
+              crops and machinery. Every contribution brings the SCF-CIG one
+              step closer to restoration and helps maintain the livelihoods of
+              our farmers. Visit our{" "}
               <ChakraLink
                 as={ReactRouterLink}
                 color="green"
@@ -255,7 +255,7 @@ export const article = [
           <ListItem>
             <Text fontSize="lg" lineHeight={2}>
               <span style={{ fontWeight: "bold" }}>Spread the Word: </span>
-              Awareness is crucial. Share the story of SCFCIG’s resilience and
+              Awareness is crucial. Share the story of SCF-CIG’s resilience and
               needs with your network to help garner more support.
             </Text>
           </ListItem>
@@ -286,11 +286,12 @@ export const article = [
         <br />
         <Text fontSize="lg" lineHeight={2}>
           As we face this challenge, our commitment to sustainable agriculture
-          and community empowerment remains unwavering. The SCFCIG is determined
-          to emerge from this tragedy stronger and more united than ever,
-          continuing to supply the nation with high-quality produce. We are more
-          than just a group of farmers; we are a family, a community bonded by
-          our dedication to nurturing our land and our people sustainably.
+          and community empowerment remains unwavering. The SCF-CIG is
+          determined to emerge from this tragedy stronger and more united than
+          ever, continuing to supply the nation with high-quality produce. We
+          are more than just a group of farmers; we are a family, a community
+          bonded by our dedication to nurturing our land and our people
+          sustainably.
         </Text>
         <br />
         <Text fontSize="lg" lineHeight={2}>
@@ -336,10 +337,10 @@ export const article = [
     content: (
       <Box color="#87A922" fontSize="md">
         <Text fontSize="lg" lineHeight={2}>
-          In recent months, Sawyer Camp Farmers Common Initiative Group (SCFCIG)
-          has faced an increasingly difficult operational landscape. Located in
-          Banga Bakundu, a community in Cameroon’s South West Region, our
-          farming activities have been significantly impacted by the ongoing
+          In recent months, Sawyer Camp Farmers Common Initiative Group
+          (SCF-CIG) has faced an increasingly difficult operational landscape.
+          Located in Banga Bakundu, a community in Cameroon’s South West Region,
+          our farming activities have been significantly impacted by the ongoing
           security challenges affecting the area.
         </Text>
         <br />
@@ -389,7 +390,7 @@ export const article = [
         <br />
         <Text fontSize="lg" lineHeight={2}>
           Despite these disruptions, our commitment to our mission remains
-          unshaken. SCFCIG has always stood for community-led development, and
+          unshaken. SCF-CIG has always stood for community-led development, and
           we are actively supporting our local members and displaced families
           wherever possible. We are working with the resources we have to
           continue essential farm activities and ensure the safety of everyone

@@ -77,7 +77,7 @@ const Footer = () => {
               </HStack>
               <ChakraLink>info@sawyercamp.com</ChakraLink>
               <Text align="center">
-                Sawyer-Camp Farmers CIG • © {new Date().getFullYear()}
+                Sawyer Camp Farmers CIG • © {new Date().getFullYear()}
               </Text>
             </VStack>
           </Box>

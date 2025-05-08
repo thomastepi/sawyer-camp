@@ -82,14 +82,13 @@ const AboutUs = () => {
             >
               <GridItem w="100%" py="30px">
                 <Text fontSize="lg">
-                  For years, our rural communities faced mounting
-                  challenges—climate change, biodiversity loss, and rural
-                  poverty. Farmers struggled to sustain their livelihoods, and
-                  the future of our land was at risk. Instead of standing by, we
-                  took action. As a united community-based organization, Sawyer
-                  Camp Farmers CIG turned these challenges into opportunities,
-                  equipping farmers with the tools and knowledge to adapt, grow,
-                  and prosper.
+                  For years, our rural communities faced mounting challenges;
+                  climate change, biodiversity loss, and rural poverty. Farmers
+                  struggled to sustain their livelihoods, and the future of our
+                  land was at risk. Instead of standing by, we took action. As a
+                  united community-based organization, Sawyer Camp Farmers CIG
+                  turned these challenges into opportunities, equipping farmers
+                  with the tools and knowledge to adapt, grow, and prosper.
                   <br />
                   <br />
                   Today, Sawyer Camp Farmers CIG is a thriving collective of

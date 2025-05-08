@@ -13,7 +13,7 @@ const projects = [
           The Community Farming Initiative (CFI) is a transformative effort by
           Sawyer Camp Farmers CIG to combat food insecurity and empower
           impoverished families. Recognizing that many local families struggle
-          to afford three square meals a day, SCFCIG has committed to utilizing
+          to afford three square meals a day, SCF-CIG has committed to utilizing
           its reserved lands to support subsistence farming.
         </Text>
         <Heading w="100%" align="left" color="green" size="md">
@@ -31,7 +31,7 @@ const projects = [
         </Heading>
         <Text w="100%" mb="0">
           The CFI is not just about land distribution; it is about empowerment.
-          Beneficiary families receive guidance from SCFCIG farmers on best
+          Beneficiary families receive guidance from SCF-CIG farmers on best
           agricultural practices, including:
         </Text>
         <ul>
@@ -66,10 +66,10 @@ const projects = [
         </ul>
         <Text w="100%">
           By addressing hunger at its root cause (lack of access to arable land)
-          SCFCIG is strengthening the foundation of the community, ensuring that
-          no family is left behind. The Community Farming Initiative stands as a
-          testament to the power of shared resources, sustainable agriculture,
-          and collective progress.
+          SCF-CIG is strengthening the foundation of the community, ensuring
+          that no family is left behind. The Community Farming Initiative stands
+          as a testament to the power of shared resources, sustainable
+          agriculture, and collective progress.
         </Text>
         <Text w="100%">
           Through this initiative, Sawyer Camp Farmers CIG continues to uphold
@@ -89,9 +89,9 @@ const projects = [
       <VStack spacing={6} align="left">
         <Text>
           The Cocoa Coffee Seedling Project (CCSP) is a strategic initiative led
-          by Sawyer Camp Farmers CIG (SCFCIG) to address low crop yields and
+          by Sawyer Camp Farmers CIG to address low crop yields and
           environmental degradation in rural communities. Through this program,
-          SCFCIG is transforming how small-scale farmers cultivate cocoa and
+          SCF-CIG is transforming how small-scale farmers cultivate cocoa and
           coffee, fostering long-term economic and ecological sustainability.
         </Text>
 
@@ -99,7 +99,7 @@ const projects = [
           How It Works
         </Heading>
         <Text>
-          SCFCIG farmers cultivate high-quality cocoa and coffee seedlings in
+          SCF-CIG farmers cultivate high-quality cocoa and coffee seedlings in
           specialized nurseries using modern techniques. Once the seedlings are
           mature and healthy, they are distributed to local small-scale farmers
           at no cost. These robust seedlings significantly enhance crop success
@@ -111,7 +111,7 @@ const projects = [
         </Heading>
         <Text w="100%" mb="0">
           The CCSP is more than just a seedling supply initiative; it’s a
-          comprehensive capacity-building program. SCFCIG farmers provide
+          comprehensive capacity-building program. SCF-CIG farmers provide
           ongoing support and mentorship to beneficiary farmers, covering topics
           such as:
         </Text>
@@ -153,7 +153,7 @@ const projects = [
           </li>
         </ul>
         <Text w="100%">
-          By linking experienced SCFCIG farmers with emerging growers, the CCSP
+          By linking experienced SCF-CIG farmers with emerging growers, the CCSP
           creates a network of knowledge transfer and mutual support. The result
           is a resilient farming community equipped to thrive both economically
           and ecologically.
@@ -175,7 +175,7 @@ const projects = [
     article: (
       <VStack spacing={6}>
         <Text>
-          At Sawyer Camp Farmers Common Initiative Group (SCFCIG), we're
+          At Sawyer Camp Farmers Common Initiative Group (SCF-CIG), we're
           constantly striving for a more sustainable future. That's why our
           Sustainable Palm Oil Production Expansion project is already well
           underway! This exciting initiative is seeing us expand our palm oil
@@ -196,7 +196,7 @@ const projects = [
           Sustainability in Action:
         </Heading>
         <Text w="100%">
-          Here's how SCFCIG is ensuring our palm oil expansion is truly
+          Here's how SCF-CIG is ensuring our palm oil expansion is truly
           sustainable:
         </Text>
         <ul>
@@ -239,7 +239,7 @@ const projects = [
         </Heading>
         <Text>
           The "Sustainable Palm Oil Production Expansion" project is a
-          significant leap forward for SCFCIG. By expanding responsibly, we're
+          significant leap forward for SCF-CIG. By expanding responsibly, we're
           contributing to a thriving palm oil industry that benefits both our
           environment and our community. We invite you to join us on this
           ongoing journey as we cultivate a sustainable future for Banga-Bakundu
@@ -248,7 +248,7 @@ const projects = [
         <Heading w="100%" align="left" color="green" size="md">
           Stay Updated!
         </Heading>
-        <Text>
+        <Text w="100%">
           We'll continue to share regular updates on the project's progress here
           on our website. This includes details on our implemented practices,
           community involvement, and future goals.
@@ -273,7 +273,7 @@ const projects = [
           At Sawyer Camp Farmers CIG, we believe that education is the
           foundation for a thriving future. Every year, as the school bells ring
           for a new academic session, we launch our Back-to-School Support
-          Initiative—a campaign dedicated to ensuring that students in rural
+          Initiative, a campaign dedicated to ensuring that students in rural
           communities return to school equipped with the supplies and support
           they need.{" "}
         </Text>{" "}
@@ -380,7 +380,7 @@ const projects = [
         <Text w="100%">
           {" "}
           Through the Back-to-School Support Initiative, Sawyer Camp Farmers CIG
-          continues its mission of community empowerment—because every child
+          continues its mission of community empowerment because every child
           deserves the opportunity to learn, grow, and build a better future.{" "}
         </Text>{" "}
         <Text w="100%">
