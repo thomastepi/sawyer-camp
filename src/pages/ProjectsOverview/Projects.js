@@ -22,12 +22,10 @@ const Projects = () => {
         <PageHeader image={img} title="Our Projects" />
         <Center bg="#789461" h="20rem">
           <Center w="70%" bg="white" h="20rem">
-            <VStack spacing={9}>
-              <Text align="center" fontSize="2xl">
-                Discover our dedication to sustainability as we combine global
-                insights with local action to drive positive change.
-              </Text>
-            </VStack>
+            <Text align="center" fontSize="2xl" px="1px">
+              Discover our dedication to sustainability as we combine global
+              insights with local action to drive positive change.
+            </Text>
           </Center>
         </Center>
         <Flex justify="center" py="90px">

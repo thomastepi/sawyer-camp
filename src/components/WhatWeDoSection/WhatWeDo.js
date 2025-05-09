@@ -25,11 +25,11 @@ const WhatWeDo = () => {
     <Box minHeight="100vh" bg="white" pt="70px">
       <VStack justifyContent="center" alignItems="center">
         <Box align="center">
-          <VStack w="80%" color="#87A922" spacing={9}>
+          <VStack w={isMobileView ? "90%" : "80%"} color="#87A922" spacing={9}>
             <Heading color="green">
               Sustainable Farming. Thriving Communities.
             </Heading>
-            <Box padding={8}>
+            <Box paddingY={8}>
               <Text fontSize={isMobileView ? "2xl" : "3xl"}>
                 In Banga Bakundu, Cameroon, we empower local farmers with
                 sustainable agriculture and modern techniques. Through education
@@ -39,7 +39,13 @@ const WhatWeDo = () => {
               </Text>
             </Box>
 
-            <Box py="55px" bg="#436850" px="30px" color="white" ref={ref}>
+            <Box
+              py="55px"
+              bg="#436850"
+              px={!isMobileView && "30px"}
+              color="white"
+              ref={ref}
+            >
               <HStack flexDir={isMobileView && "column"} spacing={5}>
                 <Box align={isMobileView ? "center" : "left"} w="90%">
                   <MotionText

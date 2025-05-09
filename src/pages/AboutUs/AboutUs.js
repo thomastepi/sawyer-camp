@@ -48,13 +48,13 @@ const AboutUs = () => {
           Building a Sustainable Future Together
         </Heading>
         <Box
-          w={isMobileView ? "90%" : "50%"}
+          w={isMobileView ? "80%" : "50%"}
           color="#87A922"
           bg="white"
-          p="30px"
+          p="20px"
           mt="70px"
         >
-          <Text fontSize="2xl" p={5}>
+          <Text fontSize="2xl">
             At Sawyer Camp Farmers CIG, we are committed to empowering local
             farmers with sustainable agricultural practices that drive economic
             growth and environmental responsibility. Through education,

@@ -16,7 +16,7 @@ const DonateHero = () => {
         </Heading>
       </Box>
       <Center bg="#789461" mb="15px">
-        <VStack spacing={8} w="80%" bg="white" p="50px">
+        <VStack spacing={8} w="80%" bg="white" p={{ base: "15px 1px", md: "50px" }}>
           <Text align="center" fontSize="2xl">
             Every Dollar Counts! Your donation helps train small farmers, combat
             climate change, and restore degraded lands. Join us in creating a

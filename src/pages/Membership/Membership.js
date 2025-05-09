@@ -7,22 +7,26 @@ import {
   HStack,
   Button,
   Center,
+  Image,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import PageHeader from "../../components/PageHeader/PageHeader";
-import useIsMobile from "../../hooks/useIsMobile";
 const img = "https://ik.imagekit.io/thormars/Sawyer-Camp/corn-farm.jpg";
 
 function Membership() {
-  const isMobileView = useIsMobile();
+  const isMobileView = useBreakpointValue({ base: true, md: false });
   const id = process.env.REACT_APP_TYPEFORM_ID;
 
   return (
     <>
       <Box color="#87A922">
-        <Box w="100%">
-          <PageHeader image={img} title="Join Us" />
-        </Box>
-        <VStack py="80px" spacing={9} w="60%" m="0 auto">
+        <PageHeader image={img} title="Join Us" />
+        <VStack
+          py="80px"
+          spacing={9}
+          w={isMobileView ? "90%" : "60%"}
+          m="0 auto"
+        >
           <Text fontSize="2xl" align="center">
             Join a thriving community of farmers committed to sustainable
             agriculture, economic empowerment, and environmental stewardship. At
@@ -31,7 +35,13 @@ function Membership() {
             action.
           </Text>
         </VStack>
-        <Center color="white" bg="#436850" m="0 auto" w="90%">
+        <Center
+          color="white"
+          bg="#436850"
+          m="0 auto"
+          w="90%"
+          p={!isMobileView && "30px"}
+        >
           <HStack
             spacing={"10"}
             p={isMobileView && "20px"}
@@ -39,7 +49,7 @@ function Membership() {
           >
             <Box w="100%">
               <VStack spacing={9}>
-                <Text align="center" width="80%" fontSize="2xl">
+                <Text align="center" fontSize="2xl">
                   Become a member and gain access to expert training, modern
                   farming techniques, and a supportive network that helps you
                   thrive.
@@ -56,9 +66,12 @@ function Membership() {
               </VStack>
             </Box>
             <Box w={isMobileView ? "90%" : "70%"} display="flex">
-              <img
+              <Image
+                boxSize="500px"
                 src={"https://ik.imagekit.io/thormars/Sawyer-Camp/ayisatu.jpg"}
                 alt="ayisatu"
+                objectFit="contain"
+                w="100%"
               />
             </Box>
           </HStack>

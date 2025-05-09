@@ -9,7 +9,6 @@ import * as Yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 import { setName, setEmail, setMessage } from "../../features/contactUsSlice";
 import { submitContactUs } from "../../features/contactUsSlice";
-import useIsMobile from "../../hooks/useIsMobile";
 import {
   Box,
   Text,
@@ -18,6 +17,7 @@ import {
   Divider,
   Grid,
   Center,
+  useBreakpointValue,
   FormControl,
   FormLabel,
   FormErrorMessage,
@@ -30,7 +30,7 @@ import {
 const img = "https://ik.imagekit.io/thormars/Sawyer-Camp/green-leaf.jpg";
 
 const ContactUs = () => {
-  const isMobileView = useIsMobile();
+  const isMobileView = useBreakpointValue({ base: true, md: false });
   const dispatch = useDispatch();
   const { isLoading, status, show } = useSelector((state) => state.contactUs);
   const alert = useSelector((state) => state.alert);
@@ -69,7 +69,10 @@ const ContactUs = () => {
       <Box w="100%" color="#87A922">
         <PageHeader image={img} title="Connect with Us" />
         <Center h="20rem" mt="20px">
-          <VStack w="60%" spacing={4} pl={isMobileView && "20px"}>
+          <VStack
+            w={isMobileView ? "90%" : "60%"}
+            spacing={4}
+          >
             <Text fontSize="2xl" align="center">
               Help us make Sawyer Camp Farmers CIG even better! Share your
               feedback and suggestions. Let's build something great together.
