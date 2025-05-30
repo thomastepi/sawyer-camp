@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import validator from "validator";
 import FixedBg from "../FixedBackground/FixedBg";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -42,18 +43,41 @@ const Subscribe = ({ image, heading, headingText }) => {
     validationSchema: Yup.object({
       email: Yup.string()
         .email("Invalid email address")
+        .max(254, "Email is too long")
         .required("Email is required"),
-      firstName: Yup.string().optional(),
-      lastName: Yup.string().optional(),
-      company: Yup.string().optional(),
+
+      firstName: Yup.string()
+        .max(50, "First name must be at most 50 characters")
+        .matches(/^[a-zA-Z\s'-]*$/, "First name contains invalid characters")
+        .optional(),
+
+      lastName: Yup.string()
+        .max(50, "Last name must be at most 50 characters")
+        .matches(/^[a-zA-Z\s'-]*$/, "Last name contains invalid characters")
+        .optional(),
+
+      company: Yup.string()
+        .max(100, "Company name must be at most 100 characters")
+        .matches(
+          /^[a-zA-Z0-9\s.'\-&,()]*$/,
+          "Company name contains invalid characters"
+        )
+        .optional(),
     }),
     onSubmit: (values) => {
-      dispatch(setEmail(values.email));
-      dispatch(setFirstName(values.firstName));
-      dispatch(setLastName(values.lastName));
-      dispatch(setCompany(values.company));
+      const sanitizedValues = {
+        email: validator.normalizeEmail(values.email),
+        firstName: validator.escape(values.firstName || ""),
+        lastName: validator.escape(values.lastName || ""),
+        company: validator.escape(values.company || ""),
+      };
+
+      dispatch(setEmail(sanitizedValues.email));
+      dispatch(setFirstName(sanitizedValues.firstName));
+      dispatch(setLastName(sanitizedValues.lastName));
+      dispatch(setCompany(sanitizedValues.company));
       try {
-        dispatch(submitNewsletter(values));
+        dispatch(submitNewsletter(sanitizedValues));
       } catch (error) {
         console.log(error);
       }
@@ -102,7 +126,12 @@ const Subscribe = ({ image, heading, headingText }) => {
                     />
                     <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
                   </FormControl>
-                  <FormControl id="first-name">
+                  <FormControl
+                    id="first-name"
+                    isInvalid={
+                      formik.touched.firstName && formik.errors.firstName
+                    }
+                  >
                     <FormLabel>First Name</FormLabel>
                     <Input
                       borderRadius="0"
@@ -115,9 +144,20 @@ const Subscribe = ({ image, heading, headingText }) => {
                       _focus={{ border: "solid green 1px" }}
                       focusBorderColor="green"
                     />
-                    <FormHelperText align="left">(Optional)</FormHelperText>
+                    {formik.touched.firstName && formik.errors.firstName ? (
+                      <FormErrorMessage>
+                        {formik.errors.firstName}
+                      </FormErrorMessage>
+                    ) : (
+                      <FormHelperText align="left">(Optional)</FormHelperText>
+                    )}
                   </FormControl>
-                  <FormControl id="last-name">
+                  <FormControl
+                    id="last-name"
+                    isInvalid={
+                      formik.touched.lastName && formik.errors.lastName
+                    }
+                  >
                     <FormLabel>Last Name</FormLabel>
                     <Input
                       borderRadius="0"
@@ -130,9 +170,18 @@ const Subscribe = ({ image, heading, headingText }) => {
                       _focus={{ border: "solid green 1px" }}
                       focusBorderColor="green"
                     />
-                    <FormHelperText align="left">(Optional)</FormHelperText>
+                    {formik.touched.lastName && formik.errors.lastName ? (
+                      <FormErrorMessage>
+                        {formik.errors.lastName}
+                      </FormErrorMessage>
+                    ) : (
+                      <FormHelperText align="left">(Optional)</FormHelperText>
+                    )}
                   </FormControl>
-                  <FormControl id="company">
+                  <FormControl
+                    id="company"
+                    isInvalid={formik.touched.company && formik.errors.company}
+                  >
                     <FormLabel>Company</FormLabel>
                     <Input
                       borderRadius="0"
@@ -145,7 +194,13 @@ const Subscribe = ({ image, heading, headingText }) => {
                       _focus={{ border: "solid green 1px" }}
                       focusBorderColor="green"
                     />
-                    <FormHelperText align="left">(Optional)</FormHelperText>
+                    {formik.touched.company && formik.errors.company ? (
+                      <FormErrorMessage>
+                        {formik.errors.company}
+                      </FormErrorMessage>
+                    ) : (
+                      <FormHelperText align="left">(Optional)</FormHelperText>
+                    )}
                   </FormControl>
                   <Button
                     type="submit"

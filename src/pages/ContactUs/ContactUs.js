@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import validator from "validator";
 // import GoogleMaps from "../../components/GoogleMaps/GoogleMaps";
 import DisplayAlert from "../../components/Alert/DisplayAlert";
 import PageHeader from "../../components/PageHeader/PageHeader";
@@ -41,17 +42,37 @@ const ContactUs = () => {
       message: "",
     },
     validationSchema: Yup.object({
-      name: Yup.string().required("Required"),
-      email: Yup.string().email("Invalid email address").required("Required"),
-      message: Yup.string().required("Required"),
+      name: Yup.string()
+        .trim()
+        .min(2, "Name must be at least 2 characters")
+        .max(50, "Name must be at most 50 characters")
+        .matches(/^[a-zA-Z\s.'-]+$/, "Name contains invalid characters")
+        .required("Name is required"),
+
+      email: Yup.string()
+        .trim()
+        .email("Invalid email address")
+        .max(254, "Email is too long")
+        .required("Email is required"),
+
+      message: Yup.string()
+        .trim()
+        .min(10, "Message must be at least 10 characters")
+        .max(1000, "Message must be at most 1000 characters")
+        .required("Message is required"),
     }),
     onSubmit: (values) => {
-      dispatch(setName(values.name));
-      dispatch(setEmail(values.email));
-      dispatch(setMessage(values.message));
+      const sanitizedValues = {
+        name: validator.escape(values.name),
+        email: validator.normalizeEmail(values.email),
+        message: validator.escape(values.message),
+      };
+      dispatch(setName(sanitizedValues.name));
+      dispatch(setEmail(sanitizedValues.email));
+      dispatch(setMessage(sanitizedValues.message));
 
       try {
-        dispatch(submitContactUs(values));
+        dispatch(submitContactUs(sanitizedValues));
       } catch (err) {
         console.log(err);
       }
@@ -69,10 +90,7 @@ const ContactUs = () => {
       <Box w="100%" color="#87A922">
         <PageHeader image={img} title="Connect with Us" />
         <Center h="20rem" mt="20px">
-          <VStack
-            w={isMobileView ? "90%" : "60%"}
-            spacing={4}
-          >
+          <VStack w={isMobileView ? "90%" : "60%"} spacing={4}>
             <Text fontSize="2xl" align="center">
               Help us make Sawyer Camp Farmers CIG even better! Share your
               feedback and suggestions. Let's build something great together.

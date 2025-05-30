@@ -94,7 +94,11 @@ export const HeroSection = () => {
                       Sawyer Camp Farmers
                     </Heading>
                     <Heading>Common Initiative Group</Heading>
-                    <Heading mt="8px" fontSize={{ base: "2xl", md: "3xl" }}>
+                    <Heading
+                      mt="8px"
+                      fontSize={{ base: "2xl", md: "3xl" }}
+                      color="whiteAlpha.900"
+                    >
                       (SCF-CIG)
                     </Heading>
                   </Box>
