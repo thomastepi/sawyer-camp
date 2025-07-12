@@ -78,7 +78,7 @@ const WhatWeDo = () => {
                   alignItems="center"
                 >
                   <MotionImage
-                    src="https://ik.imagekit.io/thormars/Sawyer-Camp/palm-oil-bottle.jpg"
+                    src="https://ik.imagekit.io/thormars/Sawyer-Camp/fri-emeline.jpg"
                     alt="palm oil"
                     boxSize="250px"
                     objectFit="cover"
