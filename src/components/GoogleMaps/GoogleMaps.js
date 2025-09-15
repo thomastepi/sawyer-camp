@@ -5,16 +5,15 @@ import {
   Marker,
   InfoWindow,
 } from "@react-google-maps/api";
+import InfoWindowChild from "./InfoWindowChild";
+import { farmInfo as f } from "../../utils/farmInfo";
 
 const containerStyle = {
   width: "100%",
   height: "400px",
 };
 
-const center = {
-  lat: 4.401,
-  lng: 9.442,
-};
+const center = f.position;
 
 function MapWithInfoWindow() {
   const { isLoaded } = useJsApiLoader({
@@ -36,25 +35,17 @@ function MapWithInfoWindow() {
     <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
       {selectedMarker && (
         <InfoWindow
-          position={{ lat: selectedMarker.lat, lng: selectedMarker.lng }}
+          position={selectedMarker.position}
           onCloseClick={handleInfoWindowClose}
         >
-          <div>
-            <h3>{selectedMarker.title}</h3>
-            <p>{selectedMarker.description}</p>
-          </div>
+          <InfoWindowChild selectedMarker={selectedMarker} />
         </InfoWindow>
       )}
       <Marker
-        position={{ lat: 4.401, lng: 9.442 }}
-        onClick={() =>
-          handleMarkerClick({
-            lat: 4.401,
-            lng: 9.442,
-            title: "Sawyer Camp",
-            description: "Banga Bakundu",
-          })
-        }
+        key={f.id}
+        position={f.position}
+        options={f.markerOptions}
+        onClick={() => handleMarkerClick(f)}
       />
     </GoogleMap>
   ) : (

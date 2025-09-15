@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import validator from "validator";
-// import GoogleMaps from "../../components/GoogleMaps/GoogleMaps";
+import GoogleMaps from "../../components/GoogleMaps/GoogleMaps";
 import DisplayAlert from "../../components/Alert/DisplayAlert";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -255,9 +255,9 @@ const ContactUs = () => {
           </Grid>
         </Box>
         {/*Renew Google Maps Subscription*/}
-        {/* <Box h="25rem">
+        <Box h="25rem">
           <GoogleMaps />
-        </Box> */}
+        </Box>
       </Box>
     </>
   );

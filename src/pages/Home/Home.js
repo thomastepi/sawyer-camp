@@ -3,7 +3,7 @@ import HeroSection from "../../components/HeroSection/HeroSection";
 import WhatWeDo from "../../components/WhatWeDoSection/WhatWeDo";
 import Team from "../../components/TeamSection/Team";
 import BlogArticleBox from "../../components/BlogArticles/BlogArticleBox";
-// import GoogleMaps from "../../components/GoogleMaps/GoogleMaps";
+import GoogleMaps from "../../components/GoogleMaps/GoogleMaps";
 import Subscribe from "../../components/SubscribeForm/Subscribe";
 import { Box, Center } from "@chakra-ui/react";
 
@@ -24,7 +24,7 @@ const Home = () => {
         headingText="Sign up for our newsletter"
       />
       {/*Renew Google Maps subscription*/}
-      {/* <GoogleMaps /> */}
+      <GoogleMaps />
     </>
   );
 };
