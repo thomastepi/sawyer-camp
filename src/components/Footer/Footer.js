@@ -19,7 +19,7 @@ const Footer = () => {
   const isMobileView = useIsMobile();
   const navigate = useNavigate();
   return (
-    <>
+    <footer>
       <Center
         py="50px"
         bg="#EEEEEE"
@@ -30,9 +30,9 @@ const Footer = () => {
           w={isMobileView ? "95%" : "70%"}
           h="100%"
           justify="space-between"
-          flexDir={isMobileView && "column"}
+          direction={{ base: "column", md: "row" }}
         >
-          <Box mb={isMobileView && "40px"}>
+          <Box mb={isMobileView ? "40px" : "0"}>
             <VStack align={isMobileView ? "center" : "left"}>
               {navLinks.map((link, index) => (
                 <ChakraLink key={index} as={ReactRouterLink} to={link.path}>
@@ -42,12 +42,12 @@ const Footer = () => {
             </VStack>
           </Box>
           <Box
-            mb={isMobileView && "30px"}
-            display={!isMobileView && "flex"}
+            mb={isMobileView ? "30px" : "0"}
+            display={!isMobileView ? "flex" : "block"}
             alignItems="center"
           >
             <VStack>
-              <Text align="center">To Support Sawyer Camp Farmers CIG</Text>
+              <Text align="center">Support Our Mission</Text>
               <Button
                 onClick={() => navigate("/donate")}
                 colorScheme="green"
@@ -75,7 +75,9 @@ const Footer = () => {
                   <FontAwesomeIcon icon={faTwitter} />
                 </ChakraLink>
               </HStack>
-              <ChakraLink>info@sawyercamp.com</ChakraLink>
+              <ChakraLink href="mailto:contact@thomastepi.com">
+                contact@thomastepi.com
+              </ChakraLink>
               <Text align="center">
                 Sawyer Camp Farmers CIG • © {new Date().getFullYear()}
               </Text>
@@ -89,7 +91,7 @@ const Footer = () => {
             <Text>Made with ❤️ by Thomas Tepi</Text>
             <ChakraLink
               target="_blank"
-              rel="noopener noreferre"
+              rel="noopener noreferrer"
               href="https://www.thomastepi.com"
             >
               www.thomastepi.com
@@ -97,7 +99,7 @@ const Footer = () => {
           </VStack>
         </Center>
       </Box>
-    </>
+    </footer>
   );
 };
 
