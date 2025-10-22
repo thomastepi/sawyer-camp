@@ -106,9 +106,16 @@ export const HeroSection = () => {
 
                 <MotionBox variants={itemVariants}>
                   <Box py={6}>
-                    <Button p={7} colorScheme="green" variant="solid">
-                      <Link to="/membership">Become a Member</Link>
-                    </Button>
+                    <div id="hero-membership-btn">
+                      <Button
+                        className=""
+                        p={7}
+                        colorScheme="green"
+                        variant="solid"
+                      >
+                        <Link to="/membership">Become a Member</Link>
+                      </Button>
+                    </div>
                   </Box>
                 </MotionBox>
               </MotionBox>

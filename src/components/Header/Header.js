@@ -45,9 +45,16 @@ const Header = () => {
             {!isMobileView && (
               <Center>
                 <HStack spacing={4}>
-                  <ChakraLink as={ReactRouterLink} to="/login" height="100%">
-                    Sign In
-                  </ChakraLink>
+                  <div id="header-member-sign-in">
+                    <ChakraLink
+                      className=""
+                      as={ReactRouterLink}
+                      to="/login"
+                      height="100%"
+                    >
+                      Sign In
+                    </ChakraLink>
+                  </div>
                   <Divider
                     borderColor="green"
                     height="40px"
@@ -64,6 +71,7 @@ const Header = () => {
               </Center>
             )}
             <ChakraLink
+              className="header-donate-btn"
               as={ReactRouterLink}
               bg="green"
               height="100%"
