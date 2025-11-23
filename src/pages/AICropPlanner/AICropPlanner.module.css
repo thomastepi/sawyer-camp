@@ -1,0 +1,14 @@
+.suggestion-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.suggestion-section h2 {
+    font-weight: bold;
+}
+
+.suggestion-section p a {
+    color: #2b6cb0;
+    text-decoration: underline;
+}

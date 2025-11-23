@@ -21,6 +21,10 @@ import Products from "./pages/Products/Products";
 import CategoryPage from "./pages/CategoryPage/CategoryPage";
 import MainLayout from "./layouts/MainLayout";
 import { PayPalProvider, ChakraUIProvider } from "./providers";
+import FarmDoctor from "./pages/FarmDoctor/FarmDoctor";
+
+import AILab from "./pages/AILab/AILab";
+import AICropPlanner from "./pages/AICropPlanner/AICropPlanner";
 
 function App() {
   return (
@@ -34,6 +38,8 @@ function App() {
               <Route path="/about-us" element={<AboutUs />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/projects" element={<Projects />} />
+              <Route path="/ai-lab" element={<AILab />} />
+              <Route path="/ai-crop-planner" element={<AICropPlanner />} />
               <Route path="/our-work" element={<OurWork />} />
               <Route path="/contact-us" element={<ContactUs />} />
               <Route
@@ -48,6 +54,7 @@ function App() {
               <Route path="/products" element={<Products />} />
               <Route path="/products/:categoryName" element={<CategoryPage />} />
               <Route path="/article/:articleId" element={<Article />} />
+              <Route path="/farm-doctor" element={<FarmDoctor />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="*" element={<ErrorPage />} />

@@ -3,6 +3,7 @@ const navLinks = [
   { name: "About Us", path: "/about-us" },
   { name: "Our Work", path: "/our-work" },
   { name: "Projects", path: "/projects" },
+  { name: "AI Lab", path: "/ai-lab" },
   { name: "Blog", path: "/blog" },
   { name: "Volunteer", path: "/volunteer" },
   { name: "Become a Member", path: "/membership", flag: true },
