@@ -39,9 +39,6 @@ const FarmDoctor = () => {
 
   const navigate = useNavigate();
 
-  const BASE_URL =
-    process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
-
   const handleImageChange = (e) => {
     const file = e.target.files?.[0];
     if (!file) {
@@ -86,7 +83,7 @@ const FarmDoctor = () => {
 
     try {
       const response = await axios.post(
-        `${BASE_URL}/api/sawyer-camp/analyze-image`,
+        `${process.env.REACT_APP_BASE_URL}/api/sawyer-camp/analyze-image`,
         formData,
         {
           headers: {

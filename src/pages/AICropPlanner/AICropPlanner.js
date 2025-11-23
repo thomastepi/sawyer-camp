@@ -39,7 +39,6 @@ const AICropPlanner = () => {
   const [loadingText, setLoadingText] = useState(loadingMessages[0]);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  const BASE_URL = process.env.REACT_APP_BASE_URL;
 
   useEffect(() => {
     if (!loading) return;
@@ -69,7 +68,7 @@ const AICropPlanner = () => {
       setError(null);
       setSuggestion(null);
       const response = await axios.post(
-        `${BASE_URL}/api/sawyer-camp/ai-crop-planner`,
+        `${process.env.REACT_APP_BASE_URL}/api/sawyer-camp/ai-crop-planner`,
         {
           prompt,
         }
