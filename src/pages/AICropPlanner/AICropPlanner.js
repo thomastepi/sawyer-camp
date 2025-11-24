@@ -37,6 +37,7 @@ const AICropPlanner = () => {
   const [suggestion, setSuggestion] = useState(null);
   const [loading, setLoading] = useState(false);
   const [loadingText, setLoadingText] = useState(loadingMessages[0]);
+  //const [jobId, setJobId] = useState(null);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
@@ -57,6 +58,8 @@ const AICropPlanner = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  console.log("value of loading", loading);
+
   const handleSubmit = async () => {
     const prompt = generateAiCropPlannerPrompt(formData);
     if (!prompt) {
@@ -73,14 +76,34 @@ const AICropPlanner = () => {
           prompt,
         }
       );
-      setSuggestion(response.data);
+      const jobId = response?.data?.jobId;
+
+      const interval = setInterval(async () => {
+        const res = await axios.get(
+          `${process.env.REACT_APP_BASE_URL}/api/sawyer-camp/ai-crop-planner/status/${jobId}`
+        );
+        if (res?.data?.status === "done") {
+          clearInterval(interval);
+          setSuggestion(res?.data?.result);
+          setLoading(false);
+        } else if (
+          res?.data?.status === "pending" ||
+          res?.data?.status === "processing"
+        ) {
+          setLoading(true);
+        } else if (res?.data?.status === "failed") {
+          clearInterval(interval);
+          setError(
+            res.data.error || "Something went wrong. Please try again later."
+          );
+          setLoading(false);
+        }
+      }, 3000);
     } catch (err) {
       console.error("Error: ", err);
       setError(
         "An error occurred while fetching the AI suggestion. Please try again."
       );
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -246,7 +269,13 @@ const AICropPlanner = () => {
             </Box>
 
             <VStack spacing={6} align="stretch">
-              <Box p={5} borderRadius="xl" borderWidth="1px" bg={accentBg}>
+              <Box
+                p={5}
+                borderRadius="xl"
+                borderWidth="1px"
+                boxShadow="md"
+                bg={accentBg}
+              >
                 <HStack spacing={3} mb={3}>
                   <InfoIcon color="green.500" />
                   <Heading size="sm">How the AI Crop Planner helps</Heading>
@@ -273,6 +302,7 @@ const AICropPlanner = () => {
             p={5}
             borderRadius="xl"
             borderWidth="1px"
+            boxShadow="md"
             bg={cardBg}
             minH="180px"
             mt={10}
