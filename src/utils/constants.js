@@ -33,6 +33,7 @@ Description: ${description}`;
 
 const generateAiCropPlannerPrompt = ({
   soilType,
+  waterAccess,
   location,
   marketDemand,
   farmSize,
@@ -42,6 +43,7 @@ You are an agricultural crop-planning assistant helping farmers choose the most 
 
 USER INPUTS:
 - Soil type: ${soilType || "not provided"}
+- water source: ${waterAccess || "not provided"}
 - Location: ${location || "not provided"}
 - Market demand: ${marketDemand || "not provided"}
 - Farm size: ${farmSize || "not provided"}
@@ -107,11 +109,36 @@ Make sure:
 };
 
 const loadingMessages = [
-  "Analyzing regional climate and soil conditions…",
-  "Searching market demand trends and pricing data…",
-  "Comparing your inputs with regional crop suitability…",
-  "Double-checking crop profitability and risk factors…",
-  "Preparing your personalized crop recommendation…",
+  "Analyzing climate…",
+  "Checking soil data…",
+  "Reading crop trends…",
+  "Scanning regions…",
+  "Evaluating risks…",
+  "Comparing options…",
+  "Checking rainfall…",
+  "Measuring heat levels…",
+  "Reviewing soil type…",
+  "Assessing nutrients…",
+  "Studying past yields…",
+  "Reviewing demand…",
+  "Checking prices…",
+  "Analyzing markets…",
+  "Estimating profits…",
+  "Measuring viability…",
+  "Checking water needs…",
+  "Reading farmer reports…",
+  "Estimating yield…",
+  "Building recommendations…",
+  "Cross-checking data…",
+  "Refining options…",
+  "Summarizing insights…",
+  "Evaluating seasons…",
+  "Checking land data…",
+  "Scanning local trends…",
+  "Running models…",
+  "Balancing factors…",
+  "Creating your plan…",
+  "Finalizing results…",
 ];
 
 export {

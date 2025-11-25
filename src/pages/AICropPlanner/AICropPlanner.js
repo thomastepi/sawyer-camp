@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useEffect } from "react";
 import {
   Alert,
   AlertIcon,
@@ -16,30 +15,24 @@ import {
   Tag,
   SimpleGrid,
   Divider,
+  Spinner,
 } from "@chakra-ui/react";
 import { InfoIcon, CheckCircleIcon } from "@chakra-ui/icons";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import { useNavigate } from "react-router-dom";
-import {
-  generateAiCropPlannerPrompt,
-  loadingMessages,
-} from "../../utils/constants";
+import { useDispatch, useSelector } from "react-redux";
+import { setFormData, setLoadingText } from "../../features/cropPlannerSlice";
+import { handleSubmit } from "../../features/cropPlannerSlice";
+import { loadingMessages } from "../../utils/constants";
 import s from "./AICropPlanner.module.css";
 
 const AICropPlanner = () => {
-  const [formData, setFormData] = useState({
-    soilType: "",
-    location: "",
-    marketDemand: "",
-    farmSize: "",
-  });
-  const [suggestion, setSuggestion] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [loadingText, setLoadingText] = useState(loadingMessages[0]);
-  //const [jobId, setJobId] = useState(null);
-  const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { formData, suggestion, loading, loadingText, error } = useSelector(
+    (state) => state.aiCropPlanner
+  );
 
   useEffect(() => {
     if (!loading) return;
@@ -48,62 +41,21 @@ const AICropPlanner = () => {
 
     const interval = setInterval(() => {
       index = (index + 1) % loadingMessages.length;
-      setLoadingText(loadingMessages[index]);
+      dispatch(setLoadingText(loadingMessages[index]));
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [loading]);
+  }, [loading, dispatch]);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    dispatch(setFormData({ ...formData, [e.target.name]: e.target.value }));
   };
 
-  console.log("value of loading", loading);
-
-  const handleSubmit = async () => {
-    const prompt = generateAiCropPlannerPrompt(formData);
-    if (!prompt) {
-      setError("Please fill in all required fields.");
-      return;
-    }
+  const handleFormSubmit = () => {
     try {
-      setLoading(true);
-      setError(null);
-      setSuggestion(null);
-      const response = await axios.post(
-        `${process.env.REACT_APP_BASE_URL}/api/sawyer-camp/ai-crop-planner`,
-        {
-          prompt,
-        }
-      );
-      const jobId = response?.data?.jobId;
-
-      const interval = setInterval(async () => {
-        const res = await axios.get(
-          `${process.env.REACT_APP_BASE_URL}/api/sawyer-camp/ai-crop-planner/status/${jobId}`
-        );
-        if (res?.data?.status === "done") {
-          clearInterval(interval);
-          setSuggestion(res?.data?.result);
-          setLoading(false);
-        } else if (
-          res?.data?.status === "pending" ||
-          res?.data?.status === "processing"
-        ) {
-          setLoading(true);
-        } else if (res?.data?.status === "failed") {
-          clearInterval(interval);
-          setError(
-            res.data.error || "Something went wrong. Please try again later."
-          );
-          setLoading(false);
-        }
-      }, 3000);
-    } catch (err) {
-      console.error("Error: ", err);
-      setError(
-        "An error occurred while fetching the AI suggestion. Please try again."
-      );
+      dispatch(handleSubmit(formData));
+    } catch (e) {
+      console.log(e);
     }
   };
 
@@ -115,7 +67,7 @@ const AICropPlanner = () => {
       <PageHeader
         title="AI Crop Planner"
         bg={"gray.100"}
-        imageUrl="https://images.unsplash.com/photo-1597911033282-13245a49c4cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+        image="https://ik.imagekit.io/thormars/Sawyer-Camp/plantain-banana.jpg"
       />
 
       <Box bg={"gray.50"} py={{ base: 8, md: 12 }}>
@@ -160,6 +112,7 @@ const AICropPlanner = () => {
             alignItems="flex-start"
           >
             <Box
+              className={s["crop-planner-form"]}
               as="form"
               onSubmit={handleSubmit}
               bg={cardBg}
@@ -189,7 +142,24 @@ const AICropPlanner = () => {
                     <option value="sandy">Sandy</option>
                     <option value="clay">Clay</option>
                     <option value="loamy">Loamy</option>
-                    <option value="silty">Silty</option>
+                    <option value="Silty">Silty</option>
+                    <option value="unknown soil type">Unknown soil type</option>
+                  </Select>
+                </FormControl>
+
+                <FormControl isRequired>
+                  <FormLabel htmlFor="waterAccess">Water Access</FormLabel>
+                  <Select
+                    id="waterAccess"
+                    name="waterAccess"
+                    placeholder="Water Source"
+                    value={formData.waterAccess}
+                    onChange={handleChange}
+                  >
+                    <option value="rainfall">Rainfall only</option>
+                    <option value="stream/river">Stream/River nearby</option>
+                    <option value="borehole/well">Borehole/Well</option>
+                    <option value="irrigation">Irrigation System</option>
                   </Select>
                 </FormControl>
 
@@ -231,7 +201,7 @@ const AICropPlanner = () => {
                 </FormControl>
 
                 <Button
-                  onClick={handleSubmit}
+                  onClick={handleFormSubmit}
                   isLoading={loading}
                   loadingText={loadingText}
                   colorScheme="green"
@@ -309,7 +279,7 @@ const AICropPlanner = () => {
           >
             <HStack spacing={3} mb={3}>
               <CheckCircleIcon color="green.500" />
-              <Heading size="sm">
+              <Heading color={"green"} size="sm">
                 {suggestion
                   ? "Recommended crop"
                   : "Your recommendation appears here"}
@@ -333,11 +303,21 @@ const AICropPlanner = () => {
               </>
             ) : (
               <>
-                <Text fontSize="sm" color="gray.500">
-                  Fill in the form above and click{" "}
-                  <strong>“Get AI Recommendation”</strong> to see a suggested
-                  crop tailored to your conditions.
-                </Text>
+                {loading ? (
+                  <Spinner
+                    thickness="4px"
+                    speed="0.65s"
+                    emptyColor="green.200"
+                    color="blue.500"
+                    size="xl"
+                  />
+                ) : (
+                  <Text fontSize="sm" color="gray.500">
+                    Fill in the form above and click{" "}
+                    <strong>“Get AI Recommendation”</strong> to see a suggested
+                    crop tailored to your conditions.
+                  </Text>
+                )}
               </>
             )}
           </Box>

@@ -2,13 +2,19 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    color: #87A922
 }
 
 .suggestion-section h2 {
     font-weight: bold;
+    color: green
 }
 
 .suggestion-section p a {
     color: #2b6cb0;
     text-decoration: underline;
+}
+
+.crop-planner-form {
+    color: #87A922
 }

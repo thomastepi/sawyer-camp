@@ -14,14 +14,14 @@ import { aiLabTools } from "../../utils/aiLab";
 
 const AILab = () => {
   const sectionBg = "white";
-  const subtleText = "gray.600";
+  const subtleText = "#87A922";
 
   return (
     <Box minH="100vh" bg={"gray.50"}>
       <PageHeader
         title="AI Lab"
         bg="gray.700"
-        imageUrl="https://images.unsplash.com/photo-1620712943543-285f7266c888?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+        image="https://ik.imagekit.io/thormars/Sawyer-Camp/plantain-banana.jpg"
       />
 
       <Box

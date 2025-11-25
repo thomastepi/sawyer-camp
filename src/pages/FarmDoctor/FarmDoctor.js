@@ -18,6 +18,7 @@ import {
   SimpleGrid,
   Badge,
   Divider,
+  Spinner,
 } from "@chakra-ui/react";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import { useNavigate } from "react-router-dom";
@@ -109,7 +110,7 @@ const FarmDoctor = () => {
     <Box>
       <PageHeader
         title="Farm Doctor"
-        imageUrl="https://images.unsplash.com/photo-1563262522-839e57833158?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
+        image="https://ik.imagekit.io/thormars/Sawyer-Camp/plantain-banana.jpg"
       />
 
       <Box bg={"gray.50"}>
@@ -145,7 +146,11 @@ const FarmDoctor = () => {
             <Divider />
           </VStack>
 
-          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
+          <SimpleGrid
+            className={s["main"]}
+            columns={{ base: 1, md: 2 }}
+            spacing={10}
+          >
             <VStack
               spacing={6}
               align="stretch"
@@ -259,6 +264,16 @@ const FarmDoctor = () => {
                     here with a probable diagnosis and next steps to help your
                     crops recover.
                   </Text>
+                )}
+
+                {loading && (
+                  <Spinner
+                    thickness="4px"
+                    speed="0.65s"
+                    emptyColor="green.200"
+                    color="blue.500"
+                    size="xl"
+                  />
                 )}
 
                 {diagnosis && (

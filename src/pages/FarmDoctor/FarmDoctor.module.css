@@ -1,11 +1,19 @@
 .diagnosis-section section {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .diagnosis-section section h2 {
-    font-size: 1.25rem;
-    color: #2f855a;
-    margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  color: #2f855a;
+  margin-bottom: 0.5rem;
+}
+
+.main {
+  color: #87a922;
+}
+
+.main h2 {
+  color: green;
 }
